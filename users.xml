@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Creds>
+	<User>
+		<ID>nickx</ID>
+		<LongName>Nicholas Xanthoudakis</LongName>
+		<Pass>a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</Pass>
+		<InventoryRights>Full</InventoryRights>
+		<EventPrivelidge>TeamEdit</EventPrivelidge>
+		<EventPrivelidge>FixScheduleEdit</EventPrivelidge>
+		<EventPrivelidge>TimelineEdit</EventPrivelidge>
+		<EventPrivelidge>FileEdit</EventPrivelidge>
+	</User>
+</Creds>

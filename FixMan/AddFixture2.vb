@@ -237,6 +237,8 @@ Public Class frmAddFix2
         FixColours = dgdColours
         FixGobos = dgdGobos
 
+        TESTING_FORM.Show()
+
         If lstEffects.SelectedItems.Count > 0 Then
             For Each item As ListViewItem.ListViewSubItem In lstEffects.SelectedItems(0).SubItems
                 FixEffects.Add(item.Text)

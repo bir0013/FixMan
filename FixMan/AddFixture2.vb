@@ -234,9 +234,8 @@ Public Class frmAddFix2
 
         FixTotalPowerDraw = nudPowerDraw.Value
 
-        '### CODE FOR COLOURS GOES HERE ###
-
-        '### CODE FOR GOBOS GOES HERE ###
+        FixColours = dgdColours
+        FixGobos = dgdGobos
 
         If lstEffects.SelectedItems.Count > 0 Then
             For Each item As ListViewItem.ListViewSubItem In lstEffects.SelectedItems(0).SubItems
@@ -266,6 +265,71 @@ Public Class frmAddFix2
         End If
     End Sub
 
+    Private Sub btnColourRemove_Click(sender As Object, e As EventArgs) Handles btnColourRemove.Click
+        '### THIS ONLY REMOVES THE LAST CELL ###
+        Try
+            If TypeOf dgdColours.Rows(colourvertical).Cells(colourhorizontal - 1).Value Is Image Then
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal - 1) = New DataGridViewTextBoxCell With {
+                    .Value = String.Empty
+                }
+                If colourhorizontal = 1 Then
+                    dgdColours.Rows.RemoveAt(colourvertical)
+                    colourvertical -= 1
+                    colourhorizontal = 3
+                Else
+                    colourhorizontal -= 1
+                End If
+            Else
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal - 1).Value = String.Empty
+                If colourhorizontal = 1 Then
+                    dgdColours.Rows.RemoveAt(colourvertical)
+                    colourvertical -= 1
+                    colourhorizontal = 3
+                Else
+                    colourhorizontal -= 1
+                End If
+            End If
+        Catch ex As Exception
+            If TypeOf ex Is ArgumentOutOfRangeException Then
+                MsgBox("There is nothing to remove.")
+            Else
+                MsgBox(ex.Message)
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnGoboRemove_Click(sender As Object, e As EventArgs) Handles btnGoboRemove.Click
+        '### THIS ONLY REMOVES THE LAST CELL ###
+        Try
+            If TypeOf dgdGobos.Rows(gobovertical).Cells(gobohorizontal - 1).Value Is Image Then
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal - 1) = New DataGridViewTextBoxCell With {
+                    .Value = String.Empty
+                }
+                If gobohorizontal = 1 Then
+                    dgdGobos.Rows.RemoveAt(gobovertical)
+                    gobovertical -= 1
+                    gobohorizontal = 3
+                Else
+                    gobohorizontal -= 1
+                End If
+            Else
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal - 1).Value = String.Empty
+                If gobohorizontal = 1 Then
+                    dgdGobos.Rows.RemoveAt(gobovertical)
+                    gobovertical -= 1
+                    gobohorizontal = 3
+                Else
+                    gobohorizontal -= 1
+                End If
+            End If
+        Catch ex As Exception
+            If TypeOf ex Is ArgumentOutOfRangeException Then
+                MsgBox("There is nothing to remove.")
+            Else
+                MsgBox(ex.Message)
+            End If
+        End Try
+    End Sub
 
     Private Sub txtControl_KeyUp(sender As Object, e As KeyEventArgs) Handles txtControl.KeyUp
         If e.KeyCode = Keys.Enter Then

@@ -140,7 +140,7 @@ Partial Class frmAddFix2
         Me.lblImagePrompt.Location = New System.Drawing.Point(7, 6)
         Me.lblImagePrompt.Name = "lblImagePrompt"
         Me.lblImagePrompt.Size = New System.Drawing.Size(49, 16)
-        Me.lblImagePrompt.TabIndex = 3
+        Me.lblImagePrompt.TabIndex = 25
         Me.lblImagePrompt.Text = "Image:"
         '
         'picImage
@@ -158,7 +158,7 @@ Partial Class frmAddFix2
         Me.lblImageLocation.Location = New System.Drawing.Point(7, 257)
         Me.lblImageLocation.Name = "lblImageLocation"
         Me.lblImageLocation.Size = New System.Drawing.Size(221, 19)
-        Me.lblImageLocation.TabIndex = 5
+        Me.lblImageLocation.TabIndex = 26
         Me.lblImageLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblManufacturerPrompt
@@ -168,7 +168,7 @@ Partial Class frmAddFix2
         Me.lblManufacturerPrompt.Location = New System.Drawing.Point(3, 5)
         Me.lblManufacturerPrompt.Name = "lblManufacturerPrompt"
         Me.lblManufacturerPrompt.Size = New System.Drawing.Size(88, 16)
-        Me.lblManufacturerPrompt.TabIndex = 6
+        Me.lblManufacturerPrompt.TabIndex = 27
         Me.lblManufacturerPrompt.Text = "Manufacturer:"
         '
         'lblModel
@@ -178,7 +178,7 @@ Partial Class frmAddFix2
         Me.lblModel.Location = New System.Drawing.Point(6, 4)
         Me.lblModel.Name = "lblModel"
         Me.lblModel.Size = New System.Drawing.Size(49, 16)
-        Me.lblModel.TabIndex = 7
+        Me.lblModel.TabIndex = 28
         Me.lblModel.Text = "Model:"
         '
         'Label5
@@ -222,7 +222,8 @@ Partial Class frmAddFix2
         Me.dgdColours.Name = "dgdColours"
         Me.dgdColours.RowHeadersWidth = 10
         Me.dgdColours.Size = New System.Drawing.Size(314, 150)
-        Me.dgdColours.TabIndex = 12
+        Me.dgdColours.TabIndex = 38
+        Me.dgdColours.TabStop = False
         '
         'dgdGobos
         '
@@ -233,7 +234,8 @@ Partial Class frmAddFix2
         Me.dgdGobos.Name = "dgdGobos"
         Me.dgdGobos.RowHeadersWidth = 10
         Me.dgdGobos.Size = New System.Drawing.Size(314, 150)
-        Me.dgdGobos.TabIndex = 13
+        Me.dgdGobos.TabIndex = 39
+        Me.dgdGobos.TabStop = False
         '
         'lstControl
         '
@@ -241,7 +243,8 @@ Partial Class frmAddFix2
         Me.lstControl.Location = New System.Drawing.Point(6, 48)
         Me.lstControl.Name = "lstControl"
         Me.lstControl.Size = New System.Drawing.Size(220, 95)
-        Me.lstControl.TabIndex = 14
+        Me.lstControl.TabIndex = 35
+        Me.lstControl.TabStop = False
         '
         'cmbBeamType
         '
@@ -290,7 +293,8 @@ Partial Class frmAddFix2
         Me.lstEffects.Location = New System.Drawing.Point(10, 52)
         Me.lstEffects.Name = "lstEffects"
         Me.lstEffects.Size = New System.Drawing.Size(240, 212)
-        Me.lstEffects.TabIndex = 20
+        Me.lstEffects.TabIndex = 41
+        Me.lstEffects.TabStop = False
         '
         'nudPowerDraw
         '
@@ -307,7 +311,7 @@ Partial Class frmAddFix2
         Me.lblTypePrompt.Location = New System.Drawing.Point(6, 5)
         Me.lblTypePrompt.Name = "lblTypePrompt"
         Me.lblTypePrompt.Size = New System.Drawing.Size(43, 16)
-        Me.lblTypePrompt.TabIndex = 22
+        Me.lblTypePrompt.TabIndex = 30
         Me.lblTypePrompt.Text = "Type:"
         '
         'lblBeamType
@@ -317,7 +321,7 @@ Partial Class frmAddFix2
         Me.lblBeamType.Location = New System.Drawing.Point(6, 6)
         Me.lblBeamType.Name = "lblBeamType"
         Me.lblBeamType.Size = New System.Drawing.Size(101, 16)
-        Me.lblBeamType.TabIndex = 23
+        Me.lblBeamType.TabIndex = 31
         Me.lblBeamType.Text = "Optical System:"
         '
         'lblSource
@@ -327,7 +331,7 @@ Partial Class frmAddFix2
         Me.lblSource.Location = New System.Drawing.Point(6, 7)
         Me.lblSource.Name = "lblSource"
         Me.lblSource.Size = New System.Drawing.Size(85, 16)
-        Me.lblSource.TabIndex = 24
+        Me.lblSource.TabIndex = 29
         Me.lblSource.Text = "Light Source:"
         '
         'lblColourTempPrompt
@@ -337,7 +341,7 @@ Partial Class frmAddFix2
         Me.lblColourTempPrompt.Location = New System.Drawing.Point(6, 7)
         Me.lblColourTempPrompt.Name = "lblColourTempPrompt"
         Me.lblColourTempPrompt.Size = New System.Drawing.Size(151, 16)
-        Me.lblColourTempPrompt.TabIndex = 25
+        Me.lblColourTempPrompt.TabIndex = 33
         Me.lblColourTempPrompt.Text = "Colour Temp. (At Open):"
         '
         'lblControlPrompt
@@ -347,7 +351,7 @@ Partial Class frmAddFix2
         Me.lblControlPrompt.Location = New System.Drawing.Point(6, 4)
         Me.lblControlPrompt.Name = "lblControlPrompt"
         Me.lblControlPrompt.Size = New System.Drawing.Size(113, 16)
-        Me.lblControlPrompt.TabIndex = 26
+        Me.lblControlPrompt.TabIndex = 34
         Me.lblControlPrompt.Text = "Control Protocols:"
         '
         'Label11
@@ -357,7 +361,7 @@ Partial Class frmAddFix2
         Me.Label11.Location = New System.Drawing.Point(7, 5)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(117, 16)
-        Me.Label11.TabIndex = 27
+        Me.Label11.TabIndex = 36
         Me.Label11.Text = "Total Power Draw:"
         '
         'lblColoursPrompt
@@ -367,7 +371,7 @@ Partial Class frmAddFix2
         Me.lblColoursPrompt.Location = New System.Drawing.Point(9, 3)
         Me.lblColoursPrompt.Name = "lblColoursPrompt"
         Me.lblColoursPrompt.Size = New System.Drawing.Size(57, 16)
-        Me.lblColoursPrompt.TabIndex = 28
+        Me.lblColoursPrompt.TabIndex = 37
         Me.lblColoursPrompt.Text = "Colours:"
         '
         'lblGoboPrompt
@@ -387,7 +391,7 @@ Partial Class frmAddFix2
         Me.lblEffectsPrompt.Location = New System.Drawing.Point(10, 5)
         Me.lblEffectsPrompt.Name = "lblEffectsPrompt"
         Me.lblEffectsPrompt.Size = New System.Drawing.Size(51, 16)
-        Me.lblEffectsPrompt.TabIndex = 30
+        Me.lblEffectsPrompt.TabIndex = 40
         Me.lblEffectsPrompt.Text = "Effects:"
         '
         'lblBeamAnglePrompt
@@ -397,7 +401,7 @@ Partial Class frmAddFix2
         Me.lblBeamAnglePrompt.Location = New System.Drawing.Point(5, 7)
         Me.lblBeamAnglePrompt.Name = "lblBeamAnglePrompt"
         Me.lblBeamAnglePrompt.Size = New System.Drawing.Size(85, 16)
-        Me.lblBeamAnglePrompt.TabIndex = 31
+        Me.lblBeamAnglePrompt.TabIndex = 32
         Me.lblBeamAnglePrompt.Text = "Beam Angle:"
         '
         'rtbNotes
@@ -418,7 +422,7 @@ Partial Class frmAddFix2
         Me.lblNotesPrompt.Location = New System.Drawing.Point(10, 5)
         Me.lblNotesPrompt.Name = "lblNotesPrompt"
         Me.lblNotesPrompt.Size = New System.Drawing.Size(82, 16)
-        Me.lblNotesPrompt.TabIndex = 33
+        Me.lblNotesPrompt.TabIndex = 42
         Me.lblNotesPrompt.Text = "Other Notes:"
         '
         'lblBASep
@@ -464,7 +468,7 @@ Partial Class frmAddFix2
         Me.pnlBeamType.Location = New System.Drawing.Point(271, 104)
         Me.pnlBeamType.Name = "pnlBeamType"
         Me.pnlBeamType.Size = New System.Drawing.Size(231, 55)
-        Me.pnlBeamType.TabIndex = 38
+        Me.pnlBeamType.TabIndex = 48
         '
         'pnlBeamAngle
         '
@@ -477,7 +481,7 @@ Partial Class frmAddFix2
         Me.pnlBeamAngle.Location = New System.Drawing.Point(271, 165)
         Me.pnlBeamAngle.Name = "pnlBeamAngle"
         Me.pnlBeamAngle.Size = New System.Drawing.Size(231, 82)
-        Me.pnlBeamAngle.TabIndex = 39
+        Me.pnlBeamAngle.TabIndex = 49
         '
         'pnlSource
         '
@@ -487,7 +491,7 @@ Partial Class frmAddFix2
         Me.pnlSource.Location = New System.Drawing.Point(16, 453)
         Me.pnlSource.Name = "pnlSource"
         Me.pnlSource.Size = New System.Drawing.Size(236, 57)
-        Me.pnlSource.TabIndex = 40
+        Me.pnlSource.TabIndex = 46
         '
         'pnlColourTemp
         '
@@ -497,7 +501,7 @@ Partial Class frmAddFix2
         Me.pnlColourTemp.Location = New System.Drawing.Point(271, 253)
         Me.pnlColourTemp.Name = "pnlColourTemp"
         Me.pnlColourTemp.Size = New System.Drawing.Size(231, 59)
-        Me.pnlColourTemp.TabIndex = 41
+        Me.pnlColourTemp.TabIndex = 50
         '
         'pnlControl
         '
@@ -509,7 +513,7 @@ Partial Class frmAddFix2
         Me.pnlControl.Location = New System.Drawing.Point(271, 318)
         Me.pnlControl.Name = "pnlControl"
         Me.pnlControl.Size = New System.Drawing.Size(231, 155)
-        Me.pnlControl.TabIndex = 42
+        Me.pnlControl.TabIndex = 51
         '
         'btnColourText
         '
@@ -573,7 +577,7 @@ Partial Class frmAddFix2
         Me.pnlPowerDraw.Location = New System.Drawing.Point(271, 479)
         Me.pnlPowerDraw.Name = "pnlPowerDraw"
         Me.pnlPowerDraw.Size = New System.Drawing.Size(231, 53)
-        Me.pnlPowerDraw.TabIndex = 49
+        Me.pnlPowerDraw.TabIndex = 52
         '
         'pnlImage
         '
@@ -585,7 +589,7 @@ Partial Class frmAddFix2
         Me.pnlImage.Location = New System.Drawing.Point(16, 42)
         Me.pnlImage.Name = "pnlImage"
         Me.pnlImage.Size = New System.Drawing.Size(236, 285)
-        Me.pnlImage.TabIndex = 38
+        Me.pnlImage.TabIndex = 43
         '
         'pnlManufacturer
         '
@@ -595,7 +599,7 @@ Partial Class frmAddFix2
         Me.pnlManufacturer.Location = New System.Drawing.Point(16, 333)
         Me.pnlManufacturer.Name = "pnlManufacturer"
         Me.pnlManufacturer.Size = New System.Drawing.Size(236, 56)
-        Me.pnlManufacturer.TabIndex = 6
+        Me.pnlManufacturer.TabIndex = 44
         '
         'pnlModel
         '
@@ -605,7 +609,7 @@ Partial Class frmAddFix2
         Me.pnlModel.Location = New System.Drawing.Point(16, 395)
         Me.pnlModel.Name = "pnlModel"
         Me.pnlModel.Size = New System.Drawing.Size(236, 52)
-        Me.pnlModel.TabIndex = 50
+        Me.pnlModel.TabIndex = 45
         '
         'pnlType
         '
@@ -615,7 +619,7 @@ Partial Class frmAddFix2
         Me.pnlType.Location = New System.Drawing.Point(271, 42)
         Me.pnlType.Name = "pnlType"
         Me.pnlType.Size = New System.Drawing.Size(231, 56)
-        Me.pnlType.TabIndex = 51
+        Me.pnlType.TabIndex = 47
         '
         'pnlColours
         '
@@ -628,7 +632,7 @@ Partial Class frmAddFix2
         Me.pnlColours.Location = New System.Drawing.Point(523, 42)
         Me.pnlColours.Name = "pnlColours"
         Me.pnlColours.Size = New System.Drawing.Size(333, 208)
-        Me.pnlColours.TabIndex = 52
+        Me.pnlColours.TabIndex = 53
         '
         'Panel12
         '
@@ -640,7 +644,7 @@ Partial Class frmAddFix2
         Me.Panel12.Location = New System.Drawing.Point(875, 42)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(260, 273)
-        Me.Panel12.TabIndex = 53
+        Me.Panel12.TabIndex = 55
         '
         'txtEffects
         '
@@ -669,7 +673,7 @@ Partial Class frmAddFix2
         Me.pnlGobos.Location = New System.Drawing.Point(523, 256)
         Me.pnlGobos.Name = "pnlGobos"
         Me.pnlGobos.Size = New System.Drawing.Size(333, 208)
-        Me.pnlGobos.TabIndex = 53
+        Me.pnlGobos.TabIndex = 54
         '
         'Panel14
         '
@@ -679,7 +683,7 @@ Partial Class frmAddFix2
         Me.Panel14.Location = New System.Drawing.Point(875, 321)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(260, 176)
-        Me.Panel14.TabIndex = 54
+        Me.Panel14.TabIndex = 56
         '
         'dlgOpenImage
         '
@@ -688,7 +692,6 @@ Partial Class frmAddFix2
         '
         'frmAddFix2
         '
-        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1153, 540)

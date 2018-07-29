@@ -22,4 +22,6 @@
 
     Public FixBeamAngle As BeamAngleInfo
 
+    Public FixColours, FixGobos As DataGridView
+
 End Module

@@ -17,8 +17,10 @@
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         For i = 0 To filecount - 1
             FixFiles.Add(lstFiles.Items.Item(i))
-            MsgBox(FixFiles.Item(i))
         Next
+
+        '### THIS IS WHEN ALL FIXTURE INFO WILL BE COMITTED TO FILE ###
+
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -33,4 +35,5 @@
         Me.Hide()
         frmAddFix2.Show()
     End Sub
+
 End Class

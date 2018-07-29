@@ -149,17 +149,17 @@ Partial Class frmAddFix2
         Me.picImage.Location = New System.Drawing.Point(7, 25)
         Me.picImage.Name = "picImage"
         Me.picImage.Size = New System.Drawing.Size(222, 197)
+        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picImage.TabIndex = 4
         Me.picImage.TabStop = False
         '
         'lblImageLocation
         '
-        Me.lblImageLocation.AutoSize = True
-        Me.lblImageLocation.Location = New System.Drawing.Point(7, 260)
+        Me.lblImageLocation.Location = New System.Drawing.Point(7, 257)
         Me.lblImageLocation.Name = "lblImageLocation"
-        Me.lblImageLocation.Size = New System.Drawing.Size(207, 13)
+        Me.lblImageLocation.Size = New System.Drawing.Size(221, 19)
         Me.lblImageLocation.TabIndex = 5
-        Me.lblImageLocation.Text = "**TO BE USED FOR IMAGE LOCATION**"
+        Me.lblImageLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblManufacturerPrompt
         '
@@ -220,7 +220,7 @@ Partial Class frmAddFix2
         Me.dgdColours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgdColours.Location = New System.Drawing.Point(9, 22)
         Me.dgdColours.Name = "dgdColours"
-        Me.dgdColours.RowHeadersWidth = 5
+        Me.dgdColours.RowHeadersWidth = 10
         Me.dgdColours.Size = New System.Drawing.Size(314, 150)
         Me.dgdColours.TabIndex = 12
         '
@@ -231,7 +231,7 @@ Partial Class frmAddFix2
         Me.dgdGobos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgdGobos.Location = New System.Drawing.Point(9, 20)
         Me.dgdGobos.Name = "dgdGobos"
-        Me.dgdGobos.RowHeadersWidth = 5
+        Me.dgdGobos.RowHeadersWidth = 10
         Me.dgdGobos.Size = New System.Drawing.Size(314, 150)
         Me.dgdGobos.TabIndex = 13
         '

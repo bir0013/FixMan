@@ -9,6 +9,11 @@ Public Class frmAddFix2
         gobohorizontal = 0
         gobovertical = 0
 
+        dgdColours.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        dgdGobos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        dgdColours.RowTemplate.Height = 70
+        dgdGobos.RowTemplate.Height = 70
+
         dgdColours.Columns.Add("Column1", "")
         dgdColours.Columns.Add("Column2", "")
         dgdColours.Columns.Add("Column3", "")
@@ -161,19 +166,12 @@ Public Class frmAddFix2
         'This procedure handles distribution of image data in the two data grid view in this form (for colour and gobo)
         'When btnColourImage or btnGoboImage is pressed, they will activate this procedure and give it the effect type identifier.
 
-
-        Dim text As String
-
-
-        Dim img As New DataGridViewImageCell
-
         dlgOpenImage.ShowDialog()
 
-        img.Value = Image.FromFile(dlgOpenImage.FileName)
+        Dim img As Image = Image.FromFile(dlgOpenImage.FileName)
 
-
-
-
+        Dim imagecell As New DataGridViewImageCell
+        imagecell.ImageLayout = DataGridViewImageCellLayout.Zoom
 
         If Not dlgOpenImage.FileName = String.Empty Then
             If EffectType = "colour" Then
@@ -182,10 +180,11 @@ Public Class frmAddFix2
                     colourvertical += 1
                     colourhorizontal = 0
                 End If
-                dgdColours.Rows(colourvertical).Cells(colourhorizontal).ValueType = img.Value
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal) = imagecell
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Value = img
 
                 '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = img.Value
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = img
 
                 colourhorizontal += 1
             ElseIf EffectType = "gobo" Then
@@ -194,10 +193,11 @@ Public Class frmAddFix2
                     gobovertical += 1
                     gobohorizontal = 0
                 End If
-                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = img.Value
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal) = imagecell
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = img
 
                 '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = img.Value
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = img
 
                 gobohorizontal += 1
             Else
@@ -210,11 +210,13 @@ Public Class frmAddFix2
 
     Private Sub btnAddImage_Click(sender As Object, e As EventArgs) Handles btnAddImage.Click
         dlgOpenImage.ShowDialog()
+        Dim image As Image = Image.FromFile(dlgOpenImage.FileName)
+        lblImageLocation.Text = dlgOpenImage.FileName
+        picImage.Image = image
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        '### INSERT STORE FOR FIXIMAGE HERE ###
-
+        FixImage = picImage.Image
         FixManufacturer = txtManufacturer.Text
         FixModel = txtModel.Text
         FixSource = txtSource.Text
@@ -257,8 +259,13 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-
+        Dim response As Integer
+        response = MsgBox("Are you sure you want to cancel? All information for this fixture will be lost.", 36, "Cancel?")
+        If response = 6 Then
+            Me.Hide()
+        End If
     End Sub
+
 
     Private Sub txtControl_KeyUp(sender As Object, e As KeyEventArgs) Handles txtControl.KeyUp
         If e.KeyCode = Keys.Enter Then

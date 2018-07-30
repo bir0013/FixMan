@@ -234,10 +234,10 @@ Public Class frmAddFix2
 
         FixTotalPowerDraw = nudPowerDraw.Value
 
-        FixColours = dgdColours
-        FixGobos = dgdGobos
+        For loops = 1 To (((colourvertical - 1) * 3) + colourhorizontal)
+            '### NOTHING WORKS, PLEASE CEASE ###
+        Next
 
-        TESTING_FORM.Show()
 
         If lstEffects.SelectedItems.Count > 0 Then
             For Each item As ListViewItem.ListViewSubItem In lstEffects.SelectedItems(0).SubItems
@@ -332,6 +332,7 @@ Public Class frmAddFix2
             End If
         End Try
     End Sub
+
 
     Private Sub txtControl_KeyUp(sender As Object, e As KeyEventArgs) Handles txtControl.KeyUp
         If e.KeyCode = Keys.Enter Then

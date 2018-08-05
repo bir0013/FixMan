@@ -4,11 +4,21 @@ Public Class frmAddFix2
     Dim colourhorizontal, colourvertical As Integer
     Dim gobohorizontal, gobovertical As Integer
     Private Sub frmAddFix2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This clears all temporary fixture info lists
+        FixControl.Clear()
+        FixEffects.Clear()
+        FixGoboDataType.Clear()
+        FixColourDataType.Clear()
+        FixGobos.Clear()
+        FixColours.Clear()
+
+        'This initialises the variables that keep track of datagridview scroll
         colourhorizontal = 0
         colourvertical = 0
         gobohorizontal = 0
         gobovertical = 0
 
+        'This initialises the datagridview for colours and gobos
         dgdColours.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         dgdGobos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         dgdColours.RowTemplate.Height = 70
@@ -23,6 +33,7 @@ Public Class frmAddFix2
         dgdGobos.Columns.Add("Column3", "")
         dgdGobos.Rows.Add()
 
+        'This initialises the comboboxes for optical system and fixture type
         cmbBeamType.Items.Add("Spot")
         cmbBeamType.Items.Add("Wash")
         cmbBeamType.Items.Add("Parabolic Aluminized Reflector (PAR)")
@@ -44,6 +55,7 @@ Public Class frmAddFix2
         cmbType.Items.Add("Other")
     End Sub
     Private Sub btnColourText_Click(sender As Object, e As EventArgs) Handles btnColourText.Click
+        'This calls the procedure that adds text to datagridviews for dgdColours
         AddTextGridView("colour")
 
         'Dim colourtext As String
@@ -75,6 +87,7 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnGoboText_Click(sender As Object, e As EventArgs) Handles btnGoboText.Click
+        'This calls the procedure that adds text to datagridviews for dgdGobos
         AddTextGridView("gobo")
         'Dim gobotext As String
 
@@ -130,6 +143,7 @@ Public Class frmAddFix2
         'End If
 
         If Not text = String.Empty Then
+            'This adds to dgdColours
             If EffectType = "colour" Then
                 If colourhorizontal = 3 Then
                     dgdColours.Rows.Add()
@@ -137,11 +151,11 @@ Public Class frmAddFix2
                     colourhorizontal = 0
                 End If
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Value = text
-
-                '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = "Text"
 
                 colourhorizontal += 1
+
+                'This adds to dgdGobos
             ElseIf EffectType = "gobo" Then
                 If gobohorizontal = 3 Then
                     dgdGobos.Rows.Add()
@@ -149,12 +163,11 @@ Public Class frmAddFix2
                     gobohorizontal = 0
                 End If
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = text
-
-                '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = "Text"
 
                 gobohorizontal += 1
             Else
+                'I thought it would be nice to add this little extra bit of error checking :)
                 MsgBox("WOW! You should never ever see this error. It's no big deal, just means that something has passed an incorrect value to the current procedure. Contact bir0013@mckinnonsc.vic.edu.au if you have this problem again.")
             End If
         Else
@@ -174,6 +187,7 @@ Public Class frmAddFix2
         imagecell.ImageLayout = DataGridViewImageCellLayout.Zoom
 
         If Not dlgOpenImage.FileName = String.Empty Then
+            'This adds to dgdColours
             If EffectType = "colour" Then
                 If colourhorizontal = 3 Then
                     dgdColours.Rows.Add()
@@ -184,10 +198,9 @@ Public Class frmAddFix2
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Value = img
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = "Image"
 
-                ''### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                'dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = img
-
                 colourhorizontal += 1
+
+                'This adds to dgdGobos
             ElseIf EffectType = "gobo" Then
                 If gobohorizontal = 3 Then
                     dgdGobos.Rows.Add()
@@ -198,11 +211,9 @@ Public Class frmAddFix2
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = img
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = "Image"
 
-                ''### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                'dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = img
-
                 gobohorizontal += 1
             Else
+                'I thought it would be nice to add this little extra bit of error checking :)
                 MsgBox("WOW! You should never ever see this error. It's no big deal, just means that something has passed an incorrect value to the current procedure. Contact bir0013@mckinnonsc.vic.edu.au if you have this problem again.")
             End If
         Else
@@ -211,6 +222,7 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnAddImage_Click(sender As Object, e As EventArgs) Handles btnAddImage.Click
+        'This is for adding an image of the fixture being entered
         dlgOpenImage.ShowDialog()
         Dim image As Image = Image.FromFile(dlgOpenImage.FileName)
         lblImageLocation.Text = dlgOpenImage.FileName
@@ -218,9 +230,15 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        Dim colourverticalscroll As Integer = 1
-        Dim colourhorizontalscroll As Integer = 1
+        'This Sub is responsible for putting all information entered in frmAddFix2 into temp variables so that they can be commited to file later
 
+        'These variables are used to keep track of position when scrolling through and getting information from the colour and gobo datagridviews
+        Dim colourverticalscroll As Integer = 0
+        Dim colourhorizontalscroll As Integer = 0
+        Dim goboverticalscroll As Integer = 0
+        Dim gobohorizontalscroll As Integer = 0
+
+        'This is where most of the information is stored
         FixImage = picImage.Image
         FixManufacturer = txtManufacturer.Text
         FixModel = txtModel.Text
@@ -231,37 +249,56 @@ Public Class frmAddFix2
         FixBeamAngle.FixBeamMax = nudBeamAngleTo.Value
         FixBeamAngle.FixBeamAuto = chkAutoZoom.Checked
 
+        'This takes all control protocols from lstControl and stores them in the FixControl list
         If lstControl.SelectedItems.Count > 0 Then
             For Each item As ListViewItem.ListViewSubItem In lstControl.SelectedItems(0).SubItems
                 FixControl.Add(item.Text)
             Next
         End If
 
+        'This is for total power draw (I have structured the storing so that it happens in the order that each section appears on the form)
         FixTotalPowerDraw = nudPowerDraw.Value
 
-
-        '### This needs work ###
-        For loops = 1 To (((colourvertical - 1) * 3) + colourhorizontal)
+        'This is responsible for taking all text and images from dgdColours and storing them in FixColours (and also FixColourDataType, which is used to keep track of which entries in FixColours correspond with which data type)
+        For loops = 1 To ((colourvertical * 3) + colourhorizontal)
             If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
-                FixColourDataType(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag
-                FixColours(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value
+                FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+                FixColours.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
             ElseIf dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Image" Then
-                FixColourDataType(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag
-                FixColours(loops - 1) = ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
+                FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+                FixColours.Add(ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value))
             End If
-            If colourhorizontalscroll = 3 Then
+            If colourhorizontalscroll = 2 Then
                 colourverticalscroll += 1
                 colourhorizontalscroll = 0
             End If
+            colourhorizontalscroll += 1
         Next
 
+        'This is responsible for taking all text and images from dgdColours and storing them in FixColours (and also FixColourDataType, which is used to keep track of which entries in FixColours correspond with which data type)
+        For loops = 1 To ((gobovertical * 3) + gobohorizontal)
+            If dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Text" Then
+                FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+                FixGobos.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value)
+            ElseIf dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Image" Then
+                FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+                FixGobos.Add(ImageToBase64(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value))
+            End If
+            If gobohorizontalscroll = 2 Then
+                goboverticalscroll += 1
+                gobohorizontalscroll = 0
+            End If
+            gobohorizontalscroll += 1
+        Next
 
+        'This takes all effects from lstEffects and stores them in the FixEffects list
         If lstEffects.SelectedItems.Count > 0 Then
             For Each item As ListViewItem.ListViewSubItem In lstEffects.SelectedItems(0).SubItems
                 FixEffects.Add(item.Text)
             Next
         End If
 
+        'This stores any notes written about the fixture
         FixNotes = rtbNotes.Text
 
         Me.Hide()
@@ -269,14 +306,17 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnColourImage_Click(sender As Object, e As EventArgs) Handles btnColourImage.Click
+        'This calls the procedure that adds images to datagridviews for dgdColours
         AddImageGridView("colour")
     End Sub
 
     Private Sub btnGoboImage_Click(sender As Object, e As EventArgs) Handles btnGoboImage.Click
+        'This calls the procedure that adds images to datagridviews for dgdGobos
         AddImageGridView("gobo")
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        'This cancel the information entry process after confirming with the user
         Dim response As Integer
         response = MsgBox("Are you sure you want to cancel? All information for this fixture will be lost.", 36, "Cancel?")
         If response = 6 Then
@@ -285,6 +325,8 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnColourRemove_Click(sender As Object, e As EventArgs) Handles btnColourRemove.Click
+        'This is for removing entries in dgdColours
+
         '### THIS ONLY REMOVES THE LAST CELL ###
         Try
             If TypeOf dgdColours.Rows(colourvertical).Cells(colourhorizontal - 1).Value Is Image Then
@@ -318,6 +360,8 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnGoboRemove_Click(sender As Object, e As EventArgs) Handles btnGoboRemove.Click
+        'This is for removing entries in dgdGobos
+
         '### THIS ONLY REMOVES THE LAST CELL ###
         Try
             If TypeOf dgdGobos.Rows(gobovertical).Cells(gobohorizontal - 1).Value Is Image Then
@@ -352,25 +396,30 @@ Public Class frmAddFix2
 
 
     Private Sub txtControl_KeyUp(sender As Object, e As KeyEventArgs) Handles txtControl.KeyUp
+        'This acts as manual "accept button" when entering data in txtControl
         If e.KeyCode = Keys.Enter Then
             btnAddControl.PerformClick()
         End If
     End Sub
 
     Private Sub txtEffects_KeyUp(sender As Object, e As KeyEventArgs) Handles txtEffects.KeyUp
+        'This acts as manual "accept button" when entering data in txtEffects
         If e.KeyCode = Keys.Enter Then
             btnAddEffect.PerformClick()
         End If
     End Sub
 
     Function ImageToBase64(ByRef img As Image)
+        'This function converts images to base64strings to be stored later
+
+        '### THIS METHOD OF STORAGE THAT THIS IS USED FOR IS VERY MEMORY INTENSIVE ###
+
         Dim format As Imaging.ImageFormat = img.RawFormat
         Using ms As New MemoryStream()
             img.Save(ms, format)
-            Dim br As New System.IO.BinaryReader(ms)
-            Dim bytes As Byte() = br.ReadBytes(CType(ms.Length, Integer))
-            Dim base64String As String = Convert.ToBase64String(bytes, 0, bytes.Length)
-            Return base64String
+            Dim imagebytes As Byte() = ms.ToArray()
+            Dim base64string As String = Convert.ToBase64String(imagebytes)
+            Return base64string
         End Using
     End Function
 End Class

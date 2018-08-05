@@ -10,7 +10,7 @@
 
     Public FixManufacturer, FixModel, FixSource, FixType, FixOptical As String
     Public FixColourTemp, FixTotalPowerDraw As Integer
-    Public FixControl, FixEffects, FixFiles As New List(Of String)
+    Public FixControl, FixEffects, FixFiles, FixGoboDataType, FixColourDataType, FixGobos, FixColours As New List(Of String)
 
     Public FixNotes As String
 

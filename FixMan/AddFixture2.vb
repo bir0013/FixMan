@@ -1,4 +1,4 @@
-﻿
+﻿Imports System.IO
 
 Public Class frmAddFix2
     Dim colourhorizontal, colourvertical As Integer
@@ -139,7 +139,7 @@ Public Class frmAddFix2
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Value = text
 
                 '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = text
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = "Text"
 
                 colourhorizontal += 1
             ElseIf EffectType = "gobo" Then
@@ -151,7 +151,7 @@ Public Class frmAddFix2
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = text
 
                 '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = text
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = "Text"
 
                 gobohorizontal += 1
             Else
@@ -182,9 +182,10 @@ Public Class frmAddFix2
                 End If
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal) = imagecell
                 dgdColours.Rows(colourvertical).Cells(colourhorizontal).Value = img
+                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = "Image"
 
-                '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = img
+                ''### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
+                'dgdColours.Rows(colourvertical).Cells(colourhorizontal).Tag = img
 
                 colourhorizontal += 1
             ElseIf EffectType = "gobo" Then
@@ -195,9 +196,10 @@ Public Class frmAddFix2
                 End If
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal) = imagecell
                 dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Value = img
+                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = "Image"
 
-                '### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
-                dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = img
+                ''### THIS CODE MAY BE CHANGED LATER. IT ADDS CELL TAG. ###
+                'dgdGobos.Rows(gobovertical).Cells(gobohorizontal).Tag = img
 
                 gobohorizontal += 1
             Else
@@ -216,6 +218,9 @@ Public Class frmAddFix2
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        Dim colourverticalscroll As Integer = 1
+        Dim colourhorizontalscroll As Integer = 1
+
         FixImage = picImage.Image
         FixManufacturer = txtManufacturer.Text
         FixModel = txtModel.Text
@@ -234,8 +239,20 @@ Public Class frmAddFix2
 
         FixTotalPowerDraw = nudPowerDraw.Value
 
+
+        '### This needs work ###
         For loops = 1 To (((colourvertical - 1) * 3) + colourhorizontal)
-            '### NOTHING WORKS, PLEASE CEASE ###
+            If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
+                FixColourDataType(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag
+                FixColours(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value
+            ElseIf dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Image" Then
+                FixColourDataType(loops - 1) = dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag
+                FixColours(loops - 1) = ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
+            End If
+            If colourhorizontalscroll = 3 Then
+                colourverticalscroll += 1
+                colourhorizontalscroll = 0
+            End If
         Next
 
 
@@ -345,4 +362,15 @@ Public Class frmAddFix2
             btnAddEffect.PerformClick()
         End If
     End Sub
+
+    Function ImageToBase64(ByRef img As Image)
+        Dim format As Imaging.ImageFormat = img.RawFormat
+        Using ms As New MemoryStream()
+            img.Save(ms, format)
+            Dim br As New System.IO.BinaryReader(ms)
+            Dim bytes As Byte() = br.ReadBytes(CType(ms.Length, Integer))
+            Dim base64String As String = Convert.ToBase64String(bytes, 0, bytes.Length)
+            Return base64String
+        End Using
+    End Function
 End Class

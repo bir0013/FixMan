@@ -51,10 +51,12 @@ Partial Class frmDatabase
         Me.btnOpenFixSheet = New System.Windows.Forms.Button()
         Me.btnOpenEventMan = New System.Windows.Forms.Button()
         Me.lblCurrentUser = New System.Windows.Forms.Label()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
         Me.pnlEvent.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mnuMenuStrip
@@ -101,13 +103,13 @@ Partial Class frmDatabase
         'ViewHelpToolStripMenuItem
         '
         Me.ViewHelpToolStripMenuItem.Name = "ViewHelpToolStripMenuItem"
-        Me.ViewHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ViewHelpToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.ViewHelpToolStripMenuItem.Text = "View Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'btnLogout
@@ -320,6 +322,15 @@ Partial Class frmDatabase
         Me.lblCurrentUser.Text = "**TO BE USED FOR CURRENT LOGIN**"
         Me.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.FixMan.My.Resources.Resources.FixMan21
+        Me.picLogo.Location = New System.Drawing.Point(-1, 464)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(197, 197)
+        Me.picLogo.TabIndex = 19
+        Me.picLogo.TabStop = False
+        '
         'frmDatabase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -332,6 +343,7 @@ Partial Class frmDatabase
         Me.Controls.Add(Me.lblCurrentUser)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnLogout)
+        Me.Controls.Add(Me.picLogo)
         Me.MainMenuStrip = Me.mnuMenuStrip
         Me.Name = "frmDatabase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -343,6 +355,7 @@ Partial Class frmDatabase
         Me.pnlStoreroom.PerformLayout()
         Me.pnlEvent.ResumeLayout(False)
         Me.pnlEvent.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -377,4 +390,5 @@ Partial Class frmDatabase
     Friend WithEvents ViewHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents picLogo As PictureBox
 End Class

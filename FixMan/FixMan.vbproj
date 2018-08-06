@@ -215,5 +215,11 @@
   <ItemGroup>
     <None Include="Resources\showpass.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixMan2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixMan2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

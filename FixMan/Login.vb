@@ -28,7 +28,6 @@ Public Class frmLogin
             End If
         Next
 
-
         ''##THE FOLLOWING IS TEST CODE! PLEASE DELETE!##
         ''currentuser = "Nicholas Xanthoudakis"
         ''Dim pass As String = txtPassword.Text
@@ -59,10 +58,6 @@ Public Class frmLogin
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         'Ends the program
         End
-    End Sub
-
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged

@@ -90,6 +90,12 @@
     <Compile Include="AddFixture3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="adduser.Designer.vb">
+      <DependentUpon>adduser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adduser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Event View.Designer.vb">
       <DependentUpon>Event View.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     <EmbeddedResource Include="AddFixture3.resx">
       <DependentUpon>AddFixture3.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adduser.resx">
+      <DependentUpon>adduser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Event View.resx">
       <DependentUpon>Event View.vb</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FixMan2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixMan21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

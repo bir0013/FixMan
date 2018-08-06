@@ -324,7 +324,7 @@ Partial Class frmDatabase
         '
         'picLogo
         '
-        Me.picLogo.Image = Global.FixMan.My.Resources.Resources.FixMan21
+        Me.picLogo.Image = Global.FixMan.My.Resources.Resources.FixMan22
         Me.picLogo.Location = New System.Drawing.Point(-1, 464)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(197, 197)

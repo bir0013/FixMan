@@ -23,7 +23,7 @@ Partial Class frmAddUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtFullName = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.rdbInventoryEdit = New System.Windows.Forms.RadioButton()
@@ -33,7 +33,7 @@ Partial Class frmAddUser
         Me.rdbEventView = New System.Windows.Forms.RadioButton()
         Me.rdbEventBlock = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtFullName = New System.Windows.Forms.Label()
+        Me.lblFullName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -63,12 +63,12 @@ Partial Class frmAddUser
         Me.txtUsername.Size = New System.Drawing.Size(201, 20)
         Me.txtUsername.TabIndex = 0
         '
-        'TextBox2
+        'txtFullName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(106, 73)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(201, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.txtFullName.Location = New System.Drawing.Point(106, 73)
+        Me.txtFullName.Name = "txtFullName"
+        Me.txtFullName.Size = New System.Drawing.Size(201, 20)
+        Me.txtFullName.TabIndex = 1
         '
         'txtPassword
         '
@@ -161,14 +161,14 @@ Partial Class frmAddUser
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Username:"
         '
-        'txtFullName
+        'lblFullName
         '
-        Me.txtFullName.AutoSize = True
-        Me.txtFullName.Location = New System.Drawing.Point(47, 77)
-        Me.txtFullName.Name = "txtFullName"
-        Me.txtFullName.Size = New System.Drawing.Size(55, 13)
-        Me.txtFullName.TabIndex = 14
-        Me.txtFullName.Text = "Full name:"
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Location = New System.Drawing.Point(47, 77)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(55, 13)
+        Me.lblFullName.TabIndex = 14
+        Me.lblFullName.Text = "Full name:"
         '
         'Label3
         '
@@ -215,13 +215,13 @@ Partial Class frmAddUser
         Me.pnlUserInfo.Controls.Add(Me.chkShowPass)
         Me.pnlUserInfo.Controls.Add(Me.lblUserInfo)
         Me.pnlUserInfo.Controls.Add(Me.txtUsername)
-        Me.pnlUserInfo.Controls.Add(Me.TextBox2)
+        Me.pnlUserInfo.Controls.Add(Me.txtFullName)
         Me.pnlUserInfo.Controls.Add(Me.txtPassword)
         Me.pnlUserInfo.Controls.Add(Me.txtConfirmPassword)
         Me.pnlUserInfo.Controls.Add(Me.Label4)
         Me.pnlUserInfo.Controls.Add(Me.Label1)
         Me.pnlUserInfo.Controls.Add(Me.Label3)
-        Me.pnlUserInfo.Controls.Add(Me.txtFullName)
+        Me.pnlUserInfo.Controls.Add(Me.lblFullName)
         Me.pnlUserInfo.Location = New System.Drawing.Point(7, 45)
         Me.pnlUserInfo.Name = "pnlUserInfo"
         Me.pnlUserInfo.Size = New System.Drawing.Size(341, 166)
@@ -375,7 +375,7 @@ Partial Class frmAddUser
     End Sub
 
     Friend WithEvents txtUsername As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtFullName As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents rdbInventoryEdit As RadioButton
@@ -385,7 +385,7 @@ Partial Class frmAddUser
     Friend WithEvents rdbEventView As RadioButton
     Friend WithEvents rdbEventBlock As RadioButton
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtFullName As Label
+    Friend WithEvents lblFullName As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label

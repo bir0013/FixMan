@@ -47,18 +47,26 @@ Public Class frmAddUser
 
         useredit = chkUserEdit.Checked
 
-        '### THIS IS NOT CURRENTLY OPERATIONAL ###
-        Dim userfile = XDocument.Load("users.xml")
-        Dim newUser = New XElement("User",
-                                   New XElement("ID", txtUsername.Text),
-                                   New XElement("LongName", txtFullName.Text),
-                                   New XElement("Pass", getSHA1Hash(txtPassword.Text)),
-                                   New XElement("InventoryRights", inventoryrights),
-                                   New XElement("EventRights", eventrights),
-                                   New XElement("UserEdit", useredit.ToString))
-        userfile.Element("Creds").Add(newUser)
+        Try
+            Dim userfile = XDocument.Load("users.xml")
+            Dim newUser = New XElement("User",
+                                       New XElement("ID", txtUsername.Text),
+                                       New XElement("LongName", txtFullName.Text),
+                                       New XElement("Pass", getSHA1Hash(txtPassword.Text)),
+                                       New XElement("InventoryRights", inventoryrights),
+                                       New XElement("EventRights", eventrights),
+                                       New XElement("UserEdit", useredit.ToString))
+            userfile.Element("Creds").Add(newUser)
 
-        frmUsers.userload()
+            userfile.Save("users.xml")
+
+            frmUsers.userload()
+
+            Me.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Function getSHA1Hash(ByVal strToHash As String) As String
@@ -77,4 +85,8 @@ Public Class frmAddUser
         Return strResult
 
     End Function
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
 End Class

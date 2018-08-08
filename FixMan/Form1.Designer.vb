@@ -84,7 +84,7 @@ Partial Class frmDatabase
         'UsersToolStripMenuItem
         '
         Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
-        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UsersToolStripMenuItem.Text = "Users"
         '
         'WindowToolStripMenuItem

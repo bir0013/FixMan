@@ -23,7 +23,7 @@ Public Class frmDatabase
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         '##THIS CODE WILL HAVE TO BE CHECKED FOR PROPER DATA CLEAR##
-        Me.Hide()
+        Me.Close()
         frmLogin.Show()
     End Sub
 
@@ -41,5 +41,9 @@ Public Class frmDatabase
 
     Private Sub btnOpenEventMan_Click(sender As Object, e As EventArgs) Handles btnOpenEventMan.Click
         frmEventView.Show()
+    End Sub
+
+    Private Sub UsersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersToolStripMenuItem.Click
+        frmUsers.Show()
     End Sub
 End Class

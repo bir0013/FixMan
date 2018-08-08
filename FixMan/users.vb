@@ -29,6 +29,7 @@ Public Class frmUsers
     End Sub
 
     Sub userload()
+        lstUsers.Items.Clear()
         Dim userfile As New XmlDocument()
         userfile.Load("users.xml")
         Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Creds")
@@ -36,5 +37,14 @@ Public Class frmUsers
         For Each nodes In userfile.SelectNodes("/Creds/User")
             lstUsers.Items.Add(nodes.ChildNodes(1).InnerText)
         Next
+    End Sub
+
+    Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+        '#THIS COULD BE IMPROVED AT A LATER DATE##
+        Dim response As Integer
+        response = MsgBox("Are you sure you want to remove this user?", 36, "Remove User?")
+        If response = 6 Then
+            End
+        End If
     End Sub
 End Class

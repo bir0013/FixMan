@@ -10,23 +10,50 @@ Public Class frmLogin
         userfile.Load("users.xml")
         Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Creds")
         Dim nodes As XmlNode
-        For Each nodes In userfile.SelectNodes("/Creds/User")
-            If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
-                If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
-                    currentuser = nodes.ChildNodes(1).InnerText
-                    txtUsername.Focus()
-                    txtUsername.Clear()
-                    txtPassword.Clear()
-                    Me.Hide()
-                    frmDatabase.Show()
-                    Exit Sub
-                Else
-                    MsgBox("Your password is incorrect.")
+
+        If Not txtUsername.Text = String.Empty Then
+            For Each nodes In userfile.SelectNodes("/Creds/User")
+                If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
+                    If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
+                        currentuser = nodes.ChildNodes(1).InnerText
+                        txtUsername.Focus()
+                        txtUsername.Clear()
+                        txtPassword.Clear()
+                        Me.Hide()
+                        frmDatabase.Show()
+                        Exit Sub
+                    Else
+                        MsgBox("Your password is incorrect.")
+                        Exit Sub
+                    End If
                 End If
-            Else
-                MsgBox("This user does not exist.")
-            End If
+            Next
+            MsgBox("This user does not exist.")
+        ElseIf txtUsername.Text = String.Empty Then
+            MsgBox("You have not entered a username.")
+        End If
+
+        For Each nodes In userfile.SelectNodes("Creds/User")
+
         Next
+
+        'For Each nodes In userfile.SelectNodes("/Creds/User")
+        '    If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
+        '        If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
+        '            currentuser = nodes.ChildNodes(1).InnerText
+        '            txtUsername.Focus()
+        '            txtUsername.Clear()
+        '            txtPassword.Clear()
+        '            Me.Hide()
+        '            frmDatabase.Show()
+        '            Exit Sub
+        '        Else
+        '            MsgBox("Your password is incorrect.")
+        '        End If
+        '    Else
+        '        'MsgBox("This user does not exist.")
+        '    End If
+        'Next
 
         ''##THE FOLLOWING IS TEST CODE! PLEASE DELETE!##
         ''currentuser = "Nicholas Xanthoudakis"

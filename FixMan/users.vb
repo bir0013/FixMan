@@ -30,13 +30,18 @@ Public Class frmUsers
 
     Sub userload()
         lstUsers.Items.Clear()
-        Dim userfile As New XmlDocument()
-        userfile.Load("users.xml")
-        Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Creds")
-        Dim nodes As XmlNode
-        For Each nodes In userfile.SelectNodes("/Creds/User")
-            lstUsers.Items.Add(nodes.ChildNodes(1).InnerText)
-        Next
+        Try
+            Dim userfile As New XmlDocument()
+            userfile.Load("users.xml")
+            Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Creds")
+            Dim nodes As XmlNode
+            For Each nodes In userfile.SelectNodes("/Creds/User")
+                lstUsers.Items.Add(nodes.ChildNodes(1).InnerText)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
@@ -44,7 +49,17 @@ Public Class frmUsers
         Dim response As Integer
         response = MsgBox("Are you sure you want to remove this user?", 36, "Remove User?")
         If response = 6 Then
-            End
+            Dim userfile As New XmlDocument()
+            userfile.Load("users.xml")
+            Dim node As XmlNode = userfile.SelectSingleNode("Creds/User/LongName[. = '" & lstUsers.SelectedItem.ToString & "']")
+            If node IsNot Nothing Then
+                node.ParentNode.ParentNode.RemoveChild(node.ParentNode)
+                userfile.Save("users.xml")
+                'MsgBox(lstUsers.SelectedItem.ToString)
+            Else
+                MsgBox("You have not selected a user.")
+            End If
         End If
+        userload()
     End Sub
 End Class

@@ -23,8 +23,11 @@ Public Class frmDatabase
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         '##THIS CODE WILL HAVE TO BE CHECKED FOR PROPER DATA CLEAR##
-        Me.Close()
         frmLogin.Show()
+        My.Application.OpenForms.Cast(Of Form)() _
+              .Except({frmLogin}) _
+              .ToList() _
+              .ForEach(Sub(form) form.Close())
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

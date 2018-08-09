@@ -27,6 +27,23 @@ Public Class frmAddUser
         Dim inventoryrights, eventrights As Integer
         Dim useredit As Boolean
 
+        If txtUsername.Text = String.Empty Then
+            MsgBox("Please enter a username")
+            Exit Sub
+        End If
+
+        If Not txtPassword.Text = txtConfirmPassword.Text Then
+            MsgBox("Your passwords do not match.")
+            Exit Sub
+        End If
+
+        For Each item In frmUsers.lstUsers.Items
+            If item.ToString = txtUsername.Text Then
+                MsgBox("This username is taken.")
+                Exit Sub
+            End If
+        Next
+
         Select Case True
             Case rdbInventoryEdit.Checked
                 inventoryrights = 2
@@ -34,6 +51,9 @@ Public Class frmAddUser
                 inventoryrights = 1
             Case rdbInventoryBlock.Checked
                 inventoryrights = 0
+            Case Not rdbInventoryEdit.Checked And Not rdbInventoryView.Checked And Not rdbInventoryBlock.Checked
+                MsgBox("Please select inventory priveliges.")
+                Exit Sub
         End Select
 
         Select Case True
@@ -43,6 +63,9 @@ Public Class frmAddUser
                 eventrights = 1
             Case rdbEventBlock.Checked
                 eventrights = 0
+            Case Not rdbEventEdit.Checked And Not rdbEventView.Checked And Not rdbEventBlock.Checked
+                MsgBox("Please select event priveliges.")
+                Exit Sub
         End Select
 
         useredit = chkUserEdit.Checked

@@ -30,9 +30,9 @@ Partial Class frmAbout
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(161, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 13)
+        Me.Label1.Size = New System.Drawing.Size(27, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "NAh m8"
+        Me.Label1.Text = "yeet"
         '
         'frmAbout
         '

@@ -47,7 +47,7 @@ Partial Class frmAddUser
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblPriveliges = New System.Windows.Forms.Label()
-        Me.btnTitle = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.pnlUserInfo.SuspendLayout()
@@ -321,15 +321,15 @@ Partial Class frmAddUser
         Me.lblPriveliges.TabIndex = 18
         Me.lblPriveliges.Text = "Priveliges"
         '
-        'btnTitle
+        'lblTitle
         '
-        Me.btnTitle.AutoSize = True
-        Me.btnTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTitle.Location = New System.Drawing.Point(129, 9)
-        Me.btnTitle.Name = "btnTitle"
-        Me.btnTitle.Size = New System.Drawing.Size(97, 24)
-        Me.btnTitle.TabIndex = 23
-        Me.btnTitle.Text = "Add User"
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(129, 9)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(97, 24)
+        Me.lblTitle.TabIndex = 23
+        Me.lblTitle.Text = "Add User"
         '
         'btnCancel
         '
@@ -356,7 +356,7 @@ Partial Class frmAddUser
         Me.ClientSize = New System.Drawing.Size(355, 441)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnTitle)
+        Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.pnlPriveliges)
         Me.Controls.Add(Me.pnlUserInfo)
         Me.Name = "frmAddUser"
@@ -393,7 +393,7 @@ Partial Class frmAddUser
     Friend WithEvents pnlUserInfo As Panel
     Friend WithEvents chkUserEdit As CheckBox
     Friend WithEvents pnlPriveliges As Panel
-    Friend WithEvents btnTitle As Label
+    Friend WithEvents lblTitle As Label
     Friend WithEvents lblUserInfo As Label
     Friend WithEvents lblPriveliges As Label
     Friend WithEvents Panel2 As Panel

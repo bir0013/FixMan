@@ -78,22 +78,22 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFixture2.Designer.vb">
+    <Compile Include="Add Fixture\AddFixture2.Designer.vb">
       <DependentUpon>AddFixture2.vb</DependentUpon>
     </Compile>
-    <Compile Include="AddFixture2.vb">
+    <Compile Include="Add Fixture\AddFixture2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFixture3.Designer.vb">
+    <Compile Include="Add Fixture\AddFixture3.Designer.vb">
       <DependentUpon>AddFixture3.vb</DependentUpon>
     </Compile>
-    <Compile Include="AddFixture3.vb">
+    <Compile Include="Add Fixture\AddFixture3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adduser.Designer.vb">
+    <Compile Include="Users\adduser.Designer.vb">
       <DependentUpon>adduser.vb</DependentUpon>
     </Compile>
-    <Compile Include="adduser.vb">
+    <Compile Include="Users\adduser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Event View.Designer.vb">
@@ -114,10 +114,10 @@
     <Compile Include="fixture search.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FixtureAddWiz.Designer.vb">
+    <Compile Include="Add Fixture\FixtureAddWiz.Designer.vb">
       <DependentUpon>FixtureAddWiz.vb</DependentUpon>
     </Compile>
-    <Compile Include="FixtureAddWiz.vb">
+    <Compile Include="Add Fixture\FixtureAddWiz.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -155,10 +155,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Universal.vb" />
-    <Compile Include="users.Designer.vb">
+    <Compile Include="Users\EditUser.Designer.vb">
+      <DependentUpon>EditUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Users\EditUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\users.Designer.vb">
       <DependentUpon>users.vb</DependentUpon>
     </Compile>
-    <Compile Include="users.vb">
+    <Compile Include="Users\users.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -166,13 +172,13 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFixture2.resx">
+    <EmbeddedResource Include="Add Fixture\AddFixture2.resx">
       <DependentUpon>AddFixture2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFixture3.resx">
+    <EmbeddedResource Include="Add Fixture\AddFixture3.resx">
       <DependentUpon>AddFixture3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="adduser.resx">
+    <EmbeddedResource Include="Users\adduser.resx">
       <DependentUpon>adduser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Event View.resx">
@@ -184,7 +190,7 @@
     <EmbeddedResource Include="fixture search.resx">
       <DependentUpon>fixture search.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FixtureAddWiz.resx">
+    <EmbeddedResource Include="Add Fixture\FixtureAddWiz.resx">
       <DependentUpon>FixtureAddWiz.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -202,7 +208,10 @@
     <EmbeddedResource Include="TESTING FORM.resx">
       <DependentUpon>TESTING FORM.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="users.resx">
+    <EmbeddedResource Include="Users\EditUser.resx">
+      <DependentUpon>EditUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\users.resx">
       <DependentUpon>users.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

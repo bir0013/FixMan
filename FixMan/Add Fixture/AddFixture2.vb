@@ -239,7 +239,7 @@ Public Class frmAddFix2
         Dim gobohorizontalscroll As Integer = 0
 
         'This is where most of the information is stored
-        FixImage = picImage.Image
+        FixImage = ImageToBase64(picImage.Image)
         FixManufacturer = txtManufacturer.Text
         FixModel = txtModel.Text
         FixSource = txtSource.Text

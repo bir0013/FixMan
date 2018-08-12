@@ -6,7 +6,7 @@
     Public InventoryPrivelidge, TeamPrivelidge, FixSchedulePrivelidge, FilePrivelidge As String
 
     'Add fixture variables
-    Public FixImage As Image
+    Public FixImage As String
 
     Public FixManufacturer, FixModel, FixSource, FixType, FixOptical As String
     Public FixColourTemp, FixTotalPowerDraw As Integer

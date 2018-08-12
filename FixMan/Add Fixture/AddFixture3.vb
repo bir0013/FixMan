@@ -1,4 +1,5 @@
-﻿Public Class frmAddFix3
+﻿Imports System.Xml
+Public Class frmAddFix3
     Dim filecount As Integer
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         dlgOpenFile.ShowDialog()
@@ -21,6 +22,38 @@
 
         '### THIS IS WHEN ALL FIXTURE INFO WILL BE COMITTED TO FILE ###
 
+        Dim newfile As New XmlTextWriter(FixManufacturer & " " & FixModel & ".xml", System.Text.Encoding.UTF8)
+        newfile.WriteStartDocument()
+        newfile.WriteStartElement("Root")
+        newfile.Close()
+
+        Dim fixfile = XDocument.Load(FixManufacturer & " " & FixModel & ".xml")
+        Dim fixinfo = New XElement("Fixture",
+                                   New XElement("Manufacturer", FixManufacturer),
+                                   New XElement("Model", FixModel),
+                                   New XElement("Image", FixImage),
+                                   New XElement("Type", FixType),
+                                   New XElement("Source", FixSource),
+                                   New XElement("Optical", FixOptical),
+                                   New XElement("SourceColourTemp", FixColourTemp),
+                                   New XElement("TotalPowerDraw", FixTotalPowerDraw),
+                                   New XElement("Control"),
+                                   New XElement("Effects"),
+                                   New XElement("ColourDataType"),
+                                   New XElement("GoboDataType"),
+                                   New XElement("Files"),
+                                    New XElement("Beam"),
+                                                New XElement("MinAngle", FixBeamAngle.FixBeamMin),
+                                                New XElement("MaxAngle", FixBeamAngle.FixBeamMax),
+                                                New XElement("IsAutomatic", FixBeamAngle.FixBeamAuto),
+                                    New XElement("Notes", FixNotes),
+                                    New XElement("Colours"),
+                                    New XElement("Gobos"))
+
+        fixfile.Element("Root").Add(fixinfo)
+
+        fixfile.Save(FixManufacturer & " " & FixModel & ".xml")
+
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -35,5 +68,4 @@
         Me.Hide()
         frmAddFix2.Show()
     End Sub
-
 End Class

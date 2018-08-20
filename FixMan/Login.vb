@@ -1,5 +1,6 @@
 ﻿Imports System.Security
 Imports System.Xml
+Imports System.IO
 
 '##LOGIN WILL HAVE TO CHECK FOR FIRST RUN AND COMPLETE SETUP IF NECESSARY##
 
@@ -95,6 +96,12 @@ Public Class frmLogin
         Else
             Me.Close()
             MsgBox("An error has occured at login. This may be a password security related issue. If this happens again please contact bir0013@mckinnonsc.vic.edu.au")
+        End If
+    End Sub
+
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If File.Exists("users.xml") = False Then
+            frmSetup.Show()
         End If
     End Sub
 End Class

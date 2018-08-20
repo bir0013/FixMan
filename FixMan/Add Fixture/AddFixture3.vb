@@ -52,6 +52,36 @@ Public Class frmAddFix3
 
         fixfile.Element("Root").Add(fixinfo)
 
+
+        For Each x In FixControl
+            Dim yeet = New XElement("Protocol", x)
+            fixfile.Element("/Root/Fixture/Control").Add(yeet)
+        Next
+
+
+        'For Each x In FixControl
+        '    fixfile.Element("Root/Fixture/Control").Add(New XElement("Protocol", x))
+        'Next
+        'For Each x In FixEffects
+        '    fixfile.Element("Root/Fixture/Effects").Add(New XElement("Effect", x))
+        'Next
+        'For Each x In FixColourDataType
+        '    MsgBox(x)
+        '    fixfile.Element("Root/Fixture/ColourDataType").Add(New XElement("Type", x))
+        'Next
+        'For Each x In FixGoboDataType
+        '    fixfile.Element("Root/Fixture/GoboDataType").Add(New XElement("Type", x))
+        'Next
+        'For Each x In FixFiles
+        '    fixfile.Element("Root/Fixture/Files").Add(New XElement("File", x))
+        'Next
+        'For Each x In FixColours
+        '    fixfile.Element("Root/Fixture/Colours").Add(New XElement("Colour", x))
+        'Next
+        'For Each x In FixGobos
+        '    fixfile.Element("Root/Fixture/Gobos").Add(New XElement("Gobo", x))
+        'Next
+
         fixfile.Save(FixManufacturer & " " & FixModel & ".xml")
 
     End Sub

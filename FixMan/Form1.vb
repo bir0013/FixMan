@@ -7,14 +7,23 @@ Public Class frmDatabase
 
     Private Sub frmDatabase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblCurrentUser.Text = ("Logged in as: " & currentuser)
+        UsersToolStripMenuItem.Enabled = UserPrivelige
+        If InventoryPrivelige = 0 Then
+            btnAddFixture.Enabled = False
+            btnRemoveFixture.Enabled = False
+            btnViewFixture.Enabled = False
+            btnSearchFixture.Enabled = False
+            dgdStoreroom.Enabled = False
+        ElseIf InventoryPrivelige = 1 Then
+            btnAddFixture.Enabled = False
+            btnRemoveFixture.Enabled = False
+        End If
 
-        'Dim config As New XmlReader( '##FILE MUST BE ADDED##
-
-
-
-
-
-
+        If EventPrivelige = 0 Then
+            btnOpenEventMan.Enabled = False
+            btnOpenFixSheet.Enabled = False
+            btnOpenTeamRoster.Enabled = False
+        End If
     End Sub
 
     Private Sub btnSearchFixture_Click(sender As Object, e As EventArgs) Handles btnSearchFixture.Click

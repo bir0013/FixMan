@@ -4,14 +4,6 @@ Public Class frmAddFix2
     Dim colourhorizontal, colourvertical As Integer
     Dim gobohorizontal, gobovertical As Integer
     Private Sub frmAddFix2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'This clears all temporary fixture info lists
-        FixControl.Clear()
-        FixEffects.Clear()
-        FixGoboDataType.Clear()
-        FixColourDataType.Clear()
-        FixGobos.Clear()
-        FixColours.Clear()
-
         'This initialises the variables that keep track of datagridview scroll
         colourhorizontal = 0
         colourvertical = 0
@@ -250,9 +242,9 @@ Public Class frmAddFix2
         FixBeamAngle.FixBeamAuto = chkAutoZoom.Checked
 
         'This takes all control protocols from lstControl and stores them in the FixControl list
-        If lstControl.SelectedItems.Count > 0 Then
-            For Each item As ListViewItem.ListViewSubItem In lstControl.SelectedItems(0).SubItems
-                FixControl.Add(item.Text)
+        If lstControl.Items.Count > 0 Then
+            For Each item In lstControl.Items
+                FixControl.Add(item)
             Next
         End If
 
@@ -292,9 +284,9 @@ Public Class frmAddFix2
         Next
 
         'This takes all effects from lstEffects and stores them in the FixEffects list
-        If lstEffects.SelectedItems.Count > 0 Then
-            For Each item As ListViewItem.ListViewSubItem In lstEffects.SelectedItems(0).SubItems
-                FixEffects.Add(item.Text)
+        If lstEffects.Items.Count > 0 Then
+            For Each item In lstEffects.Items
+                FixEffects.Add(item)
             Next
         End If
 
@@ -422,4 +414,14 @@ Public Class frmAddFix2
             Return base64string
         End Using
     End Function
+
+    Private Sub frmAddFix2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        'This clears all temporary fixture info lists
+        FixControl.Clear()
+        FixEffects.Clear()
+        FixGoboDataType.Clear()
+        FixColourDataType.Clear()
+        FixGobos.Clear()
+        FixColours.Clear()
+    End Sub
 End Class

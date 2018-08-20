@@ -52,6 +52,13 @@ Partial Class frmDatabase
         Me.btnOpenEventMan = New System.Windows.Forms.Button()
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -84,7 +91,7 @@ Partial Class frmDatabase
         'UsersToolStripMenuItem
         '
         Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
-        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
         Me.UsersToolStripMenuItem.Text = "Users"
         '
         'WindowToolStripMenuItem
@@ -138,6 +145,7 @@ Partial Class frmDatabase
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdStoreroom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdStoreroom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FixImage, Me.FixManufacturer, Me.FixModel, Me.FixSource, Me.FixType, Me.FixOptics, Me.FixPower})
         Me.dgdStoreroom.Location = New System.Drawing.Point(190, 37)
         Me.dgdStoreroom.Name = "dgdStoreroom"
         Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
@@ -331,6 +339,45 @@ Partial Class frmDatabase
         Me.picLogo.TabIndex = 19
         Me.picLogo.TabStop = False
         '
+        'FixImage
+        '
+        Me.FixImage.HeaderText = "Image"
+        Me.FixImage.Name = "FixImage"
+        '
+        'FixManufacturer
+        '
+        Me.FixManufacturer.HeaderText = "Manufacturer"
+        Me.FixManufacturer.Name = "FixManufacturer"
+        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FixManufacturer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'FixModel
+        '
+        Me.FixModel.HeaderText = "Model"
+        Me.FixModel.Name = "FixModel"
+        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FixModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'FixSource
+        '
+        Me.FixSource.HeaderText = "Light Source"
+        Me.FixSource.Name = "FixSource"
+        '
+        'FixType
+        '
+        Me.FixType.HeaderText = "Type"
+        Me.FixType.Name = "FixType"
+        '
+        'FixOptics
+        '
+        Me.FixOptics.HeaderText = "Optic Type"
+        Me.FixOptics.Name = "FixOptics"
+        '
+        'FixPower
+        '
+        Me.FixPower.HeaderText = "Total Power Draw"
+        Me.FixPower.Name = "FixPower"
+        '
         'frmDatabase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,4 +438,11 @@ Partial Class frmDatabase
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents FixImage As DataGridViewImageColumn
+    Friend WithEvents FixManufacturer As DataGridViewTextBoxColumn
+    Friend WithEvents FixModel As DataGridViewTextBoxColumn
+    Friend WithEvents FixSource As DataGridViewTextBoxColumn
+    Friend WithEvents FixType As DataGridViewTextBoxColumn
+    Friend WithEvents FixOptics As DataGridViewTextBoxColumn
+    Friend WithEvents FixPower As DataGridViewTextBoxColumn
 End Class

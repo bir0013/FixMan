@@ -3,7 +3,7 @@
     Public currentuser, currentstoreroom, currentevent As String
 
     'User level permissions variables
-    Public InventoryPrivelidge, TeamPrivelidge, FixSchedulePrivelidge, FilePrivelidge As String
+    Public InventoryPrivelige, EventPrivelige, UserPrivelige As String
 
     'Add fixture variables
     Public FixImage As String

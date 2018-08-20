@@ -17,6 +17,9 @@ Public Class frmLogin
                 If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
                     If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
                         currentuser = nodes.ChildNodes(1).InnerText
+                        InventoryPrivelige = nodes.ChildNodes(3).InnerText
+                        EventPrivelige = nodes.ChildNodes(4).InnerText
+                        UserPrivelige = nodes.ChildNodes(5).InnerText
                         txtUsername.Focus()
                         txtUsername.Clear()
                         txtPassword.Clear()

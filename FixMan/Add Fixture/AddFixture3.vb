@@ -76,6 +76,9 @@ Public Class frmAddFix3
 
         fixfile.Save(FixManufacturer & " " & FixModel & ".xml")
 
+        AddToStoreroom(FixManufacturer & " " & FixModel & ".xml", InputBox("How many of this fixture do you have?"))
+
+        Me.Close()
 
     End Sub
 

@@ -58,4 +58,8 @@ Public Class frmDatabase
     Private Sub UsersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersToolStripMenuItem.Click
         frmUsers.Show()
     End Sub
+
+    Private Sub btnSaveStoreroom_Click(sender As Object, e As EventArgs) Handles btnSaveStoreroom.Click
+
+    End Sub
 End Class

@@ -59,6 +59,7 @@ Partial Class frmDatabase
         Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -141,13 +142,16 @@ Partial Class frmDatabase
         '
         'dgdStoreroom
         '
+        Me.dgdStoreroom.AllowUserToAddRows = False
+        Me.dgdStoreroom.AllowUserToDeleteRows = False
         Me.dgdStoreroom.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdStoreroom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgdStoreroom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FixImage, Me.FixManufacturer, Me.FixModel, Me.FixSource, Me.FixType, Me.FixOptics, Me.FixPower})
+        Me.dgdStoreroom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FixImage, Me.FixManufacturer, Me.FixModel, Me.FixSource, Me.FixType, Me.FixOptics, Me.FixPower, Me.FixQty})
         Me.dgdStoreroom.Location = New System.Drawing.Point(190, 37)
         Me.dgdStoreroom.Name = "dgdStoreroom"
+        Me.dgdStoreroom.RowTemplate.Height = 55
         Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
         Me.dgdStoreroom.TabIndex = 3
         '
@@ -342,6 +346,7 @@ Partial Class frmDatabase
         'FixImage
         '
         Me.FixImage.HeaderText = "Image"
+        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.FixImage.Name = "FixImage"
         '
         'FixManufacturer
@@ -377,6 +382,12 @@ Partial Class frmDatabase
         '
         Me.FixPower.HeaderText = "Total Power Draw"
         Me.FixPower.Name = "FixPower"
+        '
+        'FixQty
+        '
+        Me.FixQty.HeaderText = "Qty."
+        Me.FixQty.Name = "FixQty"
+        Me.FixQty.Width = 50
         '
         'frmDatabase
         '
@@ -445,4 +456,5 @@ Partial Class frmDatabase
     Friend WithEvents FixType As DataGridViewTextBoxColumn
     Friend WithEvents FixOptics As DataGridViewTextBoxColumn
     Friend WithEvents FixPower As DataGridViewTextBoxColumn
+    Friend WithEvents FixQty As DataGridViewTextBoxColumn
 End Class

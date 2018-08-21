@@ -26,6 +26,7 @@ Partial Class frmAddFix1
         Me.btnManual = New System.Windows.Forms.Button()
         Me.btnImport = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.dlgImportFixture = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'Label1
@@ -65,6 +66,12 @@ Partial Class frmAddFix1
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'dlgImportFixture
+        '
+        Me.dlgImportFixture.DefaultExt = "xml"
+        Me.dlgImportFixture.Filter = "Fixture Type Files|*.xml"
+        Me.dlgImportFixture.Title = "Import Fixture"
+        '
         'frmAddFix1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -85,4 +92,5 @@ Partial Class frmAddFix1
     Friend WithEvents btnManual As Button
     Friend WithEvents btnImport As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents dlgImportFixture As OpenFileDialog
 End Class

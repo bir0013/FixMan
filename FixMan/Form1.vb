@@ -60,6 +60,46 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnSaveStoreroom_Click(sender As Object, e As EventArgs) Handles btnSaveStoreroom.Click
+        Dim filename As String
+        Dim strm As New XmlDocument
+        Dim fixturetype As XmlNode
+        Dim currentfix As XmlNode
+        Dim fixtypeid As XmlNode
+        Dim qtyid As XmlNode
+        Dim qty As XmlNode
 
+        If lblCurrentStoreroom.Text = "" Then
+            filename = InputBox("What would you like to name this file?") & ".xml"
+        Else
+            filename = lblCurrentStoreroom.Text
+            filename = filename.Remove(0, 9)
+            MsgBox(filename)
+            strm.Load(filename)
+            strm.RemoveAll()
+        End If
+
+        Dim root As XmlNode = strm.CreateElement("Storeroom")
+        strm.AppendChild(root)
+
+        For loops = 0 To dgdStoreroom.Rows.Count - 1
+            currentfix = strm.CreateElement("Fixture")
+            root.AppendChild(currentfix)
+            fixtypeid = strm.CreateElement("FixtureType")
+            currentfix.AppendChild(fixtypeid)
+            fixturetype = strm.CreateTextNode(dgdStoreroom.Rows(loops).Cells(1).Value & " " & dgdStoreroom.Rows(loops).Cells(2).Value)
+            fixtypeid.AppendChild(fixturetype)
+            qtyid = strm.CreateElement("Quantity")
+            currentfix.AppendChild(qtyid)
+            qty = strm.CreateTextNode(dgdStoreroom.Rows(loops).Cells(7).Value)
+            qtyid.AppendChild(qty)
+        Next
+        strm.Save(filename)
+        lblCurrentStoreroom.Text = "Current: " & filename
+    End Sub
+
+    Private Sub btnRemoveFixture_Click(sender As Object, e As EventArgs) Handles btnRemoveFixture.Click
+        For Each row In dgdStoreroom.SelectedRows
+            dgdStoreroom.Rows.Remove(row)
+        Next
     End Sub
 End Class

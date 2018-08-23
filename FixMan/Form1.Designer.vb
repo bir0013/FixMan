@@ -33,6 +33,14 @@ Partial Class frmDatabase
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.dgdStoreroom = New System.Windows.Forms.DataGridView()
+        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlStoreroom = New System.Windows.Forms.Panel()
         Me.lblCurrentStoreroom = New System.Windows.Forms.Label()
         Me.lblStoreroom = New System.Windows.Forms.Label()
@@ -52,14 +60,6 @@ Partial Class frmDatabase
         Me.btnOpenEventMan = New System.Windows.Forms.Button()
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -152,8 +152,55 @@ Partial Class frmDatabase
         Me.dgdStoreroom.Location = New System.Drawing.Point(190, 37)
         Me.dgdStoreroom.Name = "dgdStoreroom"
         Me.dgdStoreroom.RowTemplate.Height = 55
+        Me.dgdStoreroom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
         Me.dgdStoreroom.TabIndex = 3
+        '
+        'FixImage
+        '
+        Me.FixImage.HeaderText = "Image"
+        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.FixImage.Name = "FixImage"
+        '
+        'FixManufacturer
+        '
+        Me.FixManufacturer.HeaderText = "Manufacturer"
+        Me.FixManufacturer.Name = "FixManufacturer"
+        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FixManufacturer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'FixModel
+        '
+        Me.FixModel.HeaderText = "Model"
+        Me.FixModel.Name = "FixModel"
+        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FixModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'FixSource
+        '
+        Me.FixSource.HeaderText = "Light Source"
+        Me.FixSource.Name = "FixSource"
+        '
+        'FixType
+        '
+        Me.FixType.HeaderText = "Type"
+        Me.FixType.Name = "FixType"
+        '
+        'FixOptics
+        '
+        Me.FixOptics.HeaderText = "Optic Type"
+        Me.FixOptics.Name = "FixOptics"
+        '
+        'FixPower
+        '
+        Me.FixPower.HeaderText = "Total Power Draw"
+        Me.FixPower.Name = "FixPower"
+        '
+        'FixQty
+        '
+        Me.FixQty.HeaderText = "Qty."
+        Me.FixQty.Name = "FixQty"
+        Me.FixQty.Width = 50
         '
         'pnlStoreroom
         '
@@ -178,7 +225,6 @@ Partial Class frmDatabase
         Me.lblCurrentStoreroom.Name = "lblCurrentStoreroom"
         Me.lblCurrentStoreroom.Size = New System.Drawing.Size(156, 23)
         Me.lblCurrentStoreroom.TabIndex = 12
-        Me.lblCurrentStoreroom.Text = "*USE FOR STRM*"
         Me.lblCurrentStoreroom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblStoreroom
@@ -342,52 +388,6 @@ Partial Class frmDatabase
         Me.picLogo.Size = New System.Drawing.Size(197, 197)
         Me.picLogo.TabIndex = 19
         Me.picLogo.TabStop = False
-        '
-        'FixImage
-        '
-        Me.FixImage.HeaderText = "Image"
-        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.FixImage.Name = "FixImage"
-        '
-        'FixManufacturer
-        '
-        Me.FixManufacturer.HeaderText = "Manufacturer"
-        Me.FixManufacturer.Name = "FixManufacturer"
-        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FixManufacturer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'FixModel
-        '
-        Me.FixModel.HeaderText = "Model"
-        Me.FixModel.Name = "FixModel"
-        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FixModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'FixSource
-        '
-        Me.FixSource.HeaderText = "Light Source"
-        Me.FixSource.Name = "FixSource"
-        '
-        'FixType
-        '
-        Me.FixType.HeaderText = "Type"
-        Me.FixType.Name = "FixType"
-        '
-        'FixOptics
-        '
-        Me.FixOptics.HeaderText = "Optic Type"
-        Me.FixOptics.Name = "FixOptics"
-        '
-        'FixPower
-        '
-        Me.FixPower.HeaderText = "Total Power Draw"
-        Me.FixPower.Name = "FixPower"
-        '
-        'FixQty
-        '
-        Me.FixQty.HeaderText = "Qty."
-        Me.FixQty.Name = "FixQty"
-        Me.FixQty.Width = 50
         '
         'frmDatabase
         '

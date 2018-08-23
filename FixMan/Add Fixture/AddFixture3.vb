@@ -74,7 +74,7 @@ Public Class frmAddFix3
             fixfile.Element("Root").Element("Fixture").Element("Gobos").Add(New XElement("Gobo", x))
         Next
 
-        fixfile.Save(FixManufacturer & " " & FixModel & ".xml")
+        fixfile.Save(Application.StartupPath & "\Fixtures\" & FixManufacturer & " " & FixModel & ".xml")
 
         AddToStoreroom(FixManufacturer & " " & FixModel & ".xml", InputBox("How many of this fixture do you have?"))
 

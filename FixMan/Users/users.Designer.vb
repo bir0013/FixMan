@@ -27,6 +27,7 @@ Partial Class frmUsers
         Me.btnRemove = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.SuspendLayout()
         '
         'lstUsers
@@ -94,4 +95,5 @@ Partial Class frmUsers
     Friend WithEvents btnRemove As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents ColorDialog1 As ColorDialog
 End Class

@@ -60,6 +60,7 @@ Partial Class frmDatabase
         Me.btnOpenEventMan = New System.Windows.Forms.Button()
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.dlgOpenStoreroom = New System.Windows.Forms.OpenFileDialog()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -389,6 +390,10 @@ Partial Class frmDatabase
         Me.picLogo.TabIndex = 19
         Me.picLogo.TabStop = False
         '
+        'dlgOpenStoreroom
+        '
+        Me.dlgOpenStoreroom.FileName = "OpenFileDialog1"
+        '
         'frmDatabase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -457,4 +462,5 @@ Partial Class frmDatabase
     Friend WithEvents FixOptics As DataGridViewTextBoxColumn
     Friend WithEvents FixPower As DataGridViewTextBoxColumn
     Friend WithEvents FixQty As DataGridViewTextBoxColumn
+    Friend WithEvents dlgOpenStoreroom As OpenFileDialog
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports System.Xml
 
 Public Class frmDatabase
+    Dim openfile As String
     Private Sub btnAddFixture_Click(sender As Object, e As EventArgs) Handles btnAddFixture.Click
         frmAddFix1.Show()
     End Sub
@@ -101,5 +102,30 @@ Public Class frmDatabase
         For Each row In dgdStoreroom.SelectedRows
             dgdStoreroom.Rows.Remove(row)
         Next
+    End Sub
+
+    Private Sub btnLoadStoreroom_Click(sender As Object, e As EventArgs) Handles btnLoadStoreroom.Click
+        dlgOpenStoreroom.ShowDialog()
+
+        Try
+            Dim userfile As New XmlDocument()
+            userfile.Load(openfile)
+            If Not userfile.DocumentElement.Name = "Storeroom" Then
+                MsgBox("Please select a valid storeroom file.")
+                Exit Sub
+            End If
+            Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Storeroom")
+            Dim nodes As XmlNode
+            For Each nodes In userfile.SelectNodes("/Storeroom/Fixture")
+                AddToStoreroom(Application.StartupPath & "\Fixtures\" & nodes.ChildNodes(0).InnerText & ".xml", nodes.ChildNodes(1).InnerText)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
+    End Sub
+
+    Private Sub dlgOpenStoreroom_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dlgOpenStoreroom.FileOk
+        openfile = dlgOpenStoreroom.FileName
     End Sub
 End Class

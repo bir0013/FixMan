@@ -18,12 +18,21 @@ Public Class frmAddFix1
         '    My.Computer.FileSystem.CreateDirectory(Application.StartupPath & "\Fixtures")
         'End If
         'My.Computer.FileSystem.CopyDirectory(dlgImportFixture.FileName, Application.StartupPath & "\Fixtures")
-        Dim sourcepath As String = dlgImportFixture.FileName
-        Dim DestPath As String = Application.StartupPath & "\Fixtures"
-        If Not My.Computer.FileSystem.DirectoryExists(DestPath) Then
-            My.Computer.FileSystem.CreateDirectory(DestPath)
-        End If
-        Dim file = New FileInfo(dlgImportFixture.FileName)
-        file.CopyTo(Path.Combine(DestPath, file.Name), True)
+        Try
+            Dim sourcepath As String = dlgImportFixture.FileName
+            Dim DestPath As String = Application.StartupPath & "\Fixtures"
+            If Not My.Computer.FileSystem.DirectoryExists(DestPath) Then
+                My.Computer.FileSystem.CreateDirectory(DestPath)
+            End If
+            Dim file = New FileInfo(dlgImportFixture.FileName)
+            file.CopyTo(Path.Combine(DestPath, file.Name), True)
+        Catch ex As Exception
+            If Not ex.GetType.ToString = "System.IO.IOException" Then
+                MsgBox(ex.Message)
+            Else
+                Exit Sub
+            End If
+        End Try
+
     End Sub
 End Class

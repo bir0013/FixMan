@@ -2,11 +2,9 @@
 Imports System.Xml
 Imports System.IO
 
-'##LOGIN WILL HAVE TO CHECK FOR FIRST RUN AND COMPLETE SETUP IF NECESSARY##
-
 Public Class frmLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
+        'This code opens the users.xml document to check whether the user entered exists and whether the password entered is correct. It also makes sure that you haven't forgotten to enter information.
         Dim userfile As New XmlDocument()
         userfile.Load("users.xml")
         Dim usernodes As XmlNodeList = userfile.DocumentElement.SelectNodes("/Creds")
@@ -41,6 +39,7 @@ Public Class frmLogin
 
         Next
 
+        '##THIS IS AN OLD VERSION OF THE LOGIN CODE##
         'For Each nodes In userfile.SelectNodes("/Creds/User")
         '    If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
         '        If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
@@ -59,7 +58,7 @@ Public Class frmLogin
         '    End If
         'Next
 
-        ''##THE FOLLOWING IS TEST CODE! PLEASE DELETE!##
+        ''##THE FOLLOWING IS TEST CODE!##
         ''currentuser = "Nicholas Xanthoudakis"
         ''Dim pass As String = txtPassword.Text
         ''Dim hash As String = getSHA1Hash(pass)
@@ -87,11 +86,12 @@ Public Class frmLogin
     End Function
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        'Ends the program
+        'Ends the program. Is currently know to throw "Error creating window handle", which is an very nondescript error
         End
     End Sub
 
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged
+        'This code allows the password field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowPass.Checked = True Then
             txtPassword.UseSystemPasswordChar = False
         ElseIf chkShowPass.Checked = False Then
@@ -103,8 +103,16 @@ Public Class frmLogin
     End Sub
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This Sub checks every time the solution is loaded that it is setup correctly
+
+        'This checks that user records exist
         If File.Exists("users.xml") = False Then
             frmSetup.Show()
+        End If
+
+        'This checks that the directory that stores created/imported fixture info files exists (if it does not, it creates it)
+        If Not My.Computer.FileSystem.DirectoryExists(Application.StartupPath & "\Fixtures") Then
+            My.Computer.FileSystem.CreateDirectory(Application.StartupPath & "\Fixtures")
         End If
     End Sub
 End Class

@@ -22,15 +22,21 @@ Partial Class frmFixtureInfo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.tabTabs = New System.Windows.Forms.TabControl()
+        Me.tabManual = New System.Windows.Forms.TabPage()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.tabSummary = New System.Windows.Forms.TabPage()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.lstEffects = New System.Windows.Forms.ListBox()
+        Me.lstControl = New System.Windows.Forms.ListBox()
+        Me.dgdGobos = New System.Windows.Forms.DataGridView()
+        Me.dgdColours = New System.Windows.Forms.DataGridView()
+        Me.picImage = New System.Windows.Forms.PictureBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -47,39 +53,50 @@ Partial Class frmFixtureInfo
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.tabSpecifications = New System.Windows.Forms.TabPage()
-        Me.tabControl = New System.Windows.Forms.TabPage()
-        Me.tabMetrics = New System.Windows.Forms.TabPage()
-        Me.tabManual = New System.Windows.Forms.TabPage()
-        Me.picImage = New System.Windows.Forms.PictureBox()
-        Me.tabTabs.SuspendLayout()
+        Me.tabTabs = New System.Windows.Forms.TabControl()
+        Me.lstDocuments = New System.Windows.Forms.ListBox()
+        Me.tabManual.SuspendLayout()
         Me.tabSummary.SuspendLayout()
+        CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabTabs.SuspendLayout()
         Me.SuspendLayout()
         '
-        'tabTabs
+        'tabManual
         '
-        Me.tabTabs.Controls.Add(Me.tabSummary)
-        Me.tabTabs.Controls.Add(Me.tabSpecifications)
-        Me.tabTabs.Controls.Add(Me.tabControl)
-        Me.tabTabs.Controls.Add(Me.tabMetrics)
-        Me.tabTabs.Controls.Add(Me.tabManual)
-        Me.tabTabs.Location = New System.Drawing.Point(5, 4)
-        Me.tabTabs.Name = "tabTabs"
-        Me.tabTabs.SelectedIndex = 0
-        Me.tabTabs.Size = New System.Drawing.Size(778, 475)
-        Me.tabTabs.TabIndex = 0
+        Me.tabManual.Controls.Add(Me.lstDocuments)
+        Me.tabManual.Controls.Add(Me.WebBrowser1)
+        Me.tabManual.Location = New System.Drawing.Point(4, 22)
+        Me.tabManual.Name = "tabManual"
+        Me.tabManual.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabManual.Size = New System.Drawing.Size(889, 508)
+        Me.tabManual.TabIndex = 4
+        Me.tabManual.Text = "Documentation"
+        Me.tabManual.UseVisualStyleBackColor = True
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(722, 512)
+        Me.WebBrowser1.TabIndex = 0
         '
         'tabSummary
         '
+        Me.tabSummary.Controls.Add(Me.Label2)
+        Me.tabSummary.Controls.Add(Me.RichTextBox1)
+        Me.tabSummary.Controls.Add(Me.lstEffects)
+        Me.tabSummary.Controls.Add(Me.lstControl)
+        Me.tabSummary.Controls.Add(Me.dgdGobos)
+        Me.tabSummary.Controls.Add(Me.dgdColours)
         Me.tabSummary.Controls.Add(Me.picImage)
-        Me.tabSummary.Controls.Add(Me.Label24)
         Me.tabSummary.Controls.Add(Me.Label23)
         Me.tabSummary.Controls.Add(Me.Label22)
         Me.tabSummary.Controls.Add(Me.Label21)
         Me.tabSummary.Controls.Add(Me.Label20)
         Me.tabSummary.Controls.Add(Me.Label19)
-        Me.tabSummary.Controls.Add(Me.Label18)
         Me.tabSummary.Controls.Add(Me.Label17)
         Me.tabSummary.Controls.Add(Me.Label16)
         Me.tabSummary.Controls.Add(Me.Label15)
@@ -99,25 +116,84 @@ Partial Class frmFixtureInfo
         Me.tabSummary.Location = New System.Drawing.Point(4, 22)
         Me.tabSummary.Name = "tabSummary"
         Me.tabSummary.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSummary.Size = New System.Drawing.Size(770, 449)
+        Me.tabSummary.Size = New System.Drawing.Size(889, 508)
         Me.tabSummary.TabIndex = 0
         Me.tabSummary.Text = "Summary"
         Me.tabSummary.UseVisualStyleBackColor = True
         '
-        'Label24
+        'Label2
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(539, 338)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(45, 13)
-        Me.Label24.TabIndex = 23
-        Me.Label24.Text = "Label24"
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(556, 375)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.TabIndex = 45
+        Me.Label2.Text = "Notes:"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(559, 391)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(314, 103)
+        Me.RichTextBox1.TabIndex = 44
+        Me.RichTextBox1.Text = ""
+        '
+        'lstEffects
+        '
+        Me.lstEffects.FormattingEnabled = True
+        Me.lstEffects.Location = New System.Drawing.Point(308, 360)
+        Me.lstEffects.Name = "lstEffects"
+        Me.lstEffects.Size = New System.Drawing.Size(229, 134)
+        Me.lstEffects.TabIndex = 43
+        '
+        'lstControl
+        '
+        Me.lstControl.FormattingEnabled = True
+        Me.lstControl.Location = New System.Drawing.Point(308, 211)
+        Me.lstControl.Name = "lstControl"
+        Me.lstControl.Size = New System.Drawing.Size(229, 69)
+        Me.lstControl.TabIndex = 42
+        '
+        'dgdGobos
+        '
+        Me.dgdGobos.AllowUserToAddRows = False
+        Me.dgdGobos.AllowUserToDeleteRows = False
+        Me.dgdGobos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdGobos.Location = New System.Drawing.Point(559, 208)
+        Me.dgdGobos.Name = "dgdGobos"
+        Me.dgdGobos.RowHeadersWidth = 10
+        Me.dgdGobos.Size = New System.Drawing.Size(314, 150)
+        Me.dgdGobos.TabIndex = 41
+        Me.dgdGobos.TabStop = False
+        '
+        'dgdColours
+        '
+        Me.dgdColours.AllowUserToAddRows = False
+        Me.dgdColours.AllowUserToDeleteRows = False
+        Me.dgdColours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdColours.Location = New System.Drawing.Point(559, 30)
+        Me.dgdColours.Name = "dgdColours"
+        Me.dgdColours.RowHeadersWidth = 10
+        Me.dgdColours.Size = New System.Drawing.Size(314, 150)
+        Me.dgdColours.TabIndex = 40
+        Me.dgdColours.TabStop = False
+        '
+        'picImage
+        '
+        Me.picImage.Location = New System.Drawing.Point(16, 27)
+        Me.picImage.Name = "picImage"
+        Me.picImage.Size = New System.Drawing.Size(269, 283)
+        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picImage.TabIndex = 24
+        Me.picImage.TabStop = False
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(539, 325)
+        Me.Label23.Location = New System.Drawing.Point(305, 344)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(51, 13)
         Me.Label23.TabIndex = 22
@@ -127,7 +203,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(539, 184)
+        Me.Label22.Location = New System.Drawing.Point(556, 192)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(47, 13)
         Me.Label22.TabIndex = 21
@@ -137,7 +213,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(539, 92)
+        Me.Label21.Location = New System.Drawing.Point(556, 14)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(53, 13)
         Me.Label21.TabIndex = 20
@@ -146,7 +222,7 @@ Partial Class frmFixtureInfo
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(539, 26)
+        Me.Label20.Location = New System.Drawing.Point(305, 310)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(45, 13)
         Me.Label20.TabIndex = 19
@@ -156,26 +232,17 @@ Partial Class frmFixtureInfo
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(539, 13)
+        Me.Label19.Location = New System.Drawing.Point(305, 297)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(112, 13)
         Me.Label19.TabIndex = 18
         Me.Label19.Text = "Total Power Draw:"
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(330, 382)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 13)
-        Me.Label18.TabIndex = 17
-        Me.Label18.Text = "Label18"
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(330, 171)
+        Me.Label17.Location = New System.Drawing.Point(305, 14)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(74, 13)
         Me.Label17.TabIndex = 16
@@ -184,7 +251,7 @@ Partial Class frmFixtureInfo
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(330, 325)
+        Me.Label16.Location = New System.Drawing.Point(305, 158)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(45, 13)
         Me.Label16.TabIndex = 15
@@ -194,16 +261,16 @@ Partial Class frmFixtureInfo
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(330, 369)
+        Me.Label15.Location = New System.Drawing.Point(305, 194)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(102, 13)
+        Me.Label15.Size = New System.Drawing.Size(108, 13)
         Me.Label15.TabIndex = 14
-        Me.Label15.Text = "Control Protocol:"
+        Me.Label15.Text = "Control Protocols:"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(330, 273)
+        Me.Label14.Location = New System.Drawing.Point(305, 110)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(45, 13)
         Me.Label14.TabIndex = 13
@@ -213,7 +280,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(330, 311)
+        Me.Label13.Location = New System.Drawing.Point(305, 144)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(120, 13)
         Me.Label13.TabIndex = 12
@@ -222,7 +289,7 @@ Partial Class frmFixtureInfo
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(330, 227)
+        Me.Label12.Location = New System.Drawing.Point(305, 67)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(45, 13)
         Me.Label12.TabIndex = 11
@@ -232,7 +299,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(330, 260)
+        Me.Label11.Location = New System.Drawing.Point(305, 97)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(83, 13)
         Me.Label11.TabIndex = 10
@@ -241,7 +308,7 @@ Partial Class frmFixtureInfo
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(330, 184)
+        Me.Label10.Location = New System.Drawing.Point(305, 27)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(45, 13)
         Me.Label10.TabIndex = 9
@@ -251,7 +318,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(330, 214)
+        Me.Label9.Location = New System.Drawing.Point(305, 54)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 13)
         Me.Label9.TabIndex = 8
@@ -260,7 +327,7 @@ Partial Class frmFixtureInfo
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(330, 136)
+        Me.Label8.Location = New System.Drawing.Point(13, 438)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 13)
         Me.Label8.TabIndex = 7
@@ -270,7 +337,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(330, 123)
+        Me.Label7.Location = New System.Drawing.Point(13, 425)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
         Me.Label7.TabIndex = 6
@@ -279,7 +346,7 @@ Partial Class frmFixtureInfo
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(330, 81)
+        Me.Label6.Location = New System.Drawing.Point(13, 391)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 5
@@ -289,7 +356,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(330, 68)
+        Me.Label5.Location = New System.Drawing.Point(13, 378)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(45, 13)
         Me.Label5.TabIndex = 4
@@ -298,7 +365,7 @@ Partial Class frmFixtureInfo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(330, 26)
+        Me.Label4.Location = New System.Drawing.Point(13, 344)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(39, 13)
         Me.Label4.TabIndex = 3
@@ -308,7 +375,7 @@ Partial Class frmFixtureInfo
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(330, 13)
+        Me.Label3.Location = New System.Drawing.Point(13, 331)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 13)
         Me.Label3.TabIndex = 2
@@ -318,89 +385,57 @@ Partial Class frmFixtureInfo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(86, 37)
+        Me.Label1.Location = New System.Drawing.Point(13, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Image:"
         '
-        'tabSpecifications
+        'tabTabs
         '
-        Me.tabSpecifications.Location = New System.Drawing.Point(4, 22)
-        Me.tabSpecifications.Name = "tabSpecifications"
-        Me.tabSpecifications.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSpecifications.Size = New System.Drawing.Size(770, 449)
-        Me.tabSpecifications.TabIndex = 1
-        Me.tabSpecifications.Text = "Specifications"
-        Me.tabSpecifications.UseVisualStyleBackColor = True
+        Me.tabTabs.Controls.Add(Me.tabSummary)
+        Me.tabTabs.Controls.Add(Me.tabManual)
+        Me.tabTabs.Location = New System.Drawing.Point(5, 4)
+        Me.tabTabs.Name = "tabTabs"
+        Me.tabTabs.SelectedIndex = 0
+        Me.tabTabs.Size = New System.Drawing.Size(897, 534)
+        Me.tabTabs.TabIndex = 0
         '
-        'tabControl
+        'lstDocuments
         '
-        Me.tabControl.Location = New System.Drawing.Point(4, 22)
-        Me.tabControl.Name = "tabControl"
-        Me.tabControl.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabControl.Size = New System.Drawing.Size(770, 449)
-        Me.tabControl.TabIndex = 2
-        Me.tabControl.Text = "Control"
-        Me.tabControl.UseVisualStyleBackColor = True
-        '
-        'tabMetrics
-        '
-        Me.tabMetrics.Location = New System.Drawing.Point(4, 22)
-        Me.tabMetrics.Name = "tabMetrics"
-        Me.tabMetrics.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabMetrics.Size = New System.Drawing.Size(770, 449)
-        Me.tabMetrics.TabIndex = 3
-        Me.tabMetrics.Text = "Metrics"
-        Me.tabMetrics.UseVisualStyleBackColor = True
-        '
-        'tabManual
-        '
-        Me.tabManual.Location = New System.Drawing.Point(4, 22)
-        Me.tabManual.Name = "tabManual"
-        Me.tabManual.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabManual.Size = New System.Drawing.Size(770, 449)
-        Me.tabManual.TabIndex = 4
-        Me.tabManual.Text = "Manual"
-        Me.tabManual.UseVisualStyleBackColor = True
-        '
-        'picImage
-        '
-        Me.picImage.Location = New System.Drawing.Point(49, 85)
-        Me.picImage.Name = "picImage"
-        Me.picImage.Size = New System.Drawing.Size(162, 112)
-        Me.picImage.TabIndex = 24
-        Me.picImage.TabStop = False
+        Me.lstDocuments.FormattingEnabled = True
+        Me.lstDocuments.Location = New System.Drawing.Point(723, 0)
+        Me.lstDocuments.Name = "lstDocuments"
+        Me.lstDocuments.Size = New System.Drawing.Size(166, 511)
+        Me.lstDocuments.TabIndex = 1
         '
         'frmFixtureInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(788, 482)
+        Me.ClientSize = New System.Drawing.Size(904, 541)
         Me.Controls.Add(Me.tabTabs)
         Me.Name = "frmFixtureInfo"
         Me.Text = "*ASSIGN NAME OF CURRENT FIXTURE HERE*"
-        Me.tabTabs.ResumeLayout(False)
+        Me.tabManual.ResumeLayout(False)
         Me.tabSummary.ResumeLayout(False)
         Me.tabSummary.PerformLayout()
+        CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabTabs.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents tabTabs As TabControl
-    Friend WithEvents tabSummary As TabPage
-    Friend WithEvents tabSpecifications As TabPage
-    Friend WithEvents tabControl As TabPage
-    Friend WithEvents tabMetrics As TabPage
     Friend WithEvents tabManual As TabPage
-    Friend WithEvents Label24 As Label
+    Friend WithEvents tabSummary As TabPage
+    Friend WithEvents picImage As PictureBox
     Friend WithEvents Label23 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
@@ -417,5 +452,13 @@ Partial Class frmFixtureInfo
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents picImage As PictureBox
+    Friend WithEvents tabTabs As TabControl
+    Friend WithEvents dgdGobos As DataGridView
+    Friend WithEvents dgdColours As DataGridView
+    Friend WithEvents lstEffects As ListBox
+    Friend WithEvents lstControl As ListBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents lstDocuments As ListBox
 End Class

@@ -128,4 +128,21 @@ Public Class frmDatabase
     Private Sub dlgOpenStoreroom_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dlgOpenStoreroom.FileOk
         openfile = dlgOpenStoreroom.FileName
     End Sub
+
+    Private Sub btnViewFixture_Click(sender As Object, e As EventArgs) Handles btnViewFixture.Click
+        If Not dgdStoreroom.Rows.Count > 0 Then
+            MsgBox("There are no fixtures in the current Storeroom.")
+            Exit Sub
+        End If
+        If dgdStoreroom.SelectedRows.Count > 1 Then
+            MsgBox("Please select a single fixture.")
+            Exit Sub
+        End If
+
+        selectedfixture = dgdStoreroom.Rows(dgdStoreroom.CurrentRow.Index).Cells(1).Value & " " & dgdStoreroom.Rows(dgdStoreroom.CurrentRow.Index).Cells(2).Value
+
+        frmFixtureInfo.Show()
+
+        'MsgBox(selectedfixture)
+    End Sub
 End Class

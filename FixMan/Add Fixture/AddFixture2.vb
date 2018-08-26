@@ -401,6 +401,10 @@ Public Class frmAddFix2
         End If
     End Sub
 
+    Private Sub picImage_Click(sender As Object, e As EventArgs) Handles picImage.Click
+
+    End Sub
+
     Function ImageToBase64(ByRef img As Image)
         'This function converts images to base64strings to be stored later
 

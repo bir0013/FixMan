@@ -8,6 +8,9 @@ Module Universal
     'User level permissions variables
     Public InventoryPrivelige, EventPrivelige, UserPrivelige As String
 
+    'Selected fixture variable for frmFixInfo
+    Public selectedfixture As String
+
     'Add fixture variables
     Public FixImage As String
 
@@ -27,6 +30,7 @@ Module Universal
 
 
     Public Sub AddToStoreroom(ByRef TypeFile As String, ByRef Qty As Integer)
+        'This sub is used to add the information from a fixture info file into frmDatabase.dgdStoreroom
         Try
             Dim file As New XmlDocument()
             file.Load(TypeFile)
@@ -39,6 +43,8 @@ Module Universal
     End Sub
 
     Function Base64ToImage(ByVal base64string As String) As System.Drawing.Image
+        'This function was published as a code snippet to snipplr.com by mracoker on 02/01/2010
+
         'Setup image and get data stream together
         Dim img As System.Drawing.Image
         Dim MS As System.IO.MemoryStream = New System.IO.MemoryStream

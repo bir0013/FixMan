@@ -32,6 +32,9 @@ Partial Class frmUsers
         '
         'lstUsers
         '
+        Me.lstUsers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstUsers.FormattingEnabled = True
         Me.lstUsers.Location = New System.Drawing.Point(12, 12)
         Me.lstUsers.Name = "lstUsers"
@@ -40,6 +43,7 @@ Partial Class frmUsers
         '
         'btnNew
         '
+        Me.btnNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnNew.Location = New System.Drawing.Point(221, 304)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(145, 23)
@@ -49,6 +53,7 @@ Partial Class frmUsers
         '
         'btnRemove
         '
+        Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnRemove.Location = New System.Drawing.Point(221, 362)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(145, 23)
@@ -58,6 +63,7 @@ Partial Class frmUsers
         '
         'btnEdit
         '
+        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEdit.Location = New System.Drawing.Point(221, 333)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(145, 23)
@@ -67,6 +73,7 @@ Partial Class frmUsers
         '
         'btnCancel
         '
+        Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancel.Location = New System.Drawing.Point(291, 415)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)

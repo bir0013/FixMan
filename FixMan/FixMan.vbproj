@@ -251,5 +251,8 @@
   <ItemGroup>
     <None Include="Resources\FixMan21.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noimage.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

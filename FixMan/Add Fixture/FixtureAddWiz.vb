@@ -13,7 +13,21 @@ Public Class frmAddFix1
 
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
         dlgImportFixture.ShowDialog()
-        AddToStoreroom(dlgImportFixture.FileName, InputBox("How many of this fixture do you have?"))
+
+        Dim Valid As Boolean
+        Dim quantity As String
+
+        While Valid = False
+            quantity = InputBox("How many of this fixture do you have?")
+            If IsNumeric(quantity) Then
+                Valid = True
+            Else
+                Valid = False
+                MsgBox("Please enter a numeric value.")
+            End If
+        End While
+
+        AddToStoreroom(dlgImportFixture.FileName, quantity)
         'If Not My.Computer.FileSystem.DirectoryExists(Application.StartupPath & "\Fixtures") Then
         '    My.Computer.FileSystem.CreateDirectory(Application.StartupPath & "\Fixtures")
         'End If
@@ -30,9 +44,9 @@ Public Class frmAddFix1
             If Not ex.GetType.ToString = "System.IO.IOException" Then
                 MsgBox(ex.Message)
             Else
+                Me.Close()
                 Exit Sub
             End If
         End Try
-
     End Sub
 End Class

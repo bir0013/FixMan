@@ -23,50 +23,50 @@ Partial Class frmFixtureInfo
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tabManual = New System.Windows.Forms.TabPage()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.lstDocuments = New System.Windows.Forms.ListBox()
+        Me.webDocViewer = New System.Windows.Forms.WebBrowser()
         Me.tabSummary = New System.Windows.Forms.TabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.lblNotesPrompt = New System.Windows.Forms.Label()
+        Me.rtbNotes = New System.Windows.Forms.RichTextBox()
         Me.lstEffects = New System.Windows.Forms.ListBox()
         Me.lstControl = New System.Windows.Forms.ListBox()
         Me.dgdGobos = New System.Windows.Forms.DataGridView()
         Me.dgdColours = New System.Windows.Forms.DataGridView()
-        Me.picImage = New System.Windows.Forms.PictureBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblEffectPrompt = New System.Windows.Forms.Label()
+        Me.lblGoboPrompt = New System.Windows.Forms.Label()
+        Me.lblColourPrompt = New System.Windows.Forms.Label()
+        Me.lblTPD = New System.Windows.Forms.Label()
+        Me.lblTPDPrompt = New System.Windows.Forms.Label()
+        Me.lblBeamPrompt = New System.Windows.Forms.Label()
+        Me.lblColourTemp = New System.Windows.Forms.Label()
+        Me.lblControlPrompt = New System.Windows.Forms.Label()
+        Me.lblSource = New System.Windows.Forms.Label()
+        Me.lblColourTempPrompt = New System.Windows.Forms.Label()
+        Me.lblAngle = New System.Windows.Forms.Label()
+        Me.lblSourcePrompt = New System.Windows.Forms.Label()
+        Me.lblBeam = New System.Windows.Forms.Label()
+        Me.lblAnglePrompt = New System.Windows.Forms.Label()
+        Me.lblType = New System.Windows.Forms.Label()
+        Me.lblTypePrompt = New System.Windows.Forms.Label()
+        Me.lblModel = New System.Windows.Forms.Label()
+        Me.lblModelPrompt = New System.Windows.Forms.Label()
+        Me.lblManufacturer = New System.Windows.Forms.Label()
+        Me.lblManufacturerPrompt = New System.Windows.Forms.Label()
+        Me.lblImagePrompt = New System.Windows.Forms.Label()
         Me.tabTabs = New System.Windows.Forms.TabControl()
-        Me.lstDocuments = New System.Windows.Forms.ListBox()
+        Me.picImage = New System.Windows.Forms.PictureBox()
         Me.tabManual.SuspendLayout()
         Me.tabSummary.SuspendLayout()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTabs.SuspendLayout()
+        CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabManual
         '
         Me.tabManual.Controls.Add(Me.lstDocuments)
-        Me.tabManual.Controls.Add(Me.WebBrowser1)
+        Me.tabManual.Controls.Add(Me.webDocViewer)
         Me.tabManual.Location = New System.Drawing.Point(4, 22)
         Me.tabManual.Name = "tabManual"
         Me.tabManual.Padding = New System.Windows.Forms.Padding(3)
@@ -75,44 +75,52 @@ Partial Class frmFixtureInfo
         Me.tabManual.Text = "Documentation"
         Me.tabManual.UseVisualStyleBackColor = True
         '
-        'WebBrowser1
+        'lstDocuments
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(722, 512)
-        Me.WebBrowser1.TabIndex = 0
+        Me.lstDocuments.FormattingEnabled = True
+        Me.lstDocuments.Location = New System.Drawing.Point(723, -1)
+        Me.lstDocuments.Name = "lstDocuments"
+        Me.lstDocuments.Size = New System.Drawing.Size(166, 511)
+        Me.lstDocuments.TabIndex = 1
+        '
+        'webDocViewer
+        '
+        Me.webDocViewer.Location = New System.Drawing.Point(0, 0)
+        Me.webDocViewer.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.webDocViewer.Name = "webDocViewer"
+        Me.webDocViewer.Size = New System.Drawing.Size(722, 512)
+        Me.webDocViewer.TabIndex = 0
         '
         'tabSummary
         '
-        Me.tabSummary.Controls.Add(Me.Label2)
-        Me.tabSummary.Controls.Add(Me.RichTextBox1)
+        Me.tabSummary.Controls.Add(Me.lblNotesPrompt)
+        Me.tabSummary.Controls.Add(Me.rtbNotes)
         Me.tabSummary.Controls.Add(Me.lstEffects)
         Me.tabSummary.Controls.Add(Me.lstControl)
         Me.tabSummary.Controls.Add(Me.dgdGobos)
         Me.tabSummary.Controls.Add(Me.dgdColours)
         Me.tabSummary.Controls.Add(Me.picImage)
-        Me.tabSummary.Controls.Add(Me.Label23)
-        Me.tabSummary.Controls.Add(Me.Label22)
-        Me.tabSummary.Controls.Add(Me.Label21)
-        Me.tabSummary.Controls.Add(Me.Label20)
-        Me.tabSummary.Controls.Add(Me.Label19)
-        Me.tabSummary.Controls.Add(Me.Label17)
-        Me.tabSummary.Controls.Add(Me.Label16)
-        Me.tabSummary.Controls.Add(Me.Label15)
-        Me.tabSummary.Controls.Add(Me.Label14)
-        Me.tabSummary.Controls.Add(Me.Label13)
-        Me.tabSummary.Controls.Add(Me.Label12)
-        Me.tabSummary.Controls.Add(Me.Label11)
-        Me.tabSummary.Controls.Add(Me.Label10)
-        Me.tabSummary.Controls.Add(Me.Label9)
-        Me.tabSummary.Controls.Add(Me.Label8)
-        Me.tabSummary.Controls.Add(Me.Label7)
-        Me.tabSummary.Controls.Add(Me.Label6)
-        Me.tabSummary.Controls.Add(Me.Label5)
-        Me.tabSummary.Controls.Add(Me.Label4)
-        Me.tabSummary.Controls.Add(Me.Label3)
-        Me.tabSummary.Controls.Add(Me.Label1)
+        Me.tabSummary.Controls.Add(Me.lblEffectPrompt)
+        Me.tabSummary.Controls.Add(Me.lblGoboPrompt)
+        Me.tabSummary.Controls.Add(Me.lblColourPrompt)
+        Me.tabSummary.Controls.Add(Me.lblTPD)
+        Me.tabSummary.Controls.Add(Me.lblTPDPrompt)
+        Me.tabSummary.Controls.Add(Me.lblBeamPrompt)
+        Me.tabSummary.Controls.Add(Me.lblColourTemp)
+        Me.tabSummary.Controls.Add(Me.lblControlPrompt)
+        Me.tabSummary.Controls.Add(Me.lblSource)
+        Me.tabSummary.Controls.Add(Me.lblColourTempPrompt)
+        Me.tabSummary.Controls.Add(Me.lblAngle)
+        Me.tabSummary.Controls.Add(Me.lblSourcePrompt)
+        Me.tabSummary.Controls.Add(Me.lblBeam)
+        Me.tabSummary.Controls.Add(Me.lblAnglePrompt)
+        Me.tabSummary.Controls.Add(Me.lblType)
+        Me.tabSummary.Controls.Add(Me.lblTypePrompt)
+        Me.tabSummary.Controls.Add(Me.lblModel)
+        Me.tabSummary.Controls.Add(Me.lblModelPrompt)
+        Me.tabSummary.Controls.Add(Me.lblManufacturer)
+        Me.tabSummary.Controls.Add(Me.lblManufacturerPrompt)
+        Me.tabSummary.Controls.Add(Me.lblImagePrompt)
         Me.tabSummary.Location = New System.Drawing.Point(4, 22)
         Me.tabSummary.Name = "tabSummary"
         Me.tabSummary.Padding = New System.Windows.Forms.Padding(3)
@@ -121,45 +129,57 @@ Partial Class frmFixtureInfo
         Me.tabSummary.Text = "Summary"
         Me.tabSummary.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblNotesPrompt
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(556, 375)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
-        Me.Label2.TabIndex = 45
-        Me.Label2.Text = "Notes:"
+        Me.lblNotesPrompt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblNotesPrompt.AutoSize = True
+        Me.lblNotesPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNotesPrompt.Location = New System.Drawing.Point(556, 371)
+        Me.lblNotesPrompt.Name = "lblNotesPrompt"
+        Me.lblNotesPrompt.Size = New System.Drawing.Size(53, 16)
+        Me.lblNotesPrompt.TabIndex = 45
+        Me.lblNotesPrompt.Text = "Notes:"
         '
-        'RichTextBox1
+        'rtbNotes
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(559, 391)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(314, 103)
-        Me.RichTextBox1.TabIndex = 44
-        Me.RichTextBox1.Text = ""
+        Me.rtbNotes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rtbNotes.Location = New System.Drawing.Point(559, 391)
+        Me.rtbNotes.Name = "rtbNotes"
+        Me.rtbNotes.ReadOnly = True
+        Me.rtbNotes.Size = New System.Drawing.Size(314, 103)
+        Me.rtbNotes.TabIndex = 44
+        Me.rtbNotes.Text = ""
         '
         'lstEffects
         '
+        Me.lstEffects.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstEffects.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstEffects.FormattingEnabled = True
+        Me.lstEffects.ItemHeight = 16
         Me.lstEffects.Location = New System.Drawing.Point(308, 360)
         Me.lstEffects.Name = "lstEffects"
-        Me.lstEffects.Size = New System.Drawing.Size(229, 134)
+        Me.lstEffects.Size = New System.Drawing.Size(229, 132)
         Me.lstEffects.TabIndex = 43
         '
         'lstControl
         '
+        Me.lstControl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstControl.FormattingEnabled = True
+        Me.lstControl.ItemHeight = 16
         Me.lstControl.Location = New System.Drawing.Point(308, 211)
         Me.lstControl.Name = "lstControl"
-        Me.lstControl.Size = New System.Drawing.Size(229, 69)
+        Me.lstControl.Size = New System.Drawing.Size(229, 68)
         Me.lstControl.TabIndex = 42
         '
         'dgdGobos
         '
         Me.dgdGobos.AllowUserToAddRows = False
         Me.dgdGobos.AllowUserToDeleteRows = False
+        Me.dgdGobos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdGobos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgdGobos.Location = New System.Drawing.Point(559, 208)
         Me.dgdGobos.Name = "dgdGobos"
@@ -172,6 +192,7 @@ Partial Class frmFixtureInfo
         '
         Me.dgdColours.AllowUserToAddRows = False
         Me.dgdColours.AllowUserToDeleteRows = False
+        Me.dgdColours.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdColours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgdColours.Location = New System.Drawing.Point(559, 30)
         Me.dgdColours.Name = "dgdColours"
@@ -180,219 +201,223 @@ Partial Class frmFixtureInfo
         Me.dgdColours.TabIndex = 40
         Me.dgdColours.TabStop = False
         '
-        'picImage
+        'lblEffectPrompt
         '
-        Me.picImage.Location = New System.Drawing.Point(16, 27)
-        Me.picImage.Name = "picImage"
-        Me.picImage.Size = New System.Drawing.Size(269, 283)
-        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picImage.TabIndex = 24
-        Me.picImage.TabStop = False
+        Me.lblEffectPrompt.AutoSize = True
+        Me.lblEffectPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEffectPrompt.Location = New System.Drawing.Point(305, 340)
+        Me.lblEffectPrompt.Name = "lblEffectPrompt"
+        Me.lblEffectPrompt.Size = New System.Drawing.Size(59, 16)
+        Me.lblEffectPrompt.TabIndex = 22
+        Me.lblEffectPrompt.Text = "Effects:"
         '
-        'Label23
+        'lblGoboPrompt
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(305, 344)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(51, 13)
-        Me.Label23.TabIndex = 22
-        Me.Label23.Text = "Effects:"
+        Me.lblGoboPrompt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblGoboPrompt.AutoSize = True
+        Me.lblGoboPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGoboPrompt.Location = New System.Drawing.Point(556, 188)
+        Me.lblGoboPrompt.Name = "lblGoboPrompt"
+        Me.lblGoboPrompt.Size = New System.Drawing.Size(58, 16)
+        Me.lblGoboPrompt.TabIndex = 21
+        Me.lblGoboPrompt.Text = "Gobos:"
         '
-        'Label22
+        'lblColourPrompt
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(556, 192)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(47, 13)
-        Me.Label22.TabIndex = 21
-        Me.Label22.Text = "Gobos:"
+        Me.lblColourPrompt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblColourPrompt.AutoSize = True
+        Me.lblColourPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColourPrompt.Location = New System.Drawing.Point(556, 10)
+        Me.lblColourPrompt.Name = "lblColourPrompt"
+        Me.lblColourPrompt.Size = New System.Drawing.Size(65, 16)
+        Me.lblColourPrompt.TabIndex = 20
+        Me.lblColourPrompt.Text = "Colours:"
         '
-        'Label21
+        'lblTPD
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(556, 14)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(53, 13)
-        Me.Label21.TabIndex = 20
-        Me.Label21.Text = "Colours:"
+        Me.lblTPD.AutoSize = True
+        Me.lblTPD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTPD.Location = New System.Drawing.Point(305, 310)
+        Me.lblTPD.Name = "lblTPD"
+        Me.lblTPD.Size = New System.Drawing.Size(56, 16)
+        Me.lblTPD.TabIndex = 19
+        Me.lblTPD.Text = "Label20"
         '
-        'Label20
+        'lblTPDPrompt
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(305, 310)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(45, 13)
-        Me.Label20.TabIndex = 19
-        Me.Label20.Text = "Label20"
+        Me.lblTPDPrompt.AutoSize = True
+        Me.lblTPDPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTPDPrompt.Location = New System.Drawing.Point(305, 293)
+        Me.lblTPDPrompt.Name = "lblTPDPrompt"
+        Me.lblTPDPrompt.Size = New System.Drawing.Size(134, 16)
+        Me.lblTPDPrompt.TabIndex = 18
+        Me.lblTPDPrompt.Text = "Total Power Draw:"
         '
-        'Label19
+        'lblBeamPrompt
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(305, 297)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(112, 13)
-        Me.Label19.TabIndex = 18
-        Me.Label19.Text = "Total Power Draw:"
+        Me.lblBeamPrompt.AutoSize = True
+        Me.lblBeamPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBeamPrompt.Location = New System.Drawing.Point(305, 10)
+        Me.lblBeamPrompt.Name = "lblBeamPrompt"
+        Me.lblBeamPrompt.Size = New System.Drawing.Size(116, 16)
+        Me.lblBeamPrompt.TabIndex = 16
+        Me.lblBeamPrompt.Text = "Optical System:"
         '
-        'Label17
+        'lblColourTemp
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(305, 14)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(74, 13)
-        Me.Label17.TabIndex = 16
-        Me.Label17.Text = "Beam Type:"
+        Me.lblColourTemp.AutoSize = True
+        Me.lblColourTemp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColourTemp.Location = New System.Drawing.Point(305, 158)
+        Me.lblColourTemp.Name = "lblColourTemp"
+        Me.lblColourTemp.Size = New System.Drawing.Size(56, 16)
+        Me.lblColourTemp.TabIndex = 15
+        Me.lblColourTemp.Text = "Label16"
         '
-        'Label16
+        'lblControlPrompt
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(305, 158)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 13)
-        Me.Label16.TabIndex = 15
-        Me.Label16.Text = "Label16"
+        Me.lblControlPrompt.AutoSize = True
+        Me.lblControlPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblControlPrompt.Location = New System.Drawing.Point(305, 190)
+        Me.lblControlPrompt.Name = "lblControlPrompt"
+        Me.lblControlPrompt.Size = New System.Drawing.Size(131, 16)
+        Me.lblControlPrompt.TabIndex = 14
+        Me.lblControlPrompt.Text = "Control Protocols:"
         '
-        'Label15
+        'lblSource
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(305, 194)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(108, 13)
-        Me.Label15.TabIndex = 14
-        Me.Label15.Text = "Control Protocols:"
+        Me.lblSource.AutoSize = True
+        Me.lblSource.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSource.Location = New System.Drawing.Point(305, 110)
+        Me.lblSource.Name = "lblSource"
+        Me.lblSource.Size = New System.Drawing.Size(56, 16)
+        Me.lblSource.TabIndex = 13
+        Me.lblSource.Text = "Label14"
         '
-        'Label14
+        'lblColourTempPrompt
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(305, 110)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(45, 13)
-        Me.Label14.TabIndex = 13
-        Me.Label14.Text = "Label14"
+        Me.lblColourTempPrompt.AutoSize = True
+        Me.lblColourTempPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColourTempPrompt.Location = New System.Drawing.Point(305, 140)
+        Me.lblColourTempPrompt.Name = "lblColourTempPrompt"
+        Me.lblColourTempPrompt.Size = New System.Drawing.Size(146, 16)
+        Me.lblColourTempPrompt.TabIndex = 12
+        Me.lblColourTempPrompt.Text = "Open Colour Temp.:"
         '
-        'Label13
+        'lblAngle
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(305, 144)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(120, 13)
-        Me.Label13.TabIndex = 12
-        Me.Label13.Text = "Open Colour Temp.:"
+        Me.lblAngle.AutoSize = True
+        Me.lblAngle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAngle.Location = New System.Drawing.Point(305, 67)
+        Me.lblAngle.Name = "lblAngle"
+        Me.lblAngle.Size = New System.Drawing.Size(56, 16)
+        Me.lblAngle.TabIndex = 11
+        Me.lblAngle.Text = "Label12"
         '
-        'Label12
+        'lblSourcePrompt
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(305, 67)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(45, 13)
-        Me.Label12.TabIndex = 11
-        Me.Label12.Text = "Label12"
+        Me.lblSourcePrompt.AutoSize = True
+        Me.lblSourcePrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSourcePrompt.Location = New System.Drawing.Point(305, 93)
+        Me.lblSourcePrompt.Name = "lblSourcePrompt"
+        Me.lblSourcePrompt.Size = New System.Drawing.Size(98, 16)
+        Me.lblSourcePrompt.TabIndex = 10
+        Me.lblSourcePrompt.Text = "Light Source:"
         '
-        'Label11
+        'lblBeam
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(305, 97)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(83, 13)
-        Me.Label11.TabIndex = 10
-        Me.Label11.Text = "Light Source:"
+        Me.lblBeam.AutoSize = True
+        Me.lblBeam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBeam.Location = New System.Drawing.Point(305, 27)
+        Me.lblBeam.Name = "lblBeam"
+        Me.lblBeam.Size = New System.Drawing.Size(56, 16)
+        Me.lblBeam.TabIndex = 9
+        Me.lblBeam.Text = "Label10"
         '
-        'Label10
+        'lblAnglePrompt
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(305, 27)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 13)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "Label10"
+        Me.lblAnglePrompt.AutoSize = True
+        Me.lblAnglePrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnglePrompt.Location = New System.Drawing.Point(305, 50)
+        Me.lblAnglePrompt.Name = "lblAnglePrompt"
+        Me.lblAnglePrompt.Size = New System.Drawing.Size(96, 16)
+        Me.lblAnglePrompt.TabIndex = 8
+        Me.lblAnglePrompt.Text = "Beam Angle:"
         '
-        'Label9
+        'lblType
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(305, 54)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(78, 13)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Beam Angle:"
+        Me.lblType.AutoSize = True
+        Me.lblType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblType.Location = New System.Drawing.Point(13, 438)
+        Me.lblType.Name = "lblType"
+        Me.lblType.Size = New System.Drawing.Size(49, 16)
+        Me.lblType.TabIndex = 7
+        Me.lblType.Text = "Label8"
         '
-        'Label8
+        'lblTypePrompt
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(13, 438)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Label8"
+        Me.lblTypePrompt.AutoSize = True
+        Me.lblTypePrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTypePrompt.Location = New System.Drawing.Point(13, 421)
+        Me.lblTypePrompt.Name = "lblTypePrompt"
+        Me.lblTypePrompt.Size = New System.Drawing.Size(48, 16)
+        Me.lblTypePrompt.TabIndex = 6
+        Me.lblTypePrompt.Text = "Type:"
         '
-        'Label7
+        'lblModel
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(13, 425)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Type:"
+        Me.lblModel.AutoSize = True
+        Me.lblModel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModel.Location = New System.Drawing.Point(13, 391)
+        Me.lblModel.Name = "lblModel"
+        Me.lblModel.Size = New System.Drawing.Size(49, 16)
+        Me.lblModel.TabIndex = 5
+        Me.lblModel.Text = "Label6"
         '
-        'Label6
+        'lblModelPrompt
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 391)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Label6"
+        Me.lblModelPrompt.AutoSize = True
+        Me.lblModelPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModelPrompt.Location = New System.Drawing.Point(13, 374)
+        Me.lblModelPrompt.Name = "lblModelPrompt"
+        Me.lblModelPrompt.Size = New System.Drawing.Size(55, 16)
+        Me.lblModelPrompt.TabIndex = 4
+        Me.lblModelPrompt.Text = "Model:"
         '
-        'Label5
+        'lblManufacturer
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(13, 378)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Model:"
+        Me.lblManufacturer.AutoSize = True
+        Me.lblManufacturer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblManufacturer.Location = New System.Drawing.Point(13, 344)
+        Me.lblManufacturer.Name = "lblManufacturer"
+        Me.lblManufacturer.Size = New System.Drawing.Size(49, 16)
+        Me.lblManufacturer.TabIndex = 3
+        Me.lblManufacturer.Text = "Label4"
         '
-        'Label4
+        'lblManufacturerPrompt
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(13, 344)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Label4"
+        Me.lblManufacturerPrompt.AutoSize = True
+        Me.lblManufacturerPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblManufacturerPrompt.Location = New System.Drawing.Point(13, 327)
+        Me.lblManufacturerPrompt.Name = "lblManufacturerPrompt"
+        Me.lblManufacturerPrompt.Size = New System.Drawing.Size(101, 16)
+        Me.lblManufacturerPrompt.TabIndex = 2
+        Me.lblManufacturerPrompt.Text = "Manufacturer:"
         '
-        'Label3
+        'lblImagePrompt
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 331)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Manufacturer:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Image:"
+        Me.lblImagePrompt.AutoSize = True
+        Me.lblImagePrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblImagePrompt.Location = New System.Drawing.Point(13, 7)
+        Me.lblImagePrompt.Name = "lblImagePrompt"
+        Me.lblImagePrompt.Size = New System.Drawing.Size(55, 16)
+        Me.lblImagePrompt.TabIndex = 0
+        Me.lblImagePrompt.Text = "Image:"
         '
         'tabTabs
         '
+        Me.tabTabs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabTabs.Controls.Add(Me.tabSummary)
         Me.tabTabs.Controls.Add(Me.tabManual)
         Me.tabTabs.Location = New System.Drawing.Point(5, 4)
@@ -401,13 +426,15 @@ Partial Class frmFixtureInfo
         Me.tabTabs.Size = New System.Drawing.Size(897, 534)
         Me.tabTabs.TabIndex = 0
         '
-        'lstDocuments
+        'picImage
         '
-        Me.lstDocuments.FormattingEnabled = True
-        Me.lstDocuments.Location = New System.Drawing.Point(723, 0)
-        Me.lstDocuments.Name = "lstDocuments"
-        Me.lstDocuments.Size = New System.Drawing.Size(166, 511)
-        Me.lstDocuments.TabIndex = 1
+        Me.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picImage.Location = New System.Drawing.Point(16, 27)
+        Me.picImage.Name = "picImage"
+        Me.picImage.Size = New System.Drawing.Size(269, 283)
+        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picImage.TabIndex = 24
+        Me.picImage.TabStop = False
         '
         'frmFixtureInfo
         '
@@ -422,8 +449,8 @@ Partial Class frmFixtureInfo
         Me.tabSummary.PerformLayout()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabTabs.ResumeLayout(False)
+        CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -431,34 +458,34 @@ Partial Class frmFixtureInfo
     Friend WithEvents tabManual As TabPage
     Friend WithEvents tabSummary As TabPage
     Friend WithEvents picImage As PictureBox
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblEffectPrompt As Label
+    Friend WithEvents lblGoboPrompt As Label
+    Friend WithEvents lblColourPrompt As Label
+    Friend WithEvents lblTPD As Label
+    Friend WithEvents lblTPDPrompt As Label
+    Friend WithEvents lblBeamPrompt As Label
+    Friend WithEvents lblColourTemp As Label
+    Friend WithEvents lblControlPrompt As Label
+    Friend WithEvents lblSource As Label
+    Friend WithEvents lblColourTempPrompt As Label
+    Friend WithEvents lblAngle As Label
+    Friend WithEvents lblSourcePrompt As Label
+    Friend WithEvents lblBeam As Label
+    Friend WithEvents lblAnglePrompt As Label
+    Friend WithEvents lblType As Label
+    Friend WithEvents lblTypePrompt As Label
+    Friend WithEvents lblModel As Label
+    Friend WithEvents lblModelPrompt As Label
+    Friend WithEvents lblManufacturer As Label
+    Friend WithEvents lblManufacturerPrompt As Label
+    Friend WithEvents lblImagePrompt As Label
     Friend WithEvents tabTabs As TabControl
     Friend WithEvents dgdGobos As DataGridView
     Friend WithEvents dgdColours As DataGridView
     Friend WithEvents lstEffects As ListBox
     Friend WithEvents lstControl As ListBox
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents rtbNotes As RichTextBox
+    Friend WithEvents lblNotesPrompt As Label
+    Friend WithEvents webDocViewer As WebBrowser
     Friend WithEvents lstDocuments As ListBox
 End Class

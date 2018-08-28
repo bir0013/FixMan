@@ -171,7 +171,11 @@ Public Class frmAddFix2
         'This procedure handles distribution of image data in the two data grid view in this form (for colour and gobo)
         'When btnColourImage or btnGoboImage is pressed, they will activate this procedure and give it the effect type identifier.
 
-        dlgOpenImage.ShowDialog()
+        Dim res As DialogResult = dlgOpenImage.ShowDialog()
+        If res = Windows.Forms.DialogResult.Cancel Then
+            dlgOpenImage.FileName = String.Empty
+            Exit Sub
+        End If
 
         Dim img As Image = Image.FromFile(dlgOpenImage.FileName)
 
@@ -211,14 +215,22 @@ Public Class frmAddFix2
         Else
             MsgBox("Please enter a name.")
         End If
+
+        dlgOpenImage.FileName = String.Empty
     End Sub
 
     Private Sub btnAddImage_Click(sender As Object, e As EventArgs) Handles btnAddImage.Click
         'This is for adding an image of the fixture being entered
-        dlgOpenImage.ShowDialog()
+        Dim res As DialogResult = dlgOpenImage.ShowDialog()
+        If res = Windows.Forms.DialogResult.Cancel Then
+            dlgOpenImage.FileName = String.Empty
+            Exit Sub
+        End If
+
         Dim image As Image = Image.FromFile(dlgOpenImage.FileName)
         lblImageLocation.Text = dlgOpenImage.FileName
         picImage.Image = image
+        dlgOpenImage.FileName = String.Empty
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
@@ -231,7 +243,12 @@ Public Class frmAddFix2
         Dim gobohorizontalscroll As Integer = 0
 
         'This is where most of the information is stored
-        FixImage = ImageToBase64(picImage.Image)
+        If picImage.Image Is Nothing Then
+            FixImage = ImageToBase64(My.Resources.noimage)
+        Else
+            FixImage = ImageToBase64(picImage.Image)
+        End If
+
         FixManufacturer = txtManufacturer.Text
         FixModel = txtModel.Text
         FixSource = txtSource.Text
@@ -248,7 +265,8 @@ Public Class frmAddFix2
             Next
         End If
 
-        'This is for total power draw (I have structured the storing so that it happens in the order that each section appears on the form)
+        'This is for colour temp and total power draw (I have structured the storing so that it happens in the order that each section appears on the form)
+        FixColourTemp = nudColourTemp.Value
         FixTotalPowerDraw = nudPowerDraw.Value
 
         'This is responsible for taking all text and images from dgdColours and storing them in FixColours (and also FixColourDataType, which is used to keep track of which entries in FixColours correspond with which data type)
@@ -399,10 +417,6 @@ Public Class frmAddFix2
         If e.KeyCode = Keys.Enter Then
             btnAddEffect.PerformClick()
         End If
-    End Sub
-
-    Private Sub picImage_Click(sender As Object, e As EventArgs) Handles picImage.Click
-
     End Sub
 
     Function ImageToBase64(ByRef img As Image)

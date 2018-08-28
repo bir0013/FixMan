@@ -77,6 +77,7 @@ Partial Class frmAddFix1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(317, 207)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnImport)
         Me.Controls.Add(Me.btnManual)

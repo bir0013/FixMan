@@ -22,12 +22,12 @@ Public Class frmAddFix3
 
         '### THIS IS WHEN ALL FIXTURE INFO WILL BE COMITTED TO FILE ###
 
-        Dim newfile As New XmlTextWriter(FixManufacturer & " " & FixModel & ".xml", System.Text.Encoding.UTF8)
+        Dim newfile As New XmlTextWriter(Application.StartupPath & "\Fixtures\" & FixManufacturer & " " & FixModel & ".xml", System.Text.Encoding.UTF8)
         newfile.WriteStartDocument()
         newfile.WriteStartElement("Root")
         newfile.Close()
 
-        Dim fixfile = XDocument.Load(FixManufacturer & " " & FixModel & ".xml")
+        Dim fixfile = XDocument.Load(Application.StartupPath & "\Fixtures\" & FixManufacturer & " " & FixModel & ".xml")
         Dim fixinfo = New XElement("Fixture",
                                    New XElement("Manufacturer", FixManufacturer),
                                    New XElement("Model", FixModel),
@@ -76,8 +76,22 @@ Public Class frmAddFix3
 
         fixfile.Save(Application.StartupPath & "\Fixtures\" & FixManufacturer & " " & FixModel & ".xml")
 
-        AddToStoreroom(FixManufacturer & " " & FixModel & ".xml", InputBox("How many of this fixture do you have?"))
+        Dim Valid As Boolean
+        Dim quantity As String
 
+        While Valid = False
+            quantity = InputBox("How many of this fixture do you have?")
+            If IsNumeric(quantity) Then
+                Valid = True
+            Else
+                Valid = False
+                'put a msgbox here if you like
+            End If
+        End While
+
+        AddToStoreroom(Application.StartupPath & "\Fixtures\" & FixManufacturer & " " & FixModel & ".xml", quantity)
+
+        frmAddFix2.Close()
         Me.Close()
 
     End Sub

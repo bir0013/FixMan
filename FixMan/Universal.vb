@@ -31,15 +31,15 @@ Module Universal
 
     Public Sub AddToStoreroom(ByRef TypeFile As String, ByRef Qty As Integer)
         'This sub is used to add the information from a fixture info file into frmDatabase.dgdStoreroom
-        Try
-            Dim file As New XmlDocument()
+        'Try
+        Dim file As New XmlDocument()
             file.Load(TypeFile)
             Dim usernodes As XmlNodeList = file.DocumentElement.SelectNodes("/Root")
             frmDatabase.dgdStoreroom.Rows.Add(Base64ToImage(file.DocumentElement.ChildNodes(0).ChildNodes(2).InnerText), file.DocumentElement.ChildNodes(0).ChildNodes(0).InnerText, file.DocumentElement.ChildNodes(0).ChildNodes(1).InnerText, file.DocumentElement.ChildNodes(0).ChildNodes(4).InnerText, file.DocumentElement.ChildNodes(0).ChildNodes(3).InnerText, file.DocumentElement.ChildNodes(0).ChildNodes(5).InnerText, file.DocumentElement.ChildNodes(0).ChildNodes(7).InnerText, Qty)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        '    Exit Sub
+        'End Try
     End Sub
 
     Function Base64ToImage(ByVal base64string As String) As System.Drawing.Image

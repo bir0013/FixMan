@@ -112,6 +112,7 @@ Partial Class frmLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(394, 246)
+        Me.ControlBox = False
         Me.Controls.Add(Me.chkShowPass)
         Me.Controls.Add(Me.lblLogo)
         Me.Controls.Add(Me.btnExit)

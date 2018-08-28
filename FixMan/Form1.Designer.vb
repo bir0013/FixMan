@@ -33,6 +33,14 @@ Partial Class frmDatabase
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.dgdStoreroom = New System.Windows.Forms.DataGridView()
+        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlStoreroom = New System.Windows.Forms.Panel()
         Me.lblCurrentStoreroom = New System.Windows.Forms.Label()
         Me.lblStoreroom = New System.Windows.Forms.Label()
@@ -53,14 +61,8 @@ Partial Class frmDatabase
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.dlgOpenStoreroom = New System.Windows.Forms.OpenFileDialog()
-        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnNewStoreroom = New System.Windows.Forms.Button()
+        Me.btnNewEvent = New System.Windows.Forms.Button()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -158,9 +160,55 @@ Partial Class frmDatabase
         Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
         Me.dgdStoreroom.TabIndex = 3
         '
+        'FixImage
+        '
+        Me.FixImage.HeaderText = "Image"
+        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.FixImage.Name = "FixImage"
+        '
+        'FixManufacturer
+        '
+        Me.FixManufacturer.HeaderText = "Manufacturer"
+        Me.FixManufacturer.Name = "FixManufacturer"
+        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'FixModel
+        '
+        Me.FixModel.HeaderText = "Model"
+        Me.FixModel.Name = "FixModel"
+        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'FixSource
+        '
+        Me.FixSource.HeaderText = "Light Source"
+        Me.FixSource.Name = "FixSource"
+        '
+        'FixType
+        '
+        Me.FixType.HeaderText = "Type"
+        Me.FixType.Name = "FixType"
+        Me.FixType.Width = 110
+        '
+        'FixOptics
+        '
+        Me.FixOptics.HeaderText = "Optic Type"
+        Me.FixOptics.Name = "FixOptics"
+        '
+        'FixPower
+        '
+        Me.FixPower.HeaderText = "Total Power Draw"
+        Me.FixPower.Name = "FixPower"
+        '
+        'FixQty
+        '
+        Me.FixQty.HeaderText = "Qty."
+        Me.FixQty.Name = "FixQty"
+        Me.FixQty.Width = 50
+        '
         'pnlStoreroom
         '
         Me.pnlStoreroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlStoreroom.Controls.Add(Me.btnNewStoreroom)
         Me.pnlStoreroom.Controls.Add(Me.lblCurrentStoreroom)
         Me.pnlStoreroom.Controls.Add(Me.lblStoreroom)
         Me.pnlStoreroom.Controls.Add(Me.btnLoadStoreroom)
@@ -171,7 +219,7 @@ Partial Class frmDatabase
         Me.pnlStoreroom.Controls.Add(Me.btnAddFixture)
         Me.pnlStoreroom.Location = New System.Drawing.Point(11, 37)
         Me.pnlStoreroom.Name = "pnlStoreroom"
-        Me.pnlStoreroom.Size = New System.Drawing.Size(170, 195)
+        Me.pnlStoreroom.Size = New System.Drawing.Size(170, 222)
         Me.pnlStoreroom.TabIndex = 4
         '
         'lblCurrentStoreroom
@@ -249,6 +297,7 @@ Partial Class frmDatabase
         'pnlEvent
         '
         Me.pnlEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlEvent.Controls.Add(Me.btnNewEvent)
         Me.pnlEvent.Controls.Add(Me.lblCurrentEvent)
         Me.pnlEvent.Controls.Add(Me.lblEvent)
         Me.pnlEvent.Controls.Add(Me.btnLoadEvent)
@@ -256,9 +305,9 @@ Partial Class frmDatabase
         Me.pnlEvent.Controls.Add(Me.btnOpenTeamRoster)
         Me.pnlEvent.Controls.Add(Me.btnOpenFixSheet)
         Me.pnlEvent.Controls.Add(Me.btnOpenEventMan)
-        Me.pnlEvent.Location = New System.Drawing.Point(11, 238)
+        Me.pnlEvent.Location = New System.Drawing.Point(11, 265)
         Me.pnlEvent.Name = "pnlEvent"
-        Me.pnlEvent.Size = New System.Drawing.Size(170, 166)
+        Me.pnlEvent.Size = New System.Drawing.Size(170, 193)
         Me.pnlEvent.TabIndex = 5
         '
         'lblCurrentEvent
@@ -349,50 +398,23 @@ Partial Class frmDatabase
         '
         Me.dlgOpenStoreroom.FileName = "OpenFileDialog1"
         '
-        'FixImage
+        'btnNewStoreroom
         '
-        Me.FixImage.HeaderText = "Image"
-        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.FixImage.Name = "FixImage"
+        Me.btnNewStoreroom.Location = New System.Drawing.Point(47, 191)
+        Me.btnNewStoreroom.Name = "btnNewStoreroom"
+        Me.btnNewStoreroom.Size = New System.Drawing.Size(75, 23)
+        Me.btnNewStoreroom.TabIndex = 13
+        Me.btnNewStoreroom.Text = "New"
+        Me.btnNewStoreroom.UseVisualStyleBackColor = True
         '
-        'FixManufacturer
+        'btnNewEvent
         '
-        Me.FixManufacturer.HeaderText = "Manufacturer"
-        Me.FixManufacturer.Name = "FixManufacturer"
-        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'FixModel
-        '
-        Me.FixModel.HeaderText = "Model"
-        Me.FixModel.Name = "FixModel"
-        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'FixSource
-        '
-        Me.FixSource.HeaderText = "Light Source"
-        Me.FixSource.Name = "FixSource"
-        '
-        'FixType
-        '
-        Me.FixType.HeaderText = "Type"
-        Me.FixType.Name = "FixType"
-        Me.FixType.Width = 110
-        '
-        'FixOptics
-        '
-        Me.FixOptics.HeaderText = "Optic Type"
-        Me.FixOptics.Name = "FixOptics"
-        '
-        'FixPower
-        '
-        Me.FixPower.HeaderText = "Total Power Draw"
-        Me.FixPower.Name = "FixPower"
-        '
-        'FixQty
-        '
-        Me.FixQty.HeaderText = "Qty."
-        Me.FixQty.Name = "FixQty"
-        Me.FixQty.Width = 50
+        Me.btnNewEvent.Location = New System.Drawing.Point(47, 164)
+        Me.btnNewEvent.Name = "btnNewEvent"
+        Me.btnNewEvent.Size = New System.Drawing.Size(75, 23)
+        Me.btnNewEvent.TabIndex = 14
+        Me.btnNewEvent.Text = "New"
+        Me.btnNewEvent.UseVisualStyleBackColor = True
         '
         'frmDatabase
         '
@@ -463,4 +485,6 @@ Partial Class frmDatabase
     Friend WithEvents FixOptics As DataGridViewTextBoxColumn
     Friend WithEvents FixPower As DataGridViewTextBoxColumn
     Friend WithEvents FixQty As DataGridViewTextBoxColumn
+    Friend WithEvents btnNewStoreroom As Button
+    Friend WithEvents btnNewEvent As Button
 End Class

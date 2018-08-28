@@ -24,15 +24,17 @@ Partial Class frmEventView
     Private Sub InitializeComponent()
         Me.tabTabs = New System.Windows.Forms.TabControl()
         Me.tabSummary = New System.Windows.Forms.TabPage()
+        Me.pnlSummary = New System.Windows.Forms.Panel()
         Me.tabFixSheet = New System.Windows.Forms.TabPage()
         Me.tabTeam = New System.Windows.Forms.TabPage()
         Me.tabTimeline = New System.Windows.Forms.TabPage()
         Me.tabFiles = New System.Windows.Forms.TabPage()
-        Me.pnlSummary = New System.Windows.Forms.Panel()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnOpen = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.tabTabs.SuspendLayout()
         Me.tabSummary.SuspendLayout()
         Me.SuspendLayout()
@@ -52,6 +54,8 @@ Partial Class frmEventView
         '
         'tabSummary
         '
+        Me.tabSummary.Controls.Add(Me.ListBox2)
+        Me.tabSummary.Controls.Add(Me.ListBox1)
         Me.tabSummary.Controls.Add(Me.pnlSummary)
         Me.tabSummary.Location = New System.Drawing.Point(4, 22)
         Me.tabSummary.Name = "tabSummary"
@@ -60,6 +64,14 @@ Partial Class frmEventView
         Me.tabSummary.TabIndex = 0
         Me.tabSummary.Text = "Summary"
         Me.tabSummary.UseVisualStyleBackColor = True
+        '
+        'pnlSummary
+        '
+        Me.pnlSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSummary.Location = New System.Drawing.Point(6, 6)
+        Me.pnlSummary.Name = "pnlSummary"
+        Me.pnlSummary.Size = New System.Drawing.Size(365, 613)
+        Me.pnlSummary.TabIndex = 0
         '
         'tabFixSheet
         '
@@ -76,7 +88,7 @@ Partial Class frmEventView
         Me.tabTeam.Location = New System.Drawing.Point(4, 22)
         Me.tabTeam.Name = "tabTeam"
         Me.tabTeam.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTeam.Size = New System.Drawing.Size(937, 625)
+        Me.tabTeam.Size = New System.Drawing.Size(1136, 625)
         Me.tabTeam.TabIndex = 2
         Me.tabTeam.Text = "Team"
         Me.tabTeam.UseVisualStyleBackColor = True
@@ -86,7 +98,7 @@ Partial Class frmEventView
         Me.tabTimeline.Location = New System.Drawing.Point(4, 22)
         Me.tabTimeline.Name = "tabTimeline"
         Me.tabTimeline.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTimeline.Size = New System.Drawing.Size(937, 625)
+        Me.tabTimeline.Size = New System.Drawing.Size(1136, 625)
         Me.tabTimeline.TabIndex = 3
         Me.tabTimeline.Text = "Timeline"
         Me.tabTimeline.UseVisualStyleBackColor = True
@@ -96,18 +108,10 @@ Partial Class frmEventView
         Me.tabFiles.Location = New System.Drawing.Point(4, 22)
         Me.tabFiles.Name = "tabFiles"
         Me.tabFiles.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabFiles.Size = New System.Drawing.Size(937, 625)
+        Me.tabFiles.Size = New System.Drawing.Size(1136, 625)
         Me.tabFiles.TabIndex = 4
         Me.tabFiles.Text = "Files"
         Me.tabFiles.UseVisualStyleBackColor = True
-        '
-        'pnlSummary
-        '
-        Me.pnlSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlSummary.Location = New System.Drawing.Point(6, 6)
-        Me.pnlSummary.Name = "pnlSummary"
-        Me.pnlSummary.Size = New System.Drawing.Size(365, 613)
-        Me.pnlSummary.TabIndex = 0
         '
         'btnSave
         '
@@ -145,6 +149,22 @@ Partial Class frmEventView
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(377, 17)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(300, 602)
+        Me.ListBox1.TabIndex = 5
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(683, 97)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox2.TabIndex = 6
+        '
         'frmEventView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -174,4 +194,6 @@ Partial Class frmEventView
     Friend WithEvents btnOpen As Button
     Friend WithEvents btnNew As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents ListBox1 As ListBox
 End Class

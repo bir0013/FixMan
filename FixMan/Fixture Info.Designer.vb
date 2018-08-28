@@ -26,6 +26,7 @@ Partial Class frmFixtureInfo
         Me.lstDocuments = New System.Windows.Forms.ListBox()
         Me.webDocViewer = New System.Windows.Forms.WebBrowser()
         Me.tabSummary = New System.Windows.Forms.TabPage()
+        Me.lblColourMix = New System.Windows.Forms.Label()
         Me.lblNotesPrompt = New System.Windows.Forms.Label()
         Me.rtbNotes = New System.Windows.Forms.RichTextBox()
         Me.lstEffects = New System.Windows.Forms.ListBox()
@@ -55,7 +56,6 @@ Partial Class frmFixtureInfo
         Me.lblManufacturerPrompt = New System.Windows.Forms.Label()
         Me.lblImagePrompt = New System.Windows.Forms.Label()
         Me.tabTabs = New System.Windows.Forms.TabControl()
-        Me.lblColourMix = New System.Windows.Forms.Label()
         Me.tabManual.SuspendLayout()
         Me.tabSummary.SuspendLayout()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +130,15 @@ Partial Class frmFixtureInfo
         Me.tabSummary.TabIndex = 0
         Me.tabSummary.Text = "Summary"
         Me.tabSummary.UseVisualStyleBackColor = True
+        '
+        'lblColourMix
+        '
+        Me.lblColourMix.AutoSize = True
+        Me.lblColourMix.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColourMix.Location = New System.Drawing.Point(622, 11)
+        Me.lblColourMix.Name = "lblColourMix"
+        Me.lblColourMix.Size = New System.Drawing.Size(0, 16)
+        Me.lblColourMix.TabIndex = 47
         '
         'lblNotesPrompt
         '
@@ -446,15 +455,6 @@ Partial Class frmFixtureInfo
         Me.tabTabs.Size = New System.Drawing.Size(897, 534)
         Me.tabTabs.TabIndex = 0
         '
-        'lblColourMix
-        '
-        Me.lblColourMix.AutoSize = True
-        Me.lblColourMix.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblColourMix.Location = New System.Drawing.Point(622, 11)
-        Me.lblColourMix.Name = "lblColourMix"
-        Me.lblColourMix.Size = New System.Drawing.Size(0, 16)
-        Me.lblColourMix.TabIndex = 47
-        '
         'frmFixtureInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -462,7 +462,7 @@ Partial Class frmFixtureInfo
         Me.ClientSize = New System.Drawing.Size(904, 541)
         Me.Controls.Add(Me.tabTabs)
         Me.Name = "frmFixtureInfo"
-        Me.Text = "*ASSIGN NAME OF CURRENT FIXTURE HERE*"
+        Me.Text = "k"
         Me.tabManual.ResumeLayout(False)
         Me.tabSummary.ResumeLayout(False)
         Me.tabSummary.PerformLayout()

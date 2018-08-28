@@ -46,7 +46,7 @@ Public Class frmDatabase
         Dim response As Integer
         response = MsgBox("Are you sure you want to exit?", 36, "Exit?")
         If response = 6 Then
-            response = MsgBox("Would you like to save your work?", 36, "Exit?")
+            response = MsgBox("Would you like to save your work?", 36, "Save?")
             If response = 6 Then
                 btnSaveStoreroom.PerformClick()
                 btnSaveEvent.PerformClick()
@@ -160,5 +160,18 @@ Public Class frmDatabase
         frmFixtureInfo.Show()
 
         'MsgBox(selectedfixture)
+    End Sub
+
+    Private Sub btnNewStoreroom_Click(sender As Object, e As EventArgs) Handles btnNewStoreroom.Click
+
+
+        Dim response As Integer
+        response = MsgBox("Would you like to save your work?", 36, "Save?")
+        If response = 6 Then
+            btnSaveStoreroom.PerformClick()
+        End If
+        lblCurrentStoreroom.Text = String.Empty
+        dgdStoreroom.Rows.Clear()
+
     End Sub
 End Class

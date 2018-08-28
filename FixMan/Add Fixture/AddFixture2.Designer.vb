@@ -77,13 +77,13 @@ Partial Class frmAddFix2
         Me.pnlModel = New System.Windows.Forms.Panel()
         Me.pnlType = New System.Windows.Forms.Panel()
         Me.pnlColours = New System.Windows.Forms.Panel()
+        Me.chkColourmix = New System.Windows.Forms.CheckBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.txtEffects = New System.Windows.Forms.TextBox()
         Me.btnAddEffect = New System.Windows.Forms.Button()
         Me.pnlGobos = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.dlgOpenImage = New System.Windows.Forms.OpenFileDialog()
-        Me.chkColourmix = New System.Windows.Forms.CheckBox()
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -644,6 +644,16 @@ Partial Class frmAddFix2
         Me.pnlColours.Size = New System.Drawing.Size(333, 208)
         Me.pnlColours.TabIndex = 53
         '
+        'chkColourmix
+        '
+        Me.chkColourmix.AutoSize = True
+        Me.chkColourmix.Location = New System.Drawing.Point(253, 182)
+        Me.chkColourmix.Name = "chkColourmix"
+        Me.chkColourmix.Size = New System.Drawing.Size(78, 17)
+        Me.chkColourmix.TabIndex = 39
+        Me.chkColourmix.Text = "ColourMix?"
+        Me.chkColourmix.UseVisualStyleBackColor = True
+        '
         'Panel12
         '
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -660,12 +670,12 @@ Partial Class frmAddFix2
         '
         Me.txtEffects.Location = New System.Drawing.Point(10, 26)
         Me.txtEffects.Name = "txtEffects"
-        Me.txtEffects.Size = New System.Drawing.Size(159, 20)
+        Me.txtEffects.Size = New System.Drawing.Size(148, 20)
         Me.txtEffects.TabIndex = 20
         '
         'btnAddEffect
         '
-        Me.btnAddEffect.Location = New System.Drawing.Point(175, 26)
+        Me.btnAddEffect.Location = New System.Drawing.Point(166, 26)
         Me.btnAddEffect.Name = "btnAddEffect"
         Me.btnAddEffect.Size = New System.Drawing.Size(75, 20)
         Me.btnAddEffect.TabIndex = 21
@@ -699,16 +709,6 @@ Partial Class frmAddFix2
         '
         Me.dlgOpenImage.Filter = "Image Files|*.BMP; *.JPG;*.JPEG;*.GIF;*.WMF;*.PNG|All Files|*.*"
         Me.dlgOpenImage.Title = "Select an image"
-        '
-        'chkColourmix
-        '
-        Me.chkColourmix.AutoSize = True
-        Me.chkColourmix.Location = New System.Drawing.Point(253, 182)
-        Me.chkColourmix.Name = "chkColourmix"
-        Me.chkColourmix.Size = New System.Drawing.Size(78, 17)
-        Me.chkColourmix.TabIndex = 39
-        Me.chkColourmix.Text = "ColourMix?"
-        Me.chkColourmix.UseVisualStyleBackColor = True
         '
         'frmAddFix2
         '

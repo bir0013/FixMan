@@ -48,7 +48,8 @@ Public Class frmAddFix3
                                                 New XElement("IsAutomatic", FixBeamAngle.FixBeamAuto),
                                     New XElement("Notes", FixNotes),
                                     New XElement("Colours"),
-                                    New XElement("Gobos"))
+                                    New XElement("Gobos"),
+                                    New XElement("IsColourMix", FixColourMix))
 
         fixfile.Element("Root").Add(fixinfo)
 

@@ -83,6 +83,7 @@ Partial Class frmAddFix2
         Me.pnlGobos = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.dlgOpenImage = New System.Windows.Forms.OpenFileDialog()
+        Me.chkColourmix = New System.Windows.Forms.CheckBox()
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,7 +218,11 @@ Partial Class frmAddFix2
         '
         Me.dgdColours.AllowUserToAddRows = False
         Me.dgdColours.AllowUserToDeleteRows = False
+        Me.dgdColours.AllowUserToResizeColumns = False
+        Me.dgdColours.AllowUserToResizeRows = False
         Me.dgdColours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdColours.ColumnHeadersVisible = False
+        Me.dgdColours.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgdColours.Location = New System.Drawing.Point(9, 22)
         Me.dgdColours.Name = "dgdColours"
         Me.dgdColours.RowHeadersWidth = 10
@@ -229,7 +234,11 @@ Partial Class frmAddFix2
         '
         Me.dgdGobos.AllowUserToAddRows = False
         Me.dgdGobos.AllowUserToDeleteRows = False
+        Me.dgdGobos.AllowUserToResizeColumns = False
+        Me.dgdGobos.AllowUserToResizeRows = False
         Me.dgdGobos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdGobos.ColumnHeadersVisible = False
+        Me.dgdGobos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgdGobos.Location = New System.Drawing.Point(9, 20)
         Me.dgdGobos.Name = "dgdGobos"
         Me.dgdGobos.RowHeadersWidth = 10
@@ -624,6 +633,7 @@ Partial Class frmAddFix2
         'pnlColours
         '
         Me.pnlColours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlColours.Controls.Add(Me.chkColourmix)
         Me.pnlColours.Controls.Add(Me.dgdColours)
         Me.pnlColours.Controls.Add(Me.lblColoursPrompt)
         Me.pnlColours.Controls.Add(Me.btnColourText)
@@ -689,6 +699,16 @@ Partial Class frmAddFix2
         '
         Me.dlgOpenImage.Filter = "Image Files|*.BMP; *.JPG;*.JPEG;*.GIF;*.WMF;*.PNG|All Files|*.*"
         Me.dlgOpenImage.Title = "Select an image"
+        '
+        'chkColourmix
+        '
+        Me.chkColourmix.AutoSize = True
+        Me.chkColourmix.Location = New System.Drawing.Point(253, 182)
+        Me.chkColourmix.Name = "chkColourmix"
+        Me.chkColourmix.Size = New System.Drawing.Size(78, 17)
+        Me.chkColourmix.TabIndex = 39
+        Me.chkColourmix.Text = "ColourMix?"
+        Me.chkColourmix.UseVisualStyleBackColor = True
         '
         'frmAddFix2
         '
@@ -815,4 +835,5 @@ Partial Class frmAddFix2
     Friend WithEvents btnAddEffect As Button
     Friend WithEvents Panel14 As Panel
     Friend WithEvents dlgOpenImage As OpenFileDialog
+    Friend WithEvents chkColourmix As CheckBox
 End Class

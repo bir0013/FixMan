@@ -50,6 +50,11 @@ Public Class frmFixtureInfo
         lblColourTemp.Text = fix.DocumentElement.ChildNodes(0).ChildNodes(6).InnerText
         lblTPD.Text = fix.DocumentElement.ChildNodes(0).ChildNodes(7).InnerText
         rtbNotes.Text = fix.DocumentElement.ChildNodes(0).ChildNodes(17).InnerText
+        If fix.DocumentElement.ChildNodes(0).ChildNodes(20).InnerText = "true" Then
+            lblColourMix.Text = "ColourMix is supported"
+        ElseIf fix.DocumentElement.ChildNodes(0).ChildNodes(20).InnerText = "false" Then
+            lblColourMix.Text = "ColourMix is not supported"
+        End If
 
         If fix.DocumentElement.ChildNodes(0).ChildNodes(14).InnerText = fix.DocumentElement.ChildNodes(0).ChildNodes(15).InnerText Then
             lblAngle.Text = fix.DocumentElement.ChildNodes(0).ChildNodes(14).InnerText & "°"

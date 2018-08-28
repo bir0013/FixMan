@@ -13,10 +13,10 @@ Module Universal
 
     'Add fixture variables
     Public FixImage As String
-
     Public FixManufacturer, FixModel, FixSource, FixType, FixOptical As String
     Public FixColourTemp, FixTotalPowerDraw As Integer
     Public FixControl, FixEffects, FixFiles, FixGoboDataType, FixColourDataType, FixGobos, FixColours As New List(Of String)
+    Public FixColourMix As Boolean
 
     Public FixNotes As String
 

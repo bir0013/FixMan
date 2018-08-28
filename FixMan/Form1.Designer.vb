@@ -33,14 +33,6 @@ Partial Class frmDatabase
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.dgdStoreroom = New System.Windows.Forms.DataGridView()
-        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlStoreroom = New System.Windows.Forms.Panel()
         Me.lblCurrentStoreroom = New System.Windows.Forms.Label()
         Me.lblStoreroom = New System.Windows.Forms.Label()
@@ -61,6 +53,14 @@ Partial Class frmDatabase
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.dlgOpenStoreroom = New System.Windows.Forms.OpenFileDialog()
+        Me.FixImage = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.FixManufacturer = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixModel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixSource = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStoreroom.SuspendLayout()
@@ -145,6 +145,7 @@ Partial Class frmDatabase
         '
         Me.dgdStoreroom.AllowUserToAddRows = False
         Me.dgdStoreroom.AllowUserToDeleteRows = False
+        Me.dgdStoreroom.AllowUserToOrderColumns = True
         Me.dgdStoreroom.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -156,52 +157,6 @@ Partial Class frmDatabase
         Me.dgdStoreroom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
         Me.dgdStoreroom.TabIndex = 3
-        '
-        'FixImage
-        '
-        Me.FixImage.HeaderText = "Image"
-        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.FixImage.Name = "FixImage"
-        '
-        'FixManufacturer
-        '
-        Me.FixManufacturer.HeaderText = "Manufacturer"
-        Me.FixManufacturer.Name = "FixManufacturer"
-        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FixManufacturer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'FixModel
-        '
-        Me.FixModel.HeaderText = "Model"
-        Me.FixModel.Name = "FixModel"
-        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.FixModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'FixSource
-        '
-        Me.FixSource.HeaderText = "Light Source"
-        Me.FixSource.Name = "FixSource"
-        '
-        'FixType
-        '
-        Me.FixType.HeaderText = "Type"
-        Me.FixType.Name = "FixType"
-        '
-        'FixOptics
-        '
-        Me.FixOptics.HeaderText = "Optic Type"
-        Me.FixOptics.Name = "FixOptics"
-        '
-        'FixPower
-        '
-        Me.FixPower.HeaderText = "Total Power Draw"
-        Me.FixPower.Name = "FixPower"
-        '
-        'FixQty
-        '
-        Me.FixQty.HeaderText = "Qty."
-        Me.FixQty.Name = "FixQty"
-        Me.FixQty.Width = 50
         '
         'pnlStoreroom
         '
@@ -394,6 +349,51 @@ Partial Class frmDatabase
         '
         Me.dlgOpenStoreroom.FileName = "OpenFileDialog1"
         '
+        'FixImage
+        '
+        Me.FixImage.HeaderText = "Image"
+        Me.FixImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.FixImage.Name = "FixImage"
+        '
+        'FixManufacturer
+        '
+        Me.FixManufacturer.HeaderText = "Manufacturer"
+        Me.FixManufacturer.Name = "FixManufacturer"
+        Me.FixManufacturer.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'FixModel
+        '
+        Me.FixModel.HeaderText = "Model"
+        Me.FixModel.Name = "FixModel"
+        Me.FixModel.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'FixSource
+        '
+        Me.FixSource.HeaderText = "Light Source"
+        Me.FixSource.Name = "FixSource"
+        '
+        'FixType
+        '
+        Me.FixType.HeaderText = "Type"
+        Me.FixType.Name = "FixType"
+        Me.FixType.Width = 110
+        '
+        'FixOptics
+        '
+        Me.FixOptics.HeaderText = "Optic Type"
+        Me.FixOptics.Name = "FixOptics"
+        '
+        'FixPower
+        '
+        Me.FixPower.HeaderText = "Total Power Draw"
+        Me.FixPower.Name = "FixPower"
+        '
+        'FixQty
+        '
+        Me.FixQty.HeaderText = "Qty."
+        Me.FixQty.Name = "FixQty"
+        Me.FixQty.Width = 50
+        '
         'frmDatabase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -454,6 +454,7 @@ Partial Class frmDatabase
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents dlgOpenStoreroom As OpenFileDialog
     Friend WithEvents FixImage As DataGridViewImageColumn
     Friend WithEvents FixManufacturer As DataGridViewTextBoxColumn
     Friend WithEvents FixModel As DataGridViewTextBoxColumn
@@ -462,5 +463,4 @@ Partial Class frmDatabase
     Friend WithEvents FixOptics As DataGridViewTextBoxColumn
     Friend WithEvents FixPower As DataGridViewTextBoxColumn
     Friend WithEvents FixQty As DataGridViewTextBoxColumn
-    Friend WithEvents dlgOpenStoreroom As OpenFileDialog
 End Class

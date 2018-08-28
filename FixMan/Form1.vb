@@ -44,10 +44,14 @@ Public Class frmDatabase
 
         '#THIS COULD BE IMPROVED AT A LATER DATE##
         Dim response As Integer
-        response = MsgBox("Are you sure you want to save and exit?", 36, "Exit?")
+        response = MsgBox("Are you sure you want to exit?", 36, "Exit?")
         If response = 6 Then
-            btnSaveStoreroom.PerformClick()
-            btnSaveEvent.PerformClick()
+            response = MsgBox("Would you like to save your work?", 36, "Exit?")
+            If response = 6 Then
+                btnSaveStoreroom.PerformClick()
+                btnSaveEvent.PerformClick()
+                End
+            End If
             End
         End If
     End Sub
@@ -69,12 +73,24 @@ Public Class frmDatabase
         Dim qtyid As XmlNode
         Dim qty As XmlNode
 
+        Dim Valid As Boolean
+        Dim Name As String
+
         If lblCurrentStoreroom.Text = "" Then
-            filename = InputBox("What would you like to name this file?") & ".xml"
+            While Valid = False
+                Name = InputBox("What would you like to name this storeroom?")
+                If Not Name = String.Empty Then
+                    Valid = True
+                Else
+                    Valid = False
+                    MsgBox("Please enter a name.")
+                End If
+            End While
+            filename = Name & ".xml"
         Else
             filename = lblCurrentStoreroom.Text
             filename = filename.Remove(0, 9)
-            MsgBox(filename)
+            'MsgBox(filename)
             strm.Load(filename)
             strm.RemoveAll()
         End If

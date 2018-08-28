@@ -258,6 +258,7 @@ Public Class frmAddFix2
         FixBeamAngle.FixBeamMax = nudBeamAngleTo.Value
         FixBeamAngle.FixBeamAuto = chkAutoZoom.Checked
 
+
         'This takes all control protocols from lstControl and stores them in the FixControl list
         If lstControl.Items.Count > 0 Then
             For Each item In lstControl.Items

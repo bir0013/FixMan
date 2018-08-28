@@ -32,6 +32,7 @@ Partial Class frmFixtureInfo
         Me.lstControl = New System.Windows.Forms.ListBox()
         Me.dgdGobos = New System.Windows.Forms.DataGridView()
         Me.dgdColours = New System.Windows.Forms.DataGridView()
+        Me.picImage = New System.Windows.Forms.PictureBox()
         Me.lblEffectPrompt = New System.Windows.Forms.Label()
         Me.lblGoboPrompt = New System.Windows.Forms.Label()
         Me.lblColourPrompt = New System.Windows.Forms.Label()
@@ -54,13 +55,13 @@ Partial Class frmFixtureInfo
         Me.lblManufacturerPrompt = New System.Windows.Forms.Label()
         Me.lblImagePrompt = New System.Windows.Forms.Label()
         Me.tabTabs = New System.Windows.Forms.TabControl()
-        Me.picImage = New System.Windows.Forms.PictureBox()
+        Me.lblColourMix = New System.Windows.Forms.Label()
         Me.tabManual.SuspendLayout()
         Me.tabSummary.SuspendLayout()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabTabs.SuspendLayout()
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabTabs.SuspendLayout()
         Me.SuspendLayout()
         '
         'tabManual
@@ -93,6 +94,7 @@ Partial Class frmFixtureInfo
         '
         'tabSummary
         '
+        Me.tabSummary.Controls.Add(Me.lblColourMix)
         Me.tabSummary.Controls.Add(Me.lblNotesPrompt)
         Me.tabSummary.Controls.Add(Me.rtbNotes)
         Me.tabSummary.Controls.Add(Me.lstEffects)
@@ -179,8 +181,12 @@ Partial Class frmFixtureInfo
         '
         Me.dgdGobos.AllowUserToAddRows = False
         Me.dgdGobos.AllowUserToDeleteRows = False
+        Me.dgdGobos.AllowUserToResizeColumns = False
+        Me.dgdGobos.AllowUserToResizeRows = False
         Me.dgdGobos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdGobos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdGobos.ColumnHeadersVisible = False
+        Me.dgdGobos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgdGobos.Location = New System.Drawing.Point(559, 208)
         Me.dgdGobos.Name = "dgdGobos"
         Me.dgdGobos.RowHeadersWidth = 10
@@ -192,14 +198,28 @@ Partial Class frmFixtureInfo
         '
         Me.dgdColours.AllowUserToAddRows = False
         Me.dgdColours.AllowUserToDeleteRows = False
+        Me.dgdColours.AllowUserToResizeColumns = False
+        Me.dgdColours.AllowUserToResizeRows = False
         Me.dgdColours.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdColours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgdColours.ColumnHeadersVisible = False
+        Me.dgdColours.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgdColours.Location = New System.Drawing.Point(559, 30)
         Me.dgdColours.Name = "dgdColours"
         Me.dgdColours.RowHeadersWidth = 10
         Me.dgdColours.Size = New System.Drawing.Size(314, 150)
         Me.dgdColours.TabIndex = 40
         Me.dgdColours.TabStop = False
+        '
+        'picImage
+        '
+        Me.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picImage.Location = New System.Drawing.Point(16, 27)
+        Me.picImage.Name = "picImage"
+        Me.picImage.Size = New System.Drawing.Size(269, 283)
+        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picImage.TabIndex = 24
+        Me.picImage.TabStop = False
         '
         'lblEffectPrompt
         '
@@ -426,15 +446,14 @@ Partial Class frmFixtureInfo
         Me.tabTabs.Size = New System.Drawing.Size(897, 534)
         Me.tabTabs.TabIndex = 0
         '
-        'picImage
+        'lblColourMix
         '
-        Me.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picImage.Location = New System.Drawing.Point(16, 27)
-        Me.picImage.Name = "picImage"
-        Me.picImage.Size = New System.Drawing.Size(269, 283)
-        Me.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picImage.TabIndex = 24
-        Me.picImage.TabStop = False
+        Me.lblColourMix.AutoSize = True
+        Me.lblColourMix.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColourMix.Location = New System.Drawing.Point(622, 11)
+        Me.lblColourMix.Name = "lblColourMix"
+        Me.lblColourMix.Size = New System.Drawing.Size(0, 16)
+        Me.lblColourMix.TabIndex = 47
         '
         'frmFixtureInfo
         '
@@ -449,8 +468,8 @@ Partial Class frmFixtureInfo
         Me.tabSummary.PerformLayout()
         CType(Me.dgdGobos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabTabs.ResumeLayout(False)
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabTabs.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -488,4 +507,5 @@ Partial Class frmFixtureInfo
     Friend WithEvents lblNotesPrompt As Label
     Friend WithEvents webDocViewer As WebBrowser
     Friend WithEvents lstDocuments As ListBox
+    Friend WithEvents lblColourMix As Label
 End Class

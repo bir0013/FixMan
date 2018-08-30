@@ -237,10 +237,10 @@ Public Class frmAddFix2
         'This Sub is responsible for putting all information entered in frmAddFix2 into temp variables so that they can be commited to file later
 
         'These variables are used to keep track of position when scrolling through and getting information from the colour and gobo datagridviews
-        Dim colourverticalscroll As Integer = 0
-        Dim colourhorizontalscroll As Integer = 0
-        Dim goboverticalscroll As Integer = 0
-        Dim gobohorizontalscroll As Integer = 0
+        'Dim colourverticalscroll As Integer = 0
+        'Dim colourhorizontalscroll As Integer = 0
+        'Dim goboverticalscroll As Integer = 0
+        'Dim gobohorizontalscroll As Integer = 0
 
         'This is where most of the information is stored
         If picImage.Image Is Nothing Then
@@ -271,36 +271,60 @@ Public Class frmAddFix2
         FixTotalPowerDraw = nudPowerDraw.Value
 
         'This is responsible for taking all text and images from dgdColours and storing them in FixColours (and also FixColourDataType, which is used to keep track of which entries in FixColours correspond with which data type)
-        For loops = 1 To ((colourvertical * 3) + colourhorizontal)
-            If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
-                FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
-                FixColours.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
-            ElseIf dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Image" Then
-                FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
-                FixColours.Add(ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value))
-            End If
-            If colourhorizontalscroll = 2 Then
-                colourverticalscroll += 1
-                colourhorizontalscroll = 0
-            End If
-            colourhorizontalscroll += 1
+        For colourverticalscroll As Integer = 0 To dgdColours.RowCount - 1
+            For colourhorizontalscroll As Integer = 0 To dgdColours.ColumnCount - 1
+                If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
+                    FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+                    FixColours.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
+                ElseIf dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Image" Then
+                    FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+                    FixColours.Add(ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value))
+                End If
+            Next
         Next
 
+        'For loops = 1 To ((colourvertical * 3) + colourhorizontal)
+        '    If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
+        '        FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+        '        FixColours.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value)
+        '    ElseIf dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Image" Then
+        '        FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
+        '        FixColours.Add(ImageToBase64(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Value))
+        '    End If
+        '    If colourhorizontalscroll = 2 Then
+        '        colourverticalscroll += 1
+        '        colourhorizontalscroll = 0
+        '    End If
+        '    colourhorizontalscroll += 1
+        'Next
+
         'This is responsible for taking all text and images from dgdColours and storing them in FixColours (and also FixColourDataType, which is used to keep track of which entries in FixColours correspond with which data type)
-        For loops = 1 To ((gobovertical * 3) + gobohorizontal)
-            If dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Text" Then
-                FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
-                FixGobos.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value)
-            ElseIf dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Image" Then
-                FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
-                FixGobos.Add(ImageToBase64(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value))
-            End If
-            If gobohorizontalscroll = 2 Then
-                goboverticalscroll += 1
-                gobohorizontalscroll = 0
-            End If
-            gobohorizontalscroll += 1
+        For goboverticalscroll As Integer = 0 To dgdGobos.RowCount - 1
+            For gobohorizontalscroll As Integer = 0 To dgdGobos.ColumnCount - 1
+                If dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Text" Then
+                    FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+                    FixGobos.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value)
+                ElseIf dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Image" Then
+                    FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+                    FixGobos.Add(ImageToBase64(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value))
+                End If
+            Next
         Next
+
+        'For loops = 1 To ((gobovertical * 3) + gobohorizontal)
+        '    If dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Text" Then
+        '        FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+        '        FixGobos.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value)
+        '    ElseIf dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Image" Then
+        '        FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
+        '        FixGobos.Add(ImageToBase64(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Value))
+        '    End If
+        '    If gobohorizontalscroll = 2 Then
+        '        goboverticalscroll += 1
+        '        gobohorizontalscroll = 0
+        '    End If
+        '    gobohorizontalscroll += 1
+        'Next
 
         'This takes all effects from lstEffects and stores them in the FixEffects list
         If lstEffects.Items.Count > 0 Then

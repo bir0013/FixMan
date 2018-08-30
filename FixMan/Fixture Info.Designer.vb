@@ -462,7 +462,8 @@ Partial Class frmFixtureInfo
         Me.ClientSize = New System.Drawing.Size(904, 541)
         Me.Controls.Add(Me.tabTabs)
         Me.Name = "frmFixtureInfo"
-        Me.Text = "k"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "**ASSIGN NAME OF SELECTED FIXTURE HERE**"
         Me.tabManual.ResumeLayout(False)
         Me.tabSummary.ResumeLayout(False)
         Me.tabSummary.PerformLayout()

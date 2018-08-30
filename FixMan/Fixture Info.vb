@@ -53,7 +53,7 @@ Public Class frmFixtureInfo
         If fix.DocumentElement.ChildNodes(0).ChildNodes(20).InnerText = "true" Then
             lblColourMix.Text = "ColourMix is supported"
         ElseIf fix.DocumentElement.ChildNodes(0).ChildNodes(20).InnerText = "false" Then
-            lblColourMix.Text = "ColourMix is not supported"
+            lblColourMix.Text = "ColourMix is not supportedt"
         End If
 
         If fix.DocumentElement.ChildNodes(0).ChildNodes(14).InnerText = fix.DocumentElement.ChildNodes(0).ChildNodes(15).InnerText Then
@@ -83,7 +83,6 @@ Public Class frmFixtureInfo
             End If
             goboloops += 1
         Next
-
     End Sub
 
     Private Sub lstDocuments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDocuments.SelectedIndexChanged

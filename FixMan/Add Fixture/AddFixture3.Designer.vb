@@ -113,6 +113,7 @@ Partial Class frmAddFix3
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lstFiles)
         Me.Name = "frmAddFix3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Fixture"
         Me.ResumeLayout(False)
         Me.PerformLayout()

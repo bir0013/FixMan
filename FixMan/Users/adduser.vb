@@ -56,17 +56,19 @@ Public Class frmAddUser
                 Exit Sub
         End Select
 
-        Select Case True
-            Case rdbEventEdit.Checked
-                eventrights = 2
-            Case rdbEventView.Checked
-                eventrights = 1
-            Case rdbEventBlock.Checked
-                eventrights = 0
-            Case Not rdbEventEdit.Checked And Not rdbEventView.Checked And Not rdbEventBlock.Checked
-                MsgBox("Please select event priveliges.")
-                Exit Sub
-        End Select
+        'This is code for future functionality
+        eventrights = 2
+        'Select Case True
+        '    Case rdbEventEdit.Checked
+        '        eventrights = 2
+        '    Case rdbEventView.Checked
+        '        eventrights = 1
+        '    Case rdbEventBlock.Checked
+        '        eventrights = 0
+        '    Case Not rdbEventEdit.Checked And Not rdbEventView.Checked And Not rdbEventBlock.Checked
+        '        MsgBox("Please select event priveliges.")
+        '        Exit Sub
+        'End Select
 
         useredit = chkUserEdit.Checked
 
@@ -112,4 +114,6 @@ Public Class frmAddUser
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
+
+
 End Class

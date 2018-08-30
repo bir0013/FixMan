@@ -22,14 +22,20 @@ Partial Class frmDatabase
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.mnuMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewStoreroomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadStoreroomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveStoreroomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.msmAddFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.msmRemoveFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.msmViewFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.dgdStoreroom = New System.Windows.Forms.DataGridView()
@@ -41,7 +47,12 @@ Partial Class frmDatabase
         Me.FixOptics = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FixPower = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FixQty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctxStoreroom = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsmAddFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRemoveFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmViewFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlStoreroom = New System.Windows.Forms.Panel()
+        Me.btnNewStoreroom = New System.Windows.Forms.Button()
         Me.lblCurrentStoreroom = New System.Windows.Forms.Label()
         Me.lblStoreroom = New System.Windows.Forms.Label()
         Me.btnLoadStoreroom = New System.Windows.Forms.Button()
@@ -51,6 +62,7 @@ Partial Class frmDatabase
         Me.btnRemoveFixture = New System.Windows.Forms.Button()
         Me.btnAddFixture = New System.Windows.Forms.Button()
         Me.pnlEvent = New System.Windows.Forms.Panel()
+        Me.btnNewEvent = New System.Windows.Forms.Button()
         Me.lblCurrentEvent = New System.Windows.Forms.Label()
         Me.lblEvent = New System.Windows.Forms.Label()
         Me.btnLoadEvent = New System.Windows.Forms.Button()
@@ -59,12 +71,14 @@ Partial Class frmDatabase
         Me.btnOpenFixSheet = New System.Windows.Forms.Button()
         Me.btnOpenEventMan = New System.Windows.Forms.Button()
         Me.lblCurrentUser = New System.Windows.Forms.Label()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.dlgOpenStoreroom = New System.Windows.Forms.OpenFileDialog()
-        Me.btnNewStoreroom = New System.Windows.Forms.Button()
-        Me.btnNewEvent = New System.Windows.Forms.Button()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.msmSearchFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmSearchStoreroom = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dlgSaveStoreroom = New System.Windows.Forms.SaveFileDialog()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ctxStoreroom.SuspendLayout()
         Me.pnlStoreroom.SuspendLayout()
         Me.pnlEvent.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +86,7 @@ Partial Class frmDatabase
         '
         'mnuMenuStrip
         '
-        Me.mnuMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.mnuMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.mnuMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.mnuMenuStrip.Name = "mnuMenuStrip"
         Me.mnuMenuStrip.Size = New System.Drawing.Size(1003, 24)
@@ -81,52 +95,82 @@ Partial Class frmDatabase
         '
         'FileToolStripMenuItem
         '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewStoreroomToolStripMenuItem, Me.LoadStoreroomToolStripMenuItem, Me.SaveStoreroomToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'NewStoreroomToolStripMenuItem
+        '
+        Me.NewStoreroomToolStripMenuItem.Name = "NewStoreroomToolStripMenuItem"
+        Me.NewStoreroomToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.NewStoreroomToolStripMenuItem.Text = "New Storeroom"
+        '
+        'LoadStoreroomToolStripMenuItem
+        '
+        Me.LoadStoreroomToolStripMenuItem.Name = "LoadStoreroomToolStripMenuItem"
+        Me.LoadStoreroomToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.LoadStoreroomToolStripMenuItem.Text = "Load Storeroom"
+        '
+        'SaveStoreroomToolStripMenuItem
+        '
+        Me.SaveStoreroomToolStripMenuItem.Name = "SaveStoreroomToolStripMenuItem"
+        Me.SaveStoreroomToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.SaveStoreroomToolStripMenuItem.Text = "Save Storeroom"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsersToolStripMenuItem})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msmAddFixture, Me.msmRemoveFixture, Me.msmViewFixture, Me.msmSearchFixture, Me.UsersToolStripMenuItem})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
+        'msmAddFixture
+        '
+        Me.msmAddFixture.Name = "msmAddFixture"
+        Me.msmAddFixture.Size = New System.Drawing.Size(243, 22)
+        Me.msmAddFixture.Text = "Add Fixture to Storeroom"
+        '
+        'msmRemoveFixture
+        '
+        Me.msmRemoveFixture.Name = "msmRemoveFixture"
+        Me.msmRemoveFixture.Size = New System.Drawing.Size(243, 22)
+        Me.msmRemoveFixture.Text = "Remove Fixture from Storeroom"
+        '
+        'msmViewFixture
+        '
+        Me.msmViewFixture.Name = "msmViewFixture"
+        Me.msmViewFixture.Size = New System.Drawing.Size(243, 22)
+        Me.msmViewFixture.Text = "View Selected Fixture"
+        '
         'UsersToolStripMenuItem
         '
         Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
-        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
-        Me.UsersToolStripMenuItem.Text = "Users"
-        '
-        'WindowToolStripMenuItem
-        '
-        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
-        Me.WindowToolStripMenuItem.Text = "Window"
+        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.UsersToolStripMenuItem.Text = "Edit Users"
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewHelpToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'ViewHelpToolStripMenuItem
-        '
-        Me.ViewHelpToolStripMenuItem.Name = "ViewHelpToolStripMenuItem"
-        Me.ViewHelpToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
-        Me.ViewHelpToolStripMenuItem.Text = "View Help"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
-        Me.AboutToolStripMenuItem.Text = "About"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.HelpToolStripMenuItem.Text = "About"
         '
         'btnLogout
         '
-        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnLogout.Location = New System.Drawing.Point(835, 625)
+        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnLogout.Location = New System.Drawing.Point(835, 624)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(75, 23)
         Me.btnLogout.TabIndex = 1
@@ -135,8 +179,8 @@ Partial Class frmDatabase
         '
         'btnExit
         '
-        Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExit.Location = New System.Drawing.Point(916, 625)
+        Me.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExit.Location = New System.Drawing.Point(916, 624)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 2
@@ -153,11 +197,12 @@ Partial Class frmDatabase
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdStoreroom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgdStoreroom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FixImage, Me.FixManufacturer, Me.FixModel, Me.FixSource, Me.FixType, Me.FixOptics, Me.FixPower, Me.FixQty})
+        Me.dgdStoreroom.ContextMenuStrip = Me.ctxStoreroom
         Me.dgdStoreroom.Location = New System.Drawing.Point(190, 37)
         Me.dgdStoreroom.Name = "dgdStoreroom"
         Me.dgdStoreroom.RowTemplate.Height = 55
         Me.dgdStoreroom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgdStoreroom.Size = New System.Drawing.Size(803, 582)
+        Me.dgdStoreroom.Size = New System.Drawing.Size(801, 578)
         Me.dgdStoreroom.TabIndex = 3
         '
         'FixImage
@@ -187,7 +232,7 @@ Partial Class frmDatabase
         '
         Me.FixType.HeaderText = "Type"
         Me.FixType.Name = "FixType"
-        Me.FixType.Width = 110
+        Me.FixType.Width = 120
         '
         'FixOptics
         '
@@ -198,12 +243,37 @@ Partial Class frmDatabase
         '
         Me.FixPower.HeaderText = "Total Power Draw"
         Me.FixPower.Name = "FixPower"
+        Me.FixPower.Width = 88
         '
         'FixQty
         '
         Me.FixQty.HeaderText = "Qty."
         Me.FixQty.Name = "FixQty"
         Me.FixQty.Width = 50
+        '
+        'ctxStoreroom
+        '
+        Me.ctxStoreroom.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmAddFixture, Me.tsmRemoveFixture, Me.tsmViewFixture, Me.tsmSearchStoreroom})
+        Me.ctxStoreroom.Name = "ContextMenuStrip1"
+        Me.ctxStoreroom.Size = New System.Drawing.Size(204, 92)
+        '
+        'tsmAddFixture
+        '
+        Me.tsmAddFixture.Name = "tsmAddFixture"
+        Me.tsmAddFixture.Size = New System.Drawing.Size(203, 22)
+        Me.tsmAddFixture.Text = "Add Fixture"
+        '
+        'tsmRemoveFixture
+        '
+        Me.tsmRemoveFixture.Name = "tsmRemoveFixture"
+        Me.tsmRemoveFixture.Size = New System.Drawing.Size(203, 22)
+        Me.tsmRemoveFixture.Text = "Remove Fixture"
+        '
+        'tsmViewFixture
+        '
+        Me.tsmViewFixture.Name = "tsmViewFixture"
+        Me.tsmViewFixture.Size = New System.Drawing.Size(203, 22)
+        Me.tsmViewFixture.Text = "View Fixture Information"
         '
         'pnlStoreroom
         '
@@ -219,15 +289,26 @@ Partial Class frmDatabase
         Me.pnlStoreroom.Controls.Add(Me.btnAddFixture)
         Me.pnlStoreroom.Location = New System.Drawing.Point(11, 37)
         Me.pnlStoreroom.Name = "pnlStoreroom"
-        Me.pnlStoreroom.Size = New System.Drawing.Size(170, 222)
+        Me.pnlStoreroom.Size = New System.Drawing.Size(170, 386)
         Me.pnlStoreroom.TabIndex = 4
+        '
+        'btnNewStoreroom
+        '
+        Me.btnNewStoreroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNewStoreroom.Location = New System.Drawing.Point(50, 326)
+        Me.btnNewStoreroom.Name = "btnNewStoreroom"
+        Me.btnNewStoreroom.Size = New System.Drawing.Size(75, 47)
+        Me.btnNewStoreroom.TabIndex = 13
+        Me.btnNewStoreroom.Text = "New"
+        Me.btnNewStoreroom.UseVisualStyleBackColor = True
         '
         'lblCurrentStoreroom
         '
         Me.lblCurrentStoreroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblCurrentStoreroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentStoreroom.Location = New System.Drawing.Point(7, 20)
         Me.lblCurrentStoreroom.Name = "lblCurrentStoreroom"
-        Me.lblCurrentStoreroom.Size = New System.Drawing.Size(156, 23)
+        Me.lblCurrentStoreroom.Size = New System.Drawing.Size(156, 34)
         Me.lblCurrentStoreroom.TabIndex = 12
         Me.lblCurrentStoreroom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -242,54 +323,60 @@ Partial Class frmDatabase
         '
         'btnLoadStoreroom
         '
-        Me.btnLoadStoreroom.Location = New System.Drawing.Point(88, 162)
+        Me.btnLoadStoreroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLoadStoreroom.Location = New System.Drawing.Point(88, 273)
         Me.btnLoadStoreroom.Name = "btnLoadStoreroom"
-        Me.btnLoadStoreroom.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoadStoreroom.Size = New System.Drawing.Size(75, 47)
         Me.btnLoadStoreroom.TabIndex = 11
         Me.btnLoadStoreroom.Text = "Load"
         Me.btnLoadStoreroom.UseVisualStyleBackColor = True
         '
         'btnSaveStoreroom
         '
-        Me.btnSaveStoreroom.Location = New System.Drawing.Point(7, 162)
+        Me.btnSaveStoreroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveStoreroom.Location = New System.Drawing.Point(7, 273)
         Me.btnSaveStoreroom.Name = "btnSaveStoreroom"
-        Me.btnSaveStoreroom.Size = New System.Drawing.Size(75, 23)
+        Me.btnSaveStoreroom.Size = New System.Drawing.Size(75, 47)
         Me.btnSaveStoreroom.TabIndex = 10
         Me.btnSaveStoreroom.Text = "Save"
         Me.btnSaveStoreroom.UseVisualStyleBackColor = True
         '
         'btnSearchFixture
         '
-        Me.btnSearchFixture.Location = New System.Drawing.Point(7, 133)
+        Me.btnSearchFixture.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchFixture.Location = New System.Drawing.Point(7, 220)
         Me.btnSearchFixture.Name = "btnSearchFixture"
-        Me.btnSearchFixture.Size = New System.Drawing.Size(156, 23)
+        Me.btnSearchFixture.Size = New System.Drawing.Size(156, 47)
         Me.btnSearchFixture.TabIndex = 9
-        Me.btnSearchFixture.Text = "Search Fixture"
+        Me.btnSearchFixture.Text = "Search Storeroom"
         Me.btnSearchFixture.UseVisualStyleBackColor = True
         '
         'btnViewFixture
         '
-        Me.btnViewFixture.Location = New System.Drawing.Point(7, 104)
+        Me.btnViewFixture.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewFixture.Location = New System.Drawing.Point(7, 166)
         Me.btnViewFixture.Name = "btnViewFixture"
-        Me.btnViewFixture.Size = New System.Drawing.Size(156, 23)
+        Me.btnViewFixture.Size = New System.Drawing.Size(156, 47)
         Me.btnViewFixture.TabIndex = 8
-        Me.btnViewFixture.Text = "View Fixture"
+        Me.btnViewFixture.Text = "View Fixture Info"
         Me.btnViewFixture.UseVisualStyleBackColor = True
         '
         'btnRemoveFixture
         '
-        Me.btnRemoveFixture.Location = New System.Drawing.Point(7, 75)
+        Me.btnRemoveFixture.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemoveFixture.Location = New System.Drawing.Point(7, 113)
         Me.btnRemoveFixture.Name = "btnRemoveFixture"
-        Me.btnRemoveFixture.Size = New System.Drawing.Size(156, 23)
+        Me.btnRemoveFixture.Size = New System.Drawing.Size(156, 47)
         Me.btnRemoveFixture.TabIndex = 7
         Me.btnRemoveFixture.Text = "Remove Fixture"
         Me.btnRemoveFixture.UseVisualStyleBackColor = True
         '
         'btnAddFixture
         '
-        Me.btnAddFixture.Location = New System.Drawing.Point(7, 46)
+        Me.btnAddFixture.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddFixture.Location = New System.Drawing.Point(7, 60)
         Me.btnAddFixture.Name = "btnAddFixture"
-        Me.btnAddFixture.Size = New System.Drawing.Size(156, 23)
+        Me.btnAddFixture.Size = New System.Drawing.Size(156, 47)
         Me.btnAddFixture.TabIndex = 6
         Me.btnAddFixture.Text = "Add Fixture"
         Me.btnAddFixture.UseVisualStyleBackColor = True
@@ -305,10 +392,20 @@ Partial Class frmDatabase
         Me.pnlEvent.Controls.Add(Me.btnOpenTeamRoster)
         Me.pnlEvent.Controls.Add(Me.btnOpenFixSheet)
         Me.pnlEvent.Controls.Add(Me.btnOpenEventMan)
-        Me.pnlEvent.Location = New System.Drawing.Point(11, 265)
+        Me.pnlEvent.Location = New System.Drawing.Point(14, 464)
         Me.pnlEvent.Name = "pnlEvent"
         Me.pnlEvent.Size = New System.Drawing.Size(170, 193)
         Me.pnlEvent.TabIndex = 5
+        Me.pnlEvent.Visible = False
+        '
+        'btnNewEvent
+        '
+        Me.btnNewEvent.Location = New System.Drawing.Point(47, 164)
+        Me.btnNewEvent.Name = "btnNewEvent"
+        Me.btnNewEvent.Size = New System.Drawing.Size(75, 23)
+        Me.btnNewEvent.TabIndex = 14
+        Me.btnNewEvent.Text = "New"
+        Me.btnNewEvent.UseVisualStyleBackColor = True
         '
         'lblCurrentEvent
         '
@@ -376,14 +473,17 @@ Partial Class frmDatabase
         '
         'lblCurrentUser
         '
-        Me.lblCurrentUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCurrentUser.AutoSize = True
-        Me.lblCurrentUser.Location = New System.Drawing.Point(624, 630)
+        Me.lblCurrentUser.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblCurrentUser.Location = New System.Drawing.Point(216, 629)
         Me.lblCurrentUser.Name = "lblCurrentUser"
-        Me.lblCurrentUser.Size = New System.Drawing.Size(205, 13)
+        Me.lblCurrentUser.Size = New System.Drawing.Size(613, 18)
         Me.lblCurrentUser.TabIndex = 18
         Me.lblCurrentUser.Text = "**TO BE USED FOR CURRENT LOGIN**"
         Me.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'dlgOpenStoreroom
+        '
+        Me.dlgOpenStoreroom.Title = "Open Storeroom"
         '
         'picLogo
         '
@@ -394,33 +494,29 @@ Partial Class frmDatabase
         Me.picLogo.TabIndex = 19
         Me.picLogo.TabStop = False
         '
-        'dlgOpenStoreroom
+        'msmSearchFixture
         '
-        Me.dlgOpenStoreroom.FileName = "OpenFileDialog1"
+        Me.msmSearchFixture.Name = "msmSearchFixture"
+        Me.msmSearchFixture.Size = New System.Drawing.Size(243, 22)
+        Me.msmSearchFixture.Text = "Search Storeroom"
         '
-        'btnNewStoreroom
+        'tsmSearchStoreroom
         '
-        Me.btnNewStoreroom.Location = New System.Drawing.Point(47, 191)
-        Me.btnNewStoreroom.Name = "btnNewStoreroom"
-        Me.btnNewStoreroom.Size = New System.Drawing.Size(75, 23)
-        Me.btnNewStoreroom.TabIndex = 13
-        Me.btnNewStoreroom.Text = "New"
-        Me.btnNewStoreroom.UseVisualStyleBackColor = True
+        Me.tsmSearchStoreroom.Name = "tsmSearchStoreroom"
+        Me.tsmSearchStoreroom.Size = New System.Drawing.Size(203, 22)
+        Me.tsmSearchStoreroom.Text = "Search Storeroom"
         '
-        'btnNewEvent
+        'dlgSaveStoreroom
         '
-        Me.btnNewEvent.Location = New System.Drawing.Point(47, 164)
-        Me.btnNewEvent.Name = "btnNewEvent"
-        Me.btnNewEvent.Size = New System.Drawing.Size(75, 23)
-        Me.btnNewEvent.TabIndex = 14
-        Me.btnNewEvent.Text = "New"
-        Me.btnNewEvent.UseVisualStyleBackColor = True
+        Me.dlgSaveStoreroom.DefaultExt = "xml"
+        Me.dlgSaveStoreroom.Filter = """XML Files|*.xml"""
+        Me.dlgSaveStoreroom.Title = "Save Storeroom"
         '
         'frmDatabase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 660)
+        Me.ClientSize = New System.Drawing.Size(1003, 658)
         Me.Controls.Add(Me.mnuMenuStrip)
         Me.Controls.Add(Me.pnlEvent)
         Me.Controls.Add(Me.pnlStoreroom)
@@ -436,6 +532,7 @@ Partial Class frmDatabase
         Me.mnuMenuStrip.ResumeLayout(False)
         Me.mnuMenuStrip.PerformLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ctxStoreroom.ResumeLayout(False)
         Me.pnlStoreroom.ResumeLayout(False)
         Me.pnlStoreroom.PerformLayout()
         Me.pnlEvent.ResumeLayout(False)
@@ -449,7 +546,6 @@ Partial Class frmDatabase
     Friend WithEvents mnuMenuStrip As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnLogout As Button
     Friend WithEvents btnExit As Button
@@ -472,11 +568,23 @@ Partial Class frmDatabase
     Friend WithEvents lblCurrentEvent As Label
     Friend WithEvents lblEvent As Label
     Friend WithEvents lblCurrentUser As Label
-    Friend WithEvents ViewHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents dlgOpenStoreroom As OpenFileDialog
+    Friend WithEvents btnNewStoreroom As Button
+    Friend WithEvents btnNewEvent As Button
+    Friend WithEvents NewStoreroomToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoadStoreroomToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveStoreroomToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents msmAddFixture As ToolStripMenuItem
+    Friend WithEvents msmRemoveFixture As ToolStripMenuItem
+    Friend WithEvents msmViewFixture As ToolStripMenuItem
+    Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ctxStoreroom As ContextMenuStrip
+    Friend WithEvents tsmAddFixture As ToolStripMenuItem
+    Friend WithEvents tsmRemoveFixture As ToolStripMenuItem
+    Friend WithEvents tsmViewFixture As ToolStripMenuItem
     Friend WithEvents FixImage As DataGridViewImageColumn
     Friend WithEvents FixManufacturer As DataGridViewTextBoxColumn
     Friend WithEvents FixModel As DataGridViewTextBoxColumn
@@ -485,6 +593,7 @@ Partial Class frmDatabase
     Friend WithEvents FixOptics As DataGridViewTextBoxColumn
     Friend WithEvents FixPower As DataGridViewTextBoxColumn
     Friend WithEvents FixQty As DataGridViewTextBoxColumn
-    Friend WithEvents btnNewStoreroom As Button
-    Friend WithEvents btnNewEvent As Button
+    Friend WithEvents msmSearchFixture As ToolStripMenuItem
+    Friend WithEvents tsmSearchStoreroom As ToolStripMenuItem
+    Friend WithEvents dlgSaveStoreroom As SaveFileDialog
 End Class

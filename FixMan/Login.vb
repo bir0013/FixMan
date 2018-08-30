@@ -86,8 +86,7 @@ Public Class frmLogin
     End Function
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        'Ends the program. Is currently know to throw "Error creating window handle", which is an very nondescript error
-        End
+        Application.Exit()
     End Sub
 
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged

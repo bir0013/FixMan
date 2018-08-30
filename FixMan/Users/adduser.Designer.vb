@@ -294,7 +294,7 @@ Partial Class frmAddUser
         Me.Panel2.Controls.Add(Me.rdbInventoryBlock)
         Me.Panel2.Controls.Add(Me.rdbInventoryView)
         Me.Panel2.Controls.Add(Me.rdbInventoryEdit)
-        Me.Panel2.Location = New System.Drawing.Point(16, 39)
+        Me.Panel2.Location = New System.Drawing.Point(61, 37)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(87, 112)
         Me.Panel2.TabIndex = 24
@@ -306,10 +306,11 @@ Partial Class frmAddUser
         Me.Panel1.Controls.Add(Me.rdbEventView)
         Me.Panel1.Controls.Add(Me.rdbEventBlock)
         Me.Panel1.Controls.Add(Me.rdbEventEdit)
-        Me.Panel1.Location = New System.Drawing.Point(109, 39)
+        Me.Panel1.Location = New System.Drawing.Point(166, 26)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(84, 112)
         Me.Panel1.TabIndex = 24
+        Me.Panel1.Visible = False
         '
         'lblPriveliges
         '
@@ -354,12 +355,14 @@ Partial Class frmAddUser
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 441)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.pnlPriveliges)
         Me.Controls.Add(Me.pnlUserInfo)
         Me.Name = "frmAddUser"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New User"
         Me.pnlUserInfo.ResumeLayout(False)
         Me.pnlUserInfo.PerformLayout()

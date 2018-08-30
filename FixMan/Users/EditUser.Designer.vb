@@ -355,12 +355,14 @@ Partial Class frmEditUser
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 441)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnChange)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.pnlPriveliges)
         Me.Controls.Add(Me.pnlUserInfo)
         Me.Controls.Add(Me.btnCancel)
         Me.Name = "frmEditUser"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EditUser"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

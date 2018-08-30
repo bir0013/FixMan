@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Xml
 
 Public Class frmAddFix1
     Private Sub btnManual_Click(sender As Object, e As EventArgs) Handles btnManual.Click
@@ -12,10 +13,21 @@ Public Class frmAddFix1
     End Sub
 
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
-        dlgImportFixture.ShowDialog()
+        Dim res As DialogResult = dlgImportFixture.ShowDialog()
+        If res = Windows.Forms.DialogResult.Cancel Then
+            dlgImportFixture.FileName = String.Empty
+            Exit Sub
+        End If
 
         Dim Valid As Boolean
         Dim quantity As String
+
+        Dim fixfile As New XmlDocument()
+        fixfile.Load(dlgImportFixture.FileName)
+        If Not fixfile.DocumentElement.ChildNodes(0).Name = "Fixture" Then
+            MsgBox("Please select a valid fixture type file.")
+            Exit Sub
+        End If
 
         While Valid = False
             quantity = InputBox("How many of this fixture do you have?")

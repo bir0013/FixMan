@@ -733,6 +733,7 @@ Partial Class frmAddFix2
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnCancel)
         Me.Name = "frmAddFix2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Fixture"
         CType(Me.picImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgdColours, System.ComponentModel.ISupportInitialize).EndInit()

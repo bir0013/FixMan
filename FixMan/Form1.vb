@@ -1,14 +1,23 @@
-﻿'********************************
-
+﻿'######################################################################################
+'
+'# Title: FixMan (Fixture Manager)                                                    #
+'# Date of initial release: 30/8/2018                                                 #
+'# Author: Michael Birkett                                                            #
+'# Description: FixMan is a piece of software intended to help Audio/Visual teams to  #
+'# keep track of the inventory of stage lighting instruments.                         #
+'
+'######################################################################################
 Imports System.Xml
 
 Public Class frmDatabase
     Dim openfile As String
     Private Sub btnAddFixture_Click(sender As Object, e As EventArgs) Handles btnAddFixture.Click
+        'Shows frmAddFix1 (which allows the user to choose how they want to add a fixture to the database).
         frmAddFix1.Show()
     End Sub
 
     Private Sub frmDatabase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This sets up the frmDatabase element access dependent on user privelige levels
         lblCurrentUser.Text = ("Logged in as: " & currentuser)
         UsersToolStripMenuItem.Enabled = UserPrivelige
         If InventoryPrivelige = 0 Then
@@ -22,7 +31,7 @@ Public Class frmDatabase
             tsmViewFixture.Enabled = False
             msmViewFixture.Enabled = False
             btnSearchFixture.Enabled = False
-            tsmsearchstoreroom.enabled = False
+            tsmSearchStoreroom.Enabled = False
             msmSearchFixture.Enabled = False
             dgdStoreroom.Enabled = False
         ElseIf InventoryPrivelige = 1 Then
@@ -30,6 +39,7 @@ Public Class frmDatabase
             btnRemoveFixture.Enabled = False
         End If
 
+        'This code is for future functionality
         'If EventPrivelige = 0 Then
         '    btnOpenEventMan.Enabled = False
         '    btnOpenFixSheet.Enabled = False
@@ -38,14 +48,17 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnSearchFixture_Click(sender As Object, e As EventArgs) Handles btnSearchFixture.Click
+        'This shows the frmSearch form (which allows users to search for fixtures in the database)
         frmSearch.Show()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        '##THIS CODE WILL HAVE TO BE CHECKED FOR PROPER DATA CLEAR##
+        'This allows the user to logout so that a different user can login
         Dim response As Integer
+        'This confirms the user's choice to logout.
         response = MsgBox("Are you sure you want to logout?", 36, "Logout?")
         If response = 6 Then
+            'This asks whether the user wishes to save their work before logout occurs.
             response = MsgBox("Would you like to save your work?", 36, "Save?")
             If response = 6 Then
                 btnSaveStoreroom.PerformClick()
@@ -60,11 +73,12 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-
-        '#THIS COULD BE IMPROVED AT A LATER DATE##
+        'This exits the solution
         Dim response As Integer
+        'This confirms the user's choice to exit.
         response = MsgBox("Are you sure you want to exit?", 36, "Exit?")
         If response = 6 Then
+            'This asks wether the user wishes to save their work before logout occurs.
             response = MsgBox("Would you like to save your work?", 36, "Save?")
             If response = 6 Then
                 btnSaveStoreroom.PerformClick()
@@ -84,6 +98,7 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnSaveStoreroom_Click(sender As Object, e As EventArgs) Handles btnSaveStoreroom.Click
+        'This saves the current database
         Dim filename As String
         Dim strm As New XmlDocument
         Dim fixturetype As XmlNode
@@ -121,6 +136,7 @@ Public Class frmDatabase
         Dim root As XmlNode = strm.CreateElement("Storeroom")
         strm.AppendChild(root)
 
+        'This takes the fixture manufacturer, model and quantity from each row of dgdStoreroom and stores it in an XML file
         For loops = 0 To dgdStoreroom.Rows.Count - 1
             currentfix = strm.CreateElement("Fixture")
             root.AppendChild(currentfix)
@@ -139,6 +155,7 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnRemoveFixture_Click(sender As Object, e As EventArgs) Handles btnRemoveFixture.Click
+        'This removes any selected rows from dgdStoreroom
         If Not dgdStoreroom.Rows.Count > 0 Then
             MsgBox("There are no fixtures in the current Storeroom.")
             Exit Sub
@@ -177,10 +194,12 @@ Public Class frmDatabase
     End Sub
 
     Private Sub dlgOpenStoreroom_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dlgOpenStoreroom.FileOk
+        'This is some helper code for btnLoadStoreroom
         openfile = dlgOpenStoreroom.FileName
     End Sub
 
     Private Sub btnViewFixture_Click(sender As Object, e As EventArgs) Handles btnViewFixture.Click
+        'This checks to make sure that there is a dgdStoreroom row to select and there is only one selected before assigning the selected fixture to selectedfixture variable and opening frmFixtureInfo
         If Not dgdStoreroom.Rows.Count > 0 Then
             MsgBox("There are no fixtures in the current Storeroom.")
             Exit Sub
@@ -198,8 +217,7 @@ Public Class frmDatabase
     End Sub
 
     Private Sub btnNewStoreroom_Click(sender As Object, e As EventArgs) Handles btnNewStoreroom.Click
-
-
+        'This clears dgdStoreroom and sets currentstoreroom to string.empty after checking if the user wants to save their work.
         Dim response As Integer
         response = MsgBox("Would you like to save your work?", 36, "Save?")
         If response = 6 Then
@@ -210,6 +228,7 @@ Public Class frmDatabase
         currentstoreroom = String.Empty
     End Sub
 
+    'All of the following subs are just links to buttons for the strip and context menus
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
         frmAbout.Show()
     End Sub

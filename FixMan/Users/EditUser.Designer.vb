@@ -82,7 +82,7 @@ Partial Class frmEditUser
         Me.Panel2.Controls.Add(Me.rdbInventoryBlock)
         Me.Panel2.Controls.Add(Me.rdbInventoryView)
         Me.Panel2.Controls.Add(Me.rdbInventoryEdit)
-        Me.Panel2.Location = New System.Drawing.Point(16, 39)
+        Me.Panel2.Location = New System.Drawing.Point(60, 39)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(87, 112)
         Me.Panel2.TabIndex = 24
@@ -137,10 +137,11 @@ Partial Class frmEditUser
         Me.Panel1.Controls.Add(Me.rdbEventView)
         Me.Panel1.Controls.Add(Me.rdbEventBlock)
         Me.Panel1.Controls.Add(Me.rdbEventEdit)
-        Me.Panel1.Location = New System.Drawing.Point(109, 39)
+        Me.Panel1.Location = New System.Drawing.Point(185, 50)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(84, 112)
         Me.Panel1.TabIndex = 24
+        Me.Panel1.Visible = False
         '
         'Label6
         '
@@ -210,7 +211,7 @@ Partial Class frmEditUser
         'chkUserEdit
         '
         Me.chkUserEdit.AutoSize = True
-        Me.chkUserEdit.Location = New System.Drawing.Point(61, 159)
+        Me.chkUserEdit.Location = New System.Drawing.Point(54, 159)
         Me.chkUserEdit.Name = "chkUserEdit"
         Me.chkUserEdit.Size = New System.Drawing.Size(99, 17)
         Me.chkUserEdit.TabIndex = 21

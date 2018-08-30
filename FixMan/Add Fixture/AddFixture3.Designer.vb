@@ -28,8 +28,8 @@ Partial Class frmAddFix3
         Me.dlgOpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnRemove = New System.Windows.Forms.Button()
+        Me.btnPrevious = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstFiles
@@ -89,25 +89,25 @@ Partial Class frmAddFix3
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnRemove
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(350, 270)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Remove File"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRemove.Location = New System.Drawing.Point(350, 270)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Size = New System.Drawing.Size(75, 23)
+        Me.btnRemove.TabIndex = 27
+        Me.btnRemove.Text = "Remove File"
+        Me.btnRemove.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnPrevious
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(349, 328)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "< Previous"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnPrevious.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPrevious.Location = New System.Drawing.Point(349, 328)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrevious.TabIndex = 28
+        Me.btnPrevious.Text = "< Previous"
+        Me.btnPrevious.UseVisualStyleBackColor = True
         '
         'frmAddFix3
         '
@@ -115,8 +115,8 @@ Partial Class frmAddFix3
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(436, 399)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAdd)
@@ -136,6 +136,6 @@ Partial Class frmAddFix3
     Friend WithEvents dlgOpenFile As OpenFileDialog
     Friend WithEvents btnNext As Button
     Friend WithEvents btnCancel As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnRemove As Button
+    Friend WithEvents btnPrevious As Button
 End Class

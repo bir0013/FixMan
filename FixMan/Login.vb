@@ -14,9 +14,11 @@ Public Class frmLogin
             For Each nodes In userfile.SelectNodes("/Creds/User")
                 If nodes.ChildNodes(0).InnerText = txtUsername.Text Then
                     If nodes.ChildNodes(2).InnerText = getSHA1Hash(txtPassword.Text) Then
+                        'The following stores, from the users.xml file, the full name and priveliges that your user account carries.
                         currentuser = nodes.ChildNodes(1).InnerText
                         InventoryPrivelige = nodes.ChildNodes(3).InnerText
                         EventPrivelige = nodes.ChildNodes(4).InnerText
+                        'UserPrivelige is intended for future functionality and therefore goes unused
                         UserPrivelige = nodes.ChildNodes(5).InnerText
                         txtUsername.Focus()
                         txtUsername.Clear()
@@ -86,6 +88,7 @@ Public Class frmLogin
     End Function
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        'Exits the solution
         Application.Exit()
     End Sub
 

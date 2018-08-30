@@ -4,6 +4,7 @@ Public Class frmFixtureInfo
     Dim colourhorizontal, colourvertical As Integer
     Dim gobohorizontal, gobovertical As Integer
     Private Sub frmFixtureInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This procedure loads all information about the fixture selected in frmDatabase.dgdStoreroom into the fixture info form
         Me.Text = selectedfixture
 
         'This initialises the variables that keep track of datagridview scroll
@@ -32,7 +33,7 @@ Public Class frmFixtureInfo
         Dim nodes As XmlNode
 
         For Each nodes In fix.SelectNodes("/Root/Fixture/Files/File")
-            lstDocuments.Items.Add(nodes.InnerText)
+            lstDocuments.Items.Add(System.IO.Path.GetFileName(nodes.InnerText))
         Next
         For Each nodes In fix.SelectNodes("/Root/Fixture/Control/Protocol")
             lstControl.Items.Add(nodes.InnerText)
@@ -86,6 +87,7 @@ Public Class frmFixtureInfo
     End Sub
 
     Private Sub lstDocuments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDocuments.SelectedIndexChanged
+        'This tells webDocViewer to navigate to the file selected in lstDocuments
         webDocViewer.Navigate(lstDocuments.SelectedItem.ToString)
     End Sub
 

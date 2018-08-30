@@ -2,6 +2,7 @@
 
 Public Class frmAddUser
     Private Sub chkShowConfirm_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowConfirm.CheckedChanged
+        'This code allows the password confirm field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowConfirm.Checked = True Then
             txtConfirmPassword.UseSystemPasswordChar = False
         ElseIf chkShowConfirm.Checked = False Then
@@ -13,6 +14,7 @@ Public Class frmAddUser
     End Sub
 
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged
+        'This code allows the password field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowPass.Checked = True Then
             txtPassword.UseSystemPasswordChar = False
         ElseIf chkShowPass.Checked = False Then
@@ -24,6 +26,7 @@ Public Class frmAddUser
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        'This appends users.xml with the new user account and its information
         Dim inventoryrights, eventrights As Integer
         Dim useredit As Boolean
 
@@ -114,6 +117,4 @@ Public Class frmAddUser
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
-
-
 End Class

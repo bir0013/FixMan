@@ -2,6 +2,7 @@
 
 Public Class frmSetup
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged
+        'This code allows the password field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowPass.Checked = True Then
             txtPassword.UseSystemPasswordChar = False
         ElseIf chkShowPass.Checked = False Then
@@ -13,6 +14,7 @@ Public Class frmSetup
     End Sub
 
     Private Sub chkShowConfirm_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowConfirm.CheckedChanged
+        'This code allows the password confirm field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowConfirm.Checked = True Then
             txtConfirmPassword.UseSystemPasswordChar = False
         ElseIf chkShowConfirm.Checked = False Then
@@ -24,6 +26,8 @@ Public Class frmSetup
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        'This Sub is similar to the code for adding users througn frmAddUser, except it forces you to administrator status as there must always
+        'be one admin account present for this software to prevent becoming locked out of parts of the software.
         If txtUsername.Text = String.Empty Then
             MsgBox("Please enter a username")
             Exit Sub
@@ -70,7 +74,8 @@ Public Class frmSetup
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        End
+        'Exits solution
+        Application.Exit()
     End Sub
     Function getSHA1Hash(ByVal strToHash As String) As String
         'This function takes a string input and returns a SHA1 encrypted version
@@ -90,6 +95,7 @@ Public Class frmSetup
     End Function
 
     Private Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
+        'makes sure that the login screen stays hidden until a user is setup
         frmLogin.Hide()
     End Sub
 End Class

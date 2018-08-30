@@ -65,6 +65,7 @@ Partial Class frmAddFix2
         Me.pnlSource = New System.Windows.Forms.Panel()
         Me.pnlColourTemp = New System.Windows.Forms.Panel()
         Me.pnlControl = New System.Windows.Forms.Panel()
+        Me.btnRemoveControl = New System.Windows.Forms.Button()
         Me.btnColourText = New System.Windows.Forms.Button()
         Me.btnColourImage = New System.Windows.Forms.Button()
         Me.btnColourRemove = New System.Windows.Forms.Button()
@@ -79,6 +80,7 @@ Partial Class frmAddFix2
         Me.pnlColours = New System.Windows.Forms.Panel()
         Me.chkColourmix = New System.Windows.Forms.CheckBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.btnRemoveEffect = New System.Windows.Forms.Button()
         Me.txtEffects = New System.Windows.Forms.TextBox()
         Me.btnAddEffect = New System.Windows.Forms.Button()
         Me.pnlGobos = New System.Windows.Forms.Panel()
@@ -291,7 +293,7 @@ Partial Class frmAddFix2
         '
         Me.btnAddControl.Location = New System.Drawing.Point(151, 22)
         Me.btnAddControl.Name = "btnAddControl"
-        Me.btnAddControl.Size = New System.Drawing.Size(75, 20)
+        Me.btnAddControl.Size = New System.Drawing.Size(55, 20)
         Me.btnAddControl.TabIndex = 12
         Me.btnAddControl.Text = "Add"
         Me.btnAddControl.UseVisualStyleBackColor = True
@@ -349,9 +351,9 @@ Partial Class frmAddFix2
         Me.lblColourTempPrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblColourTempPrompt.Location = New System.Drawing.Point(6, 7)
         Me.lblColourTempPrompt.Name = "lblColourTempPrompt"
-        Me.lblColourTempPrompt.Size = New System.Drawing.Size(151, 16)
+        Me.lblColourTempPrompt.Size = New System.Drawing.Size(170, 16)
         Me.lblColourTempPrompt.TabIndex = 33
-        Me.lblColourTempPrompt.Text = "Colour Temp. (At Open):"
+        Me.lblColourTempPrompt.Text = "Colour Temp. (At Open) (K):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lblControlPrompt
         '
@@ -369,9 +371,9 @@ Partial Class frmAddFix2
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(7, 5)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(117, 16)
+        Me.Label11.Size = New System.Drawing.Size(141, 16)
         Me.Label11.TabIndex = 36
-        Me.Label11.Text = "Total Power Draw:"
+        Me.Label11.Text = "Total Power Draw (W):"
         '
         'lblColoursPrompt
         '
@@ -409,9 +411,9 @@ Partial Class frmAddFix2
         Me.lblBeamAnglePrompt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBeamAnglePrompt.Location = New System.Drawing.Point(5, 7)
         Me.lblBeamAnglePrompt.Name = "lblBeamAnglePrompt"
-        Me.lblBeamAnglePrompt.Size = New System.Drawing.Size(85, 16)
+        Me.lblBeamAnglePrompt.Size = New System.Drawing.Size(100, 16)
         Me.lblBeamAnglePrompt.TabIndex = 32
-        Me.lblBeamAnglePrompt.Text = "Beam Angle:"
+        Me.lblBeamAnglePrompt.Text = "Beam Angle (°):"
         '
         'rtbNotes
         '
@@ -515,6 +517,7 @@ Partial Class frmAddFix2
         'pnlControl
         '
         Me.pnlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlControl.Controls.Add(Me.btnRemoveControl)
         Me.pnlControl.Controls.Add(Me.lstControl)
         Me.pnlControl.Controls.Add(Me.txtControl)
         Me.pnlControl.Controls.Add(Me.btnAddControl)
@@ -523,6 +526,15 @@ Partial Class frmAddFix2
         Me.pnlControl.Name = "pnlControl"
         Me.pnlControl.Size = New System.Drawing.Size(231, 155)
         Me.pnlControl.TabIndex = 51
+        '
+        'btnRemoveControl
+        '
+        Me.btnRemoveControl.Location = New System.Drawing.Point(207, 22)
+        Me.btnRemoveControl.Name = "btnRemoveControl"
+        Me.btnRemoveControl.Size = New System.Drawing.Size(18, 20)
+        Me.btnRemoveControl.TabIndex = 36
+        Me.btnRemoveControl.Text = "-"
+        Me.btnRemoveControl.UseVisualStyleBackColor = True
         '
         'btnColourText
         '
@@ -657,6 +669,7 @@ Partial Class frmAddFix2
         'Panel12
         '
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel12.Controls.Add(Me.btnRemoveEffect)
         Me.Panel12.Controls.Add(Me.txtEffects)
         Me.Panel12.Controls.Add(Me.btnAddEffect)
         Me.Panel12.Controls.Add(Me.lstEffects)
@@ -665,6 +678,15 @@ Partial Class frmAddFix2
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(260, 273)
         Me.Panel12.TabIndex = 55
+        '
+        'btnRemoveEffect
+        '
+        Me.btnRemoveEffect.Location = New System.Drawing.Point(229, 26)
+        Me.btnRemoveEffect.Name = "btnRemoveEffect"
+        Me.btnRemoveEffect.Size = New System.Drawing.Size(21, 20)
+        Me.btnRemoveEffect.TabIndex = 37
+        Me.btnRemoveEffect.Text = "-"
+        Me.btnRemoveEffect.UseVisualStyleBackColor = True
         '
         'txtEffects
         '
@@ -677,7 +699,7 @@ Partial Class frmAddFix2
         '
         Me.btnAddEffect.Location = New System.Drawing.Point(166, 26)
         Me.btnAddEffect.Name = "btnAddEffect"
-        Me.btnAddEffect.Size = New System.Drawing.Size(75, 20)
+        Me.btnAddEffect.Size = New System.Drawing.Size(60, 20)
         Me.btnAddEffect.TabIndex = 21
         Me.btnAddEffect.Text = "Add"
         Me.btnAddEffect.UseVisualStyleBackColor = True
@@ -840,4 +862,6 @@ Partial Class frmAddFix2
     Friend WithEvents Panel14 As Panel
     Friend WithEvents dlgOpenImage As OpenFileDialog
     Friend WithEvents chkColourmix As CheckBox
+    Friend WithEvents btnRemoveControl As Button
+    Friend WithEvents btnRemoveEffect As Button
 End Class

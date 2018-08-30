@@ -1,5 +1,6 @@
 ﻿Public Class frmSearch
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        'This searches all cells in frmDatabase.dgdStoreroom to see whether the text in any cell matches that of txtSearchTerm (partial match is implemented).
         dgdSearchResult.Rows.Clear()
         Dim temp As Integer = 0
         For i As Integer = 0 To frmDatabase.dgdStoreroom.RowCount - 1
@@ -26,6 +27,7 @@
     End Sub
 
     Private Sub frmSearch_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        'Ensures that txtSearchTerm is focused
         txtSearchTerm.Focus()
     End Sub
 End Class

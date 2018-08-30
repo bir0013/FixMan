@@ -204,6 +204,7 @@ Partial Class frmSetup
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmSetup"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FirstTimeSetup"
         Me.pnlUserInfo.ResumeLayout(False)
         Me.pnlUserInfo.PerformLayout()

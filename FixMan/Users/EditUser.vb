@@ -6,6 +6,7 @@ Public Class frmEditUser
     Dim useredit As Boolean
 
     Private Sub chkShowConfirm_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowConfirm.CheckedChanged
+        'This code allows the password confirm field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowConfirm.Checked = True Then
             txtConfirmPassword.UseSystemPasswordChar = False
         ElseIf chkShowConfirm.Checked = False Then
@@ -17,6 +18,7 @@ Public Class frmEditUser
     End Sub
 
     Private Sub chkShowPass_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPass.CheckedChanged
+        'This code allows the password field to switch between showing password text and showing the system password character when the showpass checkbox is checked/unchecked
         If chkShowPass.Checked = True Then
             txtPassword.UseSystemPasswordChar = False
         ElseIf chkShowPass.Checked = False Then
@@ -50,6 +52,7 @@ Public Class frmEditUser
 
 
     Private Sub frmEditUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'This loads all information for the selected user from users.xml into this form ready for editing
         selecteduser = frmUsers.lstUsers.SelectedIndex
         Try
             Dim userfile As New XmlDocument()
@@ -62,6 +65,8 @@ Public Class frmEditUser
                 If node.ParentNode.ChildNodes(5).InnerText = "True" Then
                     chkUserEdit.Checked = True
                 End If
+
+                'This is a case statement for radio buttons
                 Select Case True
                     Case node.ParentNode.ChildNodes(3).InnerText = 2
                         rdbInventoryEdit.Checked = True
@@ -71,14 +76,15 @@ Public Class frmEditUser
                         rdbInventoryBlock.Checked = True
                 End Select
 
-                Select Case True
-                    Case node.ParentNode.ChildNodes(4).InnerText = 2
-                        rdbEventEdit.Checked = True
-                    Case node.ParentNode.ChildNodes(4).InnerText = 1
-                        rdbEventView.Checked = True
-                    Case node.ParentNode.ChildNodes(4).InnerText = 0
-                        rdbEventBlock.Checked = True
-                End Select
+                'This is code for future functionality
+                'Select Case True
+                '    Case node.ParentNode.ChildNodes(4).InnerText = 2
+                '        rdbEventEdit.Checked = True
+                '    Case node.ParentNode.ChildNodes(4).InnerText = 1
+                '        rdbEventView.Checked = True
+                '    Case node.ParentNode.ChildNodes(4).InnerText = 0
+                '        rdbEventBlock.Checked = True
+                'End Select
                 userfile.Save("users.xml")
                 'MsgBox(lstUsers.SelectedItem.ToString)
             End If
@@ -88,8 +94,7 @@ Public Class frmEditUser
     End Sub
 
     Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
-
-
+        'This checks that all data is present and that the altered user priveliges are safe to commit to file (to prevent being locked out of the software if no other user has permission to edit user).
         If txtUsername.Text = String.Empty Then
             MsgBox("Please enter a username")
             Exit Sub
@@ -159,6 +164,7 @@ Public Class frmEditUser
     End Sub
 
     Sub CommitChanges()
+        'This changes the values in users.xml to the changed values
         Try
             Dim userfile As New XmlDocument
             userfile.Load("users.xml")

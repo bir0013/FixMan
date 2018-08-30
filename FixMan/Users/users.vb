@@ -4,6 +4,7 @@ Imports System.Xml
 
 Public Class frmUsers
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        'Opens the add user form
         frmAddUser.Show()
     End Sub
 
@@ -25,10 +26,12 @@ Public Class frmUsers
     End Function
 
     Private Sub frmUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Runs the userload procedure on form load
         userload()
     End Sub
 
     Sub userload()
+        'This loads in all users in user.xml into lstUsers.
         lstUsers.Items.Clear()
         Try
             Dim userfile As New XmlDocument()
@@ -44,7 +47,8 @@ Public Class frmUsers
         End Try
     End Sub
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
-        '#THIS COULD BE IMPROVED AT A LATER DATE##
+        'This sub removes the selected user after confirming the action with the user and checking that it is safe to do so
+        '(to prevent lockout of certain solution features if there are no other users who can edit user accounts).
         Dim response As Integer
         If Not lstUsers.SelectedItems.Count > 0 Then
             MsgBox("Please select a user.")
@@ -93,6 +97,7 @@ Public Class frmUsers
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        'Opens the user editing form
         If lstUsers.SelectedItems.Count > 0 Then
             frmEditUser.Show()
         Else

@@ -283,6 +283,7 @@ Public Class frmAddFix2
             Next
         Next
 
+        'This is an old, broken version of the previous code
         'For loops = 1 To ((colourvertical * 3) + colourhorizontal)
         '    If dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag = "Text" Then
         '        FixColourDataType.Add(dgdColours.Rows(colourverticalscroll).Cells(colourhorizontalscroll).Tag)
@@ -311,6 +312,7 @@ Public Class frmAddFix2
             Next
         Next
 
+        'This is an old, broken version of the previous code
         'For loops = 1 To ((gobovertical * 3) + gobohorizontal)
         '    If dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag = "Text" Then
         '        FixGoboDataType.Add(dgdGobos.Rows(goboverticalscroll).Cells(gobohorizontalscroll).Tag)
@@ -444,11 +446,18 @@ Public Class frmAddFix2
         End If
     End Sub
 
+    Private Sub btnRemoveControl_Click(sender As Object, e As EventArgs) Handles btnRemoveControl.Click
+        'This removes the selected item from lstControl
+        lstControl.Items.Remove(lstControl.SelectedItem)
+    End Sub
+
+    Private Sub btnRemoveEffect_Click(sender As Object, e As EventArgs) Handles btnRemoveEffect.Click
+        'This removes the selected item from lstEffects
+        lstEffects.Items.Remove(lstEffects.SelectedItem)
+    End Sub
+
     Function ImageToBase64(ByRef img As Image)
         'This function converts images to base64strings to be stored later
-
-        '### THIS METHOD OF STORAGE THAT THIS IS USED FOR IS VERY MEMORY INTENSIVE ###
-
         Dim format As Imaging.ImageFormat = img.RawFormat
         Using ms As New MemoryStream()
             img.Save(ms, format)

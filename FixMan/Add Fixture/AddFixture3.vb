@@ -101,7 +101,8 @@ Public Class frmAddFix3
         Dim response As Integer
         response = MsgBox("Are you sure you want to cancel? All information for this fixture will be lost.", 36, "Cancel?")
         If response = 6 Then
-            Me.Hide()
+            frmAddFix2.Close()
+            Me.Close()
         End If
     End Sub
 

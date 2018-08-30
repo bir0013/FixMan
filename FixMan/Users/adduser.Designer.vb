@@ -361,6 +361,7 @@ Partial Class frmAddUser
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.pnlPriveliges)
         Me.Controls.Add(Me.pnlUserInfo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAddUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New User"

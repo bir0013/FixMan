@@ -361,6 +361,7 @@ Partial Class frmEditUser
         Me.Controls.Add(Me.pnlPriveliges)
         Me.Controls.Add(Me.pnlUserInfo)
         Me.Controls.Add(Me.btnCancel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmEditUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EditUser"

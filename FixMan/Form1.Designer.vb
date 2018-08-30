@@ -23,6 +23,7 @@ Partial Class frmDatabase
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDatabase))
         Me.mnuMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewStoreroomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -525,6 +526,7 @@ Partial Class frmDatabase
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.picLogo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mnuMenuStrip
         Me.Name = "frmDatabase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

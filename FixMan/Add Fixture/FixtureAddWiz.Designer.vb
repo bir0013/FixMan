@@ -82,6 +82,7 @@ Partial Class frmAddFix1
         Me.Controls.Add(Me.btnImport)
         Me.Controls.Add(Me.btnManual)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAddFix1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Fixture"

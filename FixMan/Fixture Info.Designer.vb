@@ -22,6 +22,7 @@ Partial Class frmFixtureInfo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFixtureInfo))
         Me.tabManual = New System.Windows.Forms.TabPage()
         Me.lstDocuments = New System.Windows.Forms.ListBox()
         Me.webDocViewer = New System.Windows.Forms.WebBrowser()
@@ -461,6 +462,7 @@ Partial Class frmFixtureInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(904, 541)
         Me.Controls.Add(Me.tabTabs)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmFixtureInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "**ASSIGN NAME OF SELECTED FIXTURE HERE**"

@@ -715,6 +715,7 @@ Partial Class frmAddFix2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1153, 540)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.pnlGobos)
         Me.Controls.Add(Me.Panel12)
@@ -732,6 +733,8 @@ Partial Class frmAddFix2
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnCancel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmAddFix2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Fixture"

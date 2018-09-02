@@ -35,6 +35,7 @@ Partial Class frmDatabase
         Me.msmAddFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.msmRemoveFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.msmViewFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.msmSearchFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnLogout = New System.Windows.Forms.Button()
@@ -52,6 +53,7 @@ Partial Class frmDatabase
         Me.tsmAddFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmRemoveFixture = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmViewFixture = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmSearchStoreroom = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlStoreroom = New System.Windows.Forms.Panel()
         Me.btnNewStoreroom = New System.Windows.Forms.Button()
         Me.lblCurrentStoreroom = New System.Windows.Forms.Label()
@@ -74,8 +76,6 @@ Partial Class frmDatabase
         Me.lblCurrentUser = New System.Windows.Forms.Label()
         Me.dlgOpenStoreroom = New System.Windows.Forms.OpenFileDialog()
         Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.msmSearchFixture = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmSearchStoreroom = New System.Windows.Forms.ToolStripMenuItem()
         Me.dlgSaveStoreroom = New System.Windows.Forms.SaveFileDialog()
         Me.mnuMenuStrip.SuspendLayout()
         CType(Me.dgdStoreroom, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,6 +156,12 @@ Partial Class frmDatabase
         Me.msmViewFixture.Size = New System.Drawing.Size(243, 22)
         Me.msmViewFixture.Text = "View Selected Fixture"
         '
+        'msmSearchFixture
+        '
+        Me.msmSearchFixture.Name = "msmSearchFixture"
+        Me.msmSearchFixture.Size = New System.Drawing.Size(243, 22)
+        Me.msmSearchFixture.Text = "Search Storeroom"
+        '
         'UsersToolStripMenuItem
         '
         Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
@@ -170,7 +176,7 @@ Partial Class frmDatabase
         '
         'btnLogout
         '
-        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogout.Location = New System.Drawing.Point(835, 624)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(75, 23)
@@ -180,7 +186,7 @@ Partial Class frmDatabase
         '
         'btnExit
         '
-        Me.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExit.Location = New System.Drawing.Point(916, 624)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
@@ -275,6 +281,12 @@ Partial Class frmDatabase
         Me.tsmViewFixture.Name = "tsmViewFixture"
         Me.tsmViewFixture.Size = New System.Drawing.Size(203, 22)
         Me.tsmViewFixture.Text = "View Fixture Information"
+        '
+        'tsmSearchStoreroom
+        '
+        Me.tsmSearchStoreroom.Name = "tsmSearchStoreroom"
+        Me.tsmSearchStoreroom.Size = New System.Drawing.Size(203, 22)
+        Me.tsmSearchStoreroom.Text = "Search Storeroom"
         '
         'pnlStoreroom
         '
@@ -474,7 +486,7 @@ Partial Class frmDatabase
         '
         'lblCurrentUser
         '
-        Me.lblCurrentUser.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblCurrentUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCurrentUser.Location = New System.Drawing.Point(216, 629)
         Me.lblCurrentUser.Name = "lblCurrentUser"
         Me.lblCurrentUser.Size = New System.Drawing.Size(613, 18)
@@ -494,18 +506,6 @@ Partial Class frmDatabase
         Me.picLogo.Size = New System.Drawing.Size(197, 197)
         Me.picLogo.TabIndex = 19
         Me.picLogo.TabStop = False
-        '
-        'msmSearchFixture
-        '
-        Me.msmSearchFixture.Name = "msmSearchFixture"
-        Me.msmSearchFixture.Size = New System.Drawing.Size(243, 22)
-        Me.msmSearchFixture.Text = "Search Storeroom"
-        '
-        'tsmSearchStoreroom
-        '
-        Me.tsmSearchStoreroom.Name = "tsmSearchStoreroom"
-        Me.tsmSearchStoreroom.Size = New System.Drawing.Size(203, 22)
-        Me.tsmSearchStoreroom.Text = "Search Storeroom"
         '
         'dlgSaveStoreroom
         '
